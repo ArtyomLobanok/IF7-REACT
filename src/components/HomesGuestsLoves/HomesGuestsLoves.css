@@ -1,0 +1,12 @@
+.section {
+    padding: 120px 0;
+}
+
+.section__overviews {
+    background: #EAF0F9;
+}
+
+.overviews {
+    position: relative;
+}
+
