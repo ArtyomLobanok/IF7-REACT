@@ -1,14 +1,14 @@
 import React from 'react';
-import '../App/App.css';
+import '../HomesGuestsLoves/HomesGuestsLoves.css';
 import HeadersOfModules from '../../components/HeadersOfModules/HeadersOfModules';
-import Slider from "../../components/Slider/Slider";
+import HomesGuestsLovesSlider from "../../components/HomesGuestsLovesSlider/HomesGuestsLovesSlider";
 
 function HomesGuestsLoves(){
     return (
-        <div className='section__overviews'>
+        <section className='section__overviews'>
             <HeadersOfModules/>
-            <Slider/>
-        </div>
+            <HomesGuestsLovesSlider/>
+        </section>
     );
 }
 

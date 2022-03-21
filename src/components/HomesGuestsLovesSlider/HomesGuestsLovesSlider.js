@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Slider.css'
+import './HomesGuestsLovesSlider.css'
 
 const data = [
     {
@@ -60,7 +60,7 @@ const data = [
     },
 ];
 
-function Slider() {
+function HomesGuestsLovesSlider() {
     const [objArr] = useState(data);
 
     const result = objArr.map((obj) => {
@@ -82,4 +82,4 @@ function Slider() {
     </div>;
 }
 
-export default Slider;
+export default HomesGuestsLovesSlider;
