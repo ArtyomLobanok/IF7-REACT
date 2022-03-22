@@ -1,13 +1,17 @@
 import React from "react";
 import '../AppHeader/Header.css'
-import HeaderTrip from "../../components/HeaderMenu/HeaderMenu";
 import Inner from "../../components/InnerTripHouse/InnerTripHouse";
+import '../../components/Contaiter/Container.css'
+import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
+
 const Header = () => {
     return (
-        <div className="Header">
-            <HeaderTrip/>
-            <Inner/>
-        </div>
+        <section className="Header">
+            <div className="container">
+                <HeaderMenu/>
+                <Inner/>
+            </div>
+        </section>
     );
 }
 

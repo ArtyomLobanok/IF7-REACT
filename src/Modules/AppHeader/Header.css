@@ -1,10 +1,11 @@
 .Header {
     background-image:
             url(
-            "/src/mainBackground.png"
+            "/src/components/Assets/Img/mainBackground.png"
             );
     height: 100vh;
     background-repeat:no-repeat;
+    background-position: center;
     min-height: 56.25rem;
     background-size: cover;
 }

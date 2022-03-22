@@ -1,10 +1,23 @@
 import React from "react";
 import '../InnerTripHouse/InnerTripHouse.css'
 import Form from "../../Modules/FormOfSeach/FormOfSeach";
+
 const Inner = () => {
     return (
         <div className="Inner">
+            <>
+            <h1 className="Inner__title">Discover stays<br/>
+                to live, work or just relax</h1>
             <Form/>
+                <div className="intro__icons">
+                    <a href="https://play.google.com/store">
+                        <img src='/src/components/Assets/Img/IconsFromHeader/google-play-badge.png' alt="Img google pay store"/>
+                    </a>
+                    <a href="https://www.apple.com/ru/app-store/">
+                        <img src="/src/components/Assets/Img/IconsFromHeader/App_Store_Badge.png" alt="Img apple store"/>
+                    </a>
+                </div>
+            </>
         </div>
     );
 }

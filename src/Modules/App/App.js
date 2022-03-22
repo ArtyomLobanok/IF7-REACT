@@ -7,11 +7,11 @@ import HomesGuestsLoves from "../HomesGuestsLoves/HomesGuestsLoves";
 
 function App(){
   return (
-    <div className="container">
+      <>
         <Header/>
         <HomesGuestsLoves/>
         <Footer/>
-    </div>
+      </>
   );
 }
 

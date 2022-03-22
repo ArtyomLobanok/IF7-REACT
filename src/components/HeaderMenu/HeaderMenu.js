@@ -11,19 +11,18 @@ const HeaderMenu = () => {
                     <svg className="header__logo">
                         <use href="#logotype"/>
                     </svg>
-
                     <nav className="navigation">
                         <div className="nav__links">
-                            <a href="#">Stays</a>
-                            <a href="#">Attractions</a>
+                            <a href="/#">Stays</a>
+                            <a href="/#">Attractions</a>
                         </div>
                         <div className="nav__icons">
-                            <a href="#">
+                            <a href="/#">
                                 <svg className="header__switcher">
                                     <use href="#styleTimeSwitch"/>
                                 </svg>
                             </a>
-                            <a href="#">
+                            <a href="/#">
                                 <svg className="header__account">
                                     <use href="#account"/>
                                 </svg>
