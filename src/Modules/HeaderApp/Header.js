@@ -1,5 +1,5 @@
 import React from "react";
-import '../AppHeader/Header.css'
+import './/Header.css'
 import Inner from "../../components/InnerTripHouse/InnerTripHouse";
 import '../../components/Contaiter/Container.css'
 import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";

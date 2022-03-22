@@ -1,7 +1,8 @@
 import React from "react";
 import '../InnerTripHouse/InnerTripHouse.css'
 import Form from "../../Modules/FormOfSeach/FormOfSeach";
-
+import googlePlayBadge from "../Assets/Img/IconsFromHeader/google-play-badge.png"
+import appStoreBadge from "../Assets/Img/IconsFromHeader/AppleStoreBadge.svg"
 const Inner = () => {
     return (
         <div className="Inner">
@@ -11,10 +12,10 @@ const Inner = () => {
             <Form/>
                 <div className="intro__icons">
                     <a href="https://play.google.com/store">
-                        <img src='/src/components/Assets/Img/IconsFromHeader/google-play-badge.png' alt="Img google pay store"/>
+                        <img src= {googlePlayBadge} alt="Img google pay store"/>
                     </a>
                     <a href="https://www.apple.com/ru/app-store/">
-                        <img src="/src/components/Assets/Img/IconsFromHeader/App_Store_Badge.png" alt="Img apple store"/>
+                        <img src={appStoreBadge} alt="Img apple store"/>
                     </a>
                 </div>
             </>

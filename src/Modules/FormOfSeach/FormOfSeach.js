@@ -1,5 +1,5 @@
 import React from "react";
-
+import './FormOfSeach.css'
 class Form extends React.Component {
     state = {
         name: '',
