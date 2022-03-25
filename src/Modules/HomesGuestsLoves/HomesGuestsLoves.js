@@ -9,7 +9,7 @@ function HomesGuestsLoves(){
         <section className='section__overviews'>
             <div className="container">
                 <HeadersOfModules/>
-                <DrawHotel/>
+                <DrawHotel url="https://fe-student-api.herokuapp.com/api/hotels/popular"/>
             </div>
         </section>
     );
