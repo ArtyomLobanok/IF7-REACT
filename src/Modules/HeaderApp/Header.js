@@ -6,12 +6,12 @@ import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
 
 const Header = () => {
     return (
-        <section className="Header">
+        <header className="Header">
             <div className="container">
                 <HeaderMenu/>
                 <Inner/>
             </div>
-        </section>
+        </header>
     );
 }
 

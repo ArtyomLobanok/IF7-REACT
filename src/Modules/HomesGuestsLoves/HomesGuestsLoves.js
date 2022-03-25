@@ -1,7 +1,7 @@
 import React from 'react';
 import '../HomesGuestsLoves/HomesGuestsLoves.css';
 import HeadersOfModules from '../../components/HeadersOfModules/HeadersOfModules';
-import HomesGuestsLovesSlider from "../../components/HomesGuestsLovesSlider/HomesGuestsLovesSlider";
+import Hotels from "../../components/HomesGuestsLovesSlider/HomesGuestsLovesSlider";
 import '../../components/Contaiter/Container.css'
 
 function HomesGuestsLoves(){
@@ -9,7 +9,7 @@ function HomesGuestsLoves(){
         <section className='section__overviews'>
             <div className="container">
                 <HeadersOfModules/>
-                <HomesGuestsLovesSlider/>
+                <Hotels/>
             </div>
         </section>
     );
