@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './HomesGuestsLovesSlider.css'
 import HotelCard from "../HotelCard/HotelCard";
+const url = "https://fe-student-api.herokuapp.com/api/hotels"
 function  Hotels() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [array, setArray] = useState([]);
     useEffect(() => {
-        const url = "https://fe-student-api.herokuapp.com/api/hotels"
         fetch(url)
             .then(res => res.json())
             .then(
@@ -28,13 +28,14 @@ function  Hotels() {
         return <div>Загрузка...</div>;
     } else {
         return (
-            <div className = 'overviews__slider'>
-                {array.map( hotelCard => (
-                    <HotelCard key={hotelCard.id} card={hotelCard}/>
-                ))}
-            </div>
+            error, isLoaded, array
         );
     }
 }
 
+// <div className = 'overviews__slider'>
+//     {array.map( hotelCard => (
+//         <HotelCard key={hotelCard.id} card={hotelCard}/>
+//     ))}
+// </div>
 export default Hotels;
