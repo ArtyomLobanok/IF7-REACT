@@ -1,6 +1,6 @@
 import React from "react";
 import '../InnerTripHouse/InnerTripHouse.css'
-import Form from "../../Modules/FormOfSeach/FormOfSeach";
+import Form from "../FormOfSeach/FormOfSeach";
 import googlePlayBadge from "../Assets/Img/IconsFromHeader/google-play-badge.png"
 import appStoreBadge from "../Assets/Img/IconsFromHeader/AppleStoreBadge.svg"
 const Inner = () => {

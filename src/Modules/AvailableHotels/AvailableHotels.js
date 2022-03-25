@@ -4,16 +4,16 @@ import HotelCard from "../HotelCard/HotelCard";
 function  Hotels() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
+    const [array, setArray] = useState([]);
     useEffect(() => {
-        const url = "https://fe-student-api.herokuapp.com/api/hotels/popular"
+        const url = "https://fe-student-api.herokuapp.com/api/hotels"
         fetch(url)
             .then(res => res.json())
             .then(
                 (result) => {
                     console.log(result)
                     setIsLoaded(true);
-                    setItems(result);
+                    setArray(result);
                 },
                 (error) => {
                     setIsLoaded(true);
@@ -29,8 +29,8 @@ function  Hotels() {
     } else {
         return (
             <div className = 'overviews__slider'>
-                {items.map( hotelCard => (
-                        <HotelCard key={hotelCard.id} card={hotelCard}/>
+                {array.map( hotelCard => (
+                    <HotelCard key={hotelCard.id} card={hotelCard}/>
                 ))}
             </div>
         );

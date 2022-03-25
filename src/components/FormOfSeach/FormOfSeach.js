@@ -22,11 +22,11 @@ class Form extends React.Component {
             <div className="intro__content">
                 <form className="intro__form" id="mainForm" onClick={this.handleClick}>
                     <div className="first__input">
-                        {/*<a href="/#" className="form__icon">*/}
-                        {/*    <svg className="icon__search">*/}
-                        {/*        <use href="#search"/>*/}
-                        {/*    </svg>*/}
-                        {/*</a>*/}
+                        <a href="/#" className="form__icon">
+                            <svg className="icon__search">
+                                <use href="#search"/>
+                            </svg>
+                        </a>
                         <div className="form__item">
                             <input autoComplete="off" type="text" name="name" id="searchName" className="form__input"
                                    required value={name} onChange={this.handleChange}/>
