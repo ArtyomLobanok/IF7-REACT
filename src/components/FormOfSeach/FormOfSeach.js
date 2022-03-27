@@ -21,12 +21,14 @@ class Form extends React.Component {
         return (
             <div className="intro__content">
                 <form className="intro__form" id="mainForm" onClick={this.handleClick}>
+                    {/*//Search --->*/}
                     <div className="first__input">
-                        <a href="/#" className="form__icon">
-                            <svg className="icon__search">
-                                <use href="#search"/>
-                            </svg>
-                        </a>
+                        {/*//360px --->*/}
+                        {/*<a href="/#" className="form__icon">*/}
+                        {/*    <svg className="icon__search">*/}
+                        {/*        <use href="#search"/>*/}
+                        {/*    </svg>*/}
+                        {/*</a>*/}
                         <div className="form__item">
                             <input autoComplete="off" type="text" name="name" id="searchName" className="form__input"
                                    required value={name} onChange={this.handleChange}/>
@@ -34,6 +36,7 @@ class Form extends React.Component {
                                 name</label>
                         </div>
                     </div>
+                    {/*//Calendar --->*/}
                     <div className="second__input">
                         <div className="form__item">
                             <input autoComplete="off" name="in_date" id="in_date" className="form__input" required/>
@@ -45,7 +48,7 @@ class Form extends React.Component {
                             <label className="form__label" htmlFor="out_date">Check-out date</label>
                         </div>
                     </div>
-
+                    {/*//Modal Menu --->*/}
                     <div className="third__input" id="mainMenu">
                         <div className="form__item input">
                             <span className="counterNumber" id="adultsCounter"/>

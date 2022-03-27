@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './HomesGuestsLovesSlider.css'
 import HotelCard from "../HotelCard/HotelCard";
-import useFeacth from "../../hooks/useFetch"
+import useFeatch from "../../hooks/useFetch"
 
 function DrawHotel ({ url }){
-    const {error, loading, array,} = useFeacth(url);
+    const {error, loading, array,} = useFeatch(url);
     if (error) {
         return <div>Ошибка: {error.message}</div>;
     } else if (loading) {

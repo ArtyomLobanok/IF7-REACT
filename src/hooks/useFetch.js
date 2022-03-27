@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-function useFeacth(url) {
+function useFeatch(url) {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [array, setArray] = useState([]);
@@ -28,4 +28,4 @@ function useFeacth(url) {
     };
 };
 
-export default useFeacth;
+export default useFeatch;

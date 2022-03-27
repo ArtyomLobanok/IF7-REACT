@@ -1,8 +1,8 @@
 import React from "react";
 import '../InnerTripHouse/InnerTripHouse.css'
 import Form from "../FormOfSeach/FormOfSeach";
-import googlePlayBadge from "../Assets/Img/IconsFromHeader/google-play-badge.png"
-import appStoreBadge from "../Assets/Img/IconsFromHeader/AppleStoreBadge.svg"
+import googlePlayBadge from "../../assets/Img/IconsFromHeader/google-play-badge.png"
+import appStoreBadge from "../../assets/Img/IconsFromHeader/AppleStoreBadge.svg"
 const Inner = () => {
     return (
         <div className="Inner">

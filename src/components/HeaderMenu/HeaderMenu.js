@@ -1,6 +1,6 @@
 import React from "react";
 import './/HeaderMenu.css'
-import Svg from "./Svg/Svg";
+import Svg from "../../assets/svg/Svg";
 
 const HeaderMenu = () => {
     return (
