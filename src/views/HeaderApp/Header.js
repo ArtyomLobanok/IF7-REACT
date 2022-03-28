@@ -4,12 +4,13 @@ import Inner from "../../components/InnerTripHouse/InnerTripHouse";
 import '../../components/Contaiter/Container.css'
 import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
 
-const Header = () => {
+const Header = ({setSearchData}) => {
+    console.log(setSearchData)
     return (
         <header className="Header">
             <div className="container">
                 <HeaderMenu/>
-                <Inner/>
+                <Inner setSearchData={setSearchData}/>
             </div>
         </header>
     );

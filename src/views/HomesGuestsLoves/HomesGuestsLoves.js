@@ -1,5 +1,5 @@
 import React from 'react';
-import '../HomesGuestsLoves/HomesGuestsLoves.css';
+import './HomesGuestsLoves.css';
 import DrawHotel from "../../components/HomesGuestsLovesSlider/HomesGuestsLovesSlider";
 import '../../components/Contaiter/Container.css'
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";

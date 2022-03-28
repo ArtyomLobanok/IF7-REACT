@@ -1,18 +1,13 @@
 import React from 'react';
 import '../HomesGuestsLoves/HomesGuestsLoves.css';
-import {useForm} from "../../components/FormOfSeach/FormSearchofHotels/FormSearchofHotels"
-import {url} from "../../api/endPoints";
-import useFeatch from "../../hooks/useFetch";
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
 import '../../components/Contaiter/Container.css'
 import HotelCard from '../../components/HotelCard/HotelCard';
 
 
-const AvailableHotels = () => {
-    const {values, handleChange} = useForm();
-    console.log(values.nameOfSearch)
-    const {array} = useFeatch(values.nameOfSearch && url.searchUrl(values.nameOfSearch));
-    console.log({array})
+const AvailableHotels = ({data, array}) => {
+
+    console.log({data})
     return (
         <>
             <section className='section__overviews'>

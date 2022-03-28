@@ -1,15 +1,17 @@
 import React from "react";
-import '../InnerTripHouse/InnerTripHouse.css'
+import './InnerTripHouse.css'
 import Form from "../FormOfSeach/FormOfSeach";
 import googlePlayBadge from "../../assets/Img/IconsFromHeader/google-play-badge.png"
 import appStoreBadge from "../../assets/Img/IconsFromHeader/AppleStoreBadge.svg"
-const Inner = () => {
+
+const Inner = ({setSearchData}) => {
+    console.log(setSearchData)
     return (
         <div className="Inner">
             <>
             <h1 className="Inner__title">Discover stays<br/>
                 to live, work or just relax</h1>
-            <Form/>
+            <Form setSearchData={setSearchData}/>
                 <div className="intro__icons">
                     <a href="https://play.google.com/store">
                         <img src= {googlePlayBadge} alt="Img google pay store"/>

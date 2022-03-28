@@ -4,18 +4,18 @@ import {FirstForm} from './FormSearchofHotels/FormSearchofHotels'
 
 
 
-function Form () {
+function Form ({setSearchData}) {
 
     const handleClick = () => {
 
 
     };
-
+    console.log(setSearchData)
     return (
             <div className="intro__content">
                 <form className="intro__form" id="mainForm" onClick={handleClick}>
                     {/*//Search --->*/}
-                    <FirstForm/>
+                    <FirstForm setSearchData={setSearchData}/>
                     {/*//Calendar --->*/}
                     <div className="second__input">
                         <div className="form__item">
