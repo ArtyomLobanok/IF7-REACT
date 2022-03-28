@@ -1,9 +1,10 @@
 import React from "react";
+import MyDataPicker from "../../components/FormOfSeach/Data-picker/DataPicker";
 const Footer = () => {
     return (
         <footer className="Footer">
             <>
-                <h3>Footer</h3>
+                <MyDataPicker/>
             </>
 
         </footer>
