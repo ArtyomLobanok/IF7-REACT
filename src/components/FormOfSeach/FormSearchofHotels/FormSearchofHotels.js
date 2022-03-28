@@ -1,9 +1,7 @@
 import React, {useState} from "react";
-import useFeatch from "../../../hooks/useFetch";
-import {url} from "../../../api/endPoints";
-import HotelCard from "../../HotelCard/HotelCard";
+import '../FormOfSeach.css'
 
-const useForm = () => {
+export const useForm = () => {
     const [values, setValues] = useState({
         nameOfSearch: '',
     });
@@ -24,34 +22,38 @@ const useForm = () => {
     }
 }
 
-function TestForm() {
+export const FirstForm = () => {
     const {values, handleChange} = useForm();
 
-    const {array} = useFeatch(values.nameOfSearch && url.searchUrl(values.nameOfSearch));
-    console.log(values.nameOfSearch)
-
     return (
-        <>
-            <form>
-                <h2>test form</h2>
-                <label>
-                    Enter your value
+            <div className="first__input">
+                {/*//360px --->*/}
+                {/*<a href="/#" className="form__icon">*/}
+                {/*    <svg className="icon__search">*/}
+                {/*        <use href="#search"/>*/}
+                {/*    </svg>*/}
+                {/*</a>*/}
+                <div className="form__item">
                     <input
-                        name='nameOfSearch'
-                        value={values.name}
-                        onChange={handleChange}
-                        placeholder='Your destination or hotel name'
+                        name = 'nameOfSearch'
+                        type = 'text'
+                        id = 'searchName'
+                        className ='form__input'
+                        value = {values.name}
+                        onChange = {handleChange}
+                        autoComplete = 'off'
                     />
-                </label>
-            </form>
-            <div className='overviews__slider'>
-                {array.map(hotelCard => (
-                    <HotelCard key={hotelCard.id} card={hotelCard}/>
-                ))}
+                    <label
+                        className='form__label'
+                        htmlFor = 'nameOfSearch'>
+                        Your destination or hotel
+                        name
+                    </label>
+                </div>
+                {/*<div className='overviews__slider'>*/}
+                {/*    {array.map(hotelCard => (*/}
+                {/*        <HotelCard key={hotelCard.id} card={hotelCard}/>*/}
+                {/*    ))}*/}
+                {/*</div>*/}
             </div>
-        </>
-    )
-}
-
-
-export default TestForm;
+)}

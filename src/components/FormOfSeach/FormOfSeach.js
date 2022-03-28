@@ -1,41 +1,21 @@
 import React from "react";
 import './FormOfSeach.css'
+import {FirstForm} from './FormSearchofHotels/FormSearchofHotels'
 
-class Form extends React.Component {
-    state = {
-        name: '',
+
+
+function Form () {
+
+    const handleClick = () => {
+
+
     };
 
-    handleClick = () => {
-    };
-
-    handleChange = (e) => {
-        this.setState({
-            name: e.target.value,
-        });
-    };
-
-    render() {
-        const {name} = this.state;
-
-        return (
+    return (
             <div className="intro__content">
-                <form className="intro__form" id="mainForm" onClick={this.handleClick}>
+                <form className="intro__form" id="mainForm" onClick={handleClick}>
                     {/*//Search --->*/}
-                    <div className="first__input">
-                        {/*//360px --->*/}
-                        {/*<a href="/#" className="form__icon">*/}
-                        {/*    <svg className="icon__search">*/}
-                        {/*        <use href="#search"/>*/}
-                        {/*    </svg>*/}
-                        {/*</a>*/}
-                        <div className="form__item">
-                            <input autoComplete="off" type="text" name="name" id="searchName" className="form__input"
-                                   required value={name} onChange={this.handleChange}/>
-                            <label className="form__label" htmlFor="name">Your destination or hotel
-                                name</label>
-                        </div>
-                    </div>
+                    <FirstForm/>
                     {/*//Calendar --->*/}
                     <div className="second__input">
                         <div className="form__item">
@@ -66,7 +46,9 @@ class Form extends React.Component {
                         </div>
                     </div>
                     <div className="positionModalMenu">
-                        <button className="form__button search">Search</button>
+                        {/*BUTTON HERE*/}
+                        <button type='submit' className="form__button search">Search</button>
+
                         <div className="modalMenu" id="modalMenu">
                             <div className="counterContainer">
                                 <div className="namesNumberChanger">
@@ -109,8 +91,7 @@ class Form extends React.Component {
                     </div>
                 </form>
             </div>
-        );
-    }
+    );
 }
 
-export default Form
+export default Form;

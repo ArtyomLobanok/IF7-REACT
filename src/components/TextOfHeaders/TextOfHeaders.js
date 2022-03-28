@@ -1,12 +1,8 @@
 import React from 'react';
 import './TextOfHeaders.css';
 
-class TextOfHeaders extends React.Component {
-    render () {
-        let label;
-        ({label} = this.props);
-        return <h2>{ label }</h2>;
-    }
+const TextOfHeaders = (props) => {
+    return <h2>{props.text}</h2>;
 }
 
 export default TextOfHeaders;

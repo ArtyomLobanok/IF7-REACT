@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './HomesGuestsLovesSlider.css'
 import HotelCard from "../HotelCard/HotelCard";
 import useFeatch from "../../hooks/useFetch"
