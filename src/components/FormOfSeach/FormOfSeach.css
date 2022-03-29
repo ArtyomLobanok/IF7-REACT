@@ -31,7 +31,8 @@
     font-weight: 400;
 }
 
-.intro__form .form__input:focus {
+.form__input:hover,
+.form__input:focus {
     border: 0.1875rem solid #F5BD41;
     margin: -0.1875rem 0;
 }
@@ -54,6 +55,7 @@
 }
 
 .intro__form .first__input {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

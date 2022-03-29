@@ -11,7 +11,6 @@ function Form ({setSearchData}) {
 
 
     };
-    console.log(setSearchData)
     return (
             <div className="intro__content">
                 <form className="intro__form" id="mainForm" onClick={handleClick}>

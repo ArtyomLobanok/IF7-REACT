@@ -24,35 +24,27 @@ export const useForm = () => {
 
 export const FirstForm = ({setSearchData}) => {
     const {values, handleChange} = useForm();
-    useEffect(()=>{
+    useEffect(() => {
         setSearchData(values)
-    },[values])
+    }, [values])
     console.log(setSearchData)
     return (
         <div className="first__input">
-            {/*//360px --->*/}
-            {/*<a href="/#" className="form__icon">*/}
-            {/*    <svg className="icon__search">*/}
-            {/*        <use href="#search"/>*/}
-            {/*    </svg>*/}
-            {/*</a>*/}
-            <div>
-                <input
-                    name='nameOfSearch'
-                    type='text'
-                    id='searchName'
-                    className='form__input'
-                    value={values.name}
-                    onChange={handleChange}
-                    autoComplete='off'
-                />
-                <label
-                    className='form__label'
-                    htmlFor='nameOfSearch'>
-                    Your destination or hotel
-                    name
-                </label>
-            </div>
+            <input
+                name='nameOfSearch'
+                type='text'
+                id='searchName'
+                className='form__input'
+                value={values.name}
+                onChange={handleChange}
+                autoComplete='off'
+            />
+            <label
+                className='form__label'
+                htmlFor='nameOfSearch'>
+                Your destination or hotel
+                name
+            </label>
         </div>
     )
 }

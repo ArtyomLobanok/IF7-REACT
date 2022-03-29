@@ -5,7 +5,6 @@ import '../../components/Contaiter/Container.css'
 import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
 
 const Header = ({setSearchData}) => {
-    console.log(setSearchData)
     return (
         <header className="Header">
             <div className="container">

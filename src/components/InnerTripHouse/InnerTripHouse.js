@@ -5,7 +5,6 @@ import googlePlayBadge from "../../assets/Img/IconsFromHeader/google-play-badge.
 import appStoreBadge from "../../assets/Img/IconsFromHeader/AppleStoreBadge.svg"
 
 const Inner = ({setSearchData}) => {
-    console.log(setSearchData)
     return (
         <div className="Inner">
             <>
