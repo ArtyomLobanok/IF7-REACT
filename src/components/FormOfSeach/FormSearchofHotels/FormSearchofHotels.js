@@ -36,7 +36,7 @@ export const FirstForm = ({setSearchData}) => {
             {/*        <use href="#search"/>*/}
             {/*    </svg>*/}
             {/*</a>*/}
-            <div className="form__item">
+            <div>
                 <input
                     name='nameOfSearch'
                     type='text'

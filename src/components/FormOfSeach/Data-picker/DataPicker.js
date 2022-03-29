@@ -2,63 +2,44 @@ import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import '../../Contaiter/Container.css'
 import "react-datepicker/dist/react-datepicker.css";
+import './DataPicker.css'
+// <div className="second__input">
+//     <div className="form__item">
+//         <input autoComplete="off" name="in_date" id="in_date" className="form__input" required/>
+//         <label className="form__label" htmlFor="in_date">Check-in date</label>
+//     </div>
+//     <div className="form__item">
+//         <input autoComplete="off" name="out_date" id="out_date" className="form__input"
+//                required/>
+//         <label className="form__label" htmlFor="out_date">Check-out date</label>
+//     </div>
+// </div>
+
+
 
 const MyDataPicker = () => {
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+    const onChange = (dates) => {
+        const [start, end] = dates;
+        setStartDate(start);
+        setEndDate(end);
+    };
     return (
-        <div className='container'>
-        <DatePicker
-            renderCustomHeader={({
-                                     monthDate,
-                                     customHeaderCount,
-                                     decreaseMonth,
-                                     increaseMonth,
-                                 }) => (
-                <div>
-                    <button
-                        aria-label="Previous Month"
-                        className={
-                            "react-datepicker__navigation react-datepicker__navigation--previous"
-                        }
-                        style={customHeaderCount === 1 ? { visibility: "hidden" } : null}
-                        onClick={decreaseMonth}
-                    >
-            <span
-                className={
-                    "react-datepicker__navigation-icon react-datepicker__navigation-icon--previous"
-                }
-            >
-              {"<"}
-            </span>
-                    </button>
-                    <span className="react-datepicker__current-month">
-            {monthDate.toLocaleString("en-US", {
-                month: "long",
-                year: "numeric",
-            })}
-          </span>
-                    <button
-                        aria-label="Next Month"
-                        className={
-                            "react-datepicker__navigation react-datepicker__navigation--next"
-                        }
-                        style={customHeaderCount === 0 ? { visibility: "hidden" } : null}
-                        onClick={increaseMonth}
-                    >
-            <span
-                className={
-                    "react-datepicker__navigation-icon react-datepicker__navigation-icon--next"
-                }
-            >
-              {">"}
-            </span>
-                    </button>
-                </div>
-            )}
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-            monthsShown={2}
-        />
+        <div className="second__input">
+            <DatePicker
+                name="datepicker"
+                className="form__item"
+                selected={startDate}
+                minDate={new Date()}
+                onChange={onChange}
+                startDate={startDate}
+                endDate={endDate}
+                selectsRange
+                monthsShown={2}
+                dateFormat='E, MMM d'
+            />
+
         </div>
     );
 };

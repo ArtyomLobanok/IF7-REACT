@@ -87,20 +87,6 @@
     background-color: #FFF;
 }
 
-.intro__form .second__input .form__item {
-    width: 100%;
-    position: relative;
-}
-
-.intro__form .second__input .form__item .form__input {
-    padding: 1.3125rem 0.5rem 1.25rem 0.5rem;
-    cursor: pointer;
-}
-
-.intro__form .second__input .form__item .form__label {
-    left: 0.5rem;
-}
-
 .intro__form .third__input {
     display: -webkit-box;
     display: -ms-flexbox;

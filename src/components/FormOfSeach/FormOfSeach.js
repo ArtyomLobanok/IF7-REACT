@@ -1,6 +1,7 @@
 import React from "react";
 import './FormOfSeach.css'
 import {FirstForm} from './FormSearchofHotels/FormSearchofHotels'
+import MyDataPicker from "./Data-picker/DataPicker";
 
 
 
@@ -17,17 +18,7 @@ function Form ({setSearchData}) {
                     {/*//Search --->*/}
                     <FirstForm setSearchData={setSearchData}/>
                     {/*//Calendar --->*/}
-                    <div className="second__input">
-                        <div className="form__item">
-                            <input autoComplete="off" name="in_date" id="in_date" className="form__input" required/>
-                            <label className="form__label" htmlFor="in_date">Check-in date</label>
-                        </div>
-                        <div className="form__item">
-                            <input autoComplete="off" name="out_date" id="out_date" className="form__input"
-                                   required/>
-                            <label className="form__label" htmlFor="out_date">Check-out date</label>
-                        </div>
-                    </div>
+                    <MyDataPicker/>
                     {/*//Modal Menu --->*/}
                     <div className="third__input" id="mainMenu">
                         <div className="form__item input">
