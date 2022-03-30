@@ -12,17 +12,19 @@ const {data} = OrderData()
             <div className="containerAll">
                 <div className='container1'>
                     {
-                        data.map(item => `${item.label}: ${item.count}`)
+                        Object.keys(data).map(key => `${data[key].label} ${data[key].count}`)
                     }
                 </div>
                 <div className="container2">
                     {
-                        data.map(item => <Counter {...item} />)
+                        Object.keys(data).map(key => <Counter {...data[key]} />)
                     }
                 </div>
             </div>
                 <div className="selects">
-            <Selects/>
+                    {
+                        data.adults.count > 1 && <span>Lorem</span>//map select
+                    }<Selects/>
                 </div>
             </>
     );

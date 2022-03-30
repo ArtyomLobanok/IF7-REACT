@@ -1,25 +1,12 @@
 import React from "react";
 
-const Counter = ({minValue, maxValue, label, count, onChange}) => {
-    function decrement() {
-        if (count === minValue) {
-            return count
-        }
-        onChange(prevCount => prevCount - 1)
-    }
-
-    function increment() {
-        if (count === maxValue) {
-            return count
-        }
-        onChange(prevCount => prevCount + 1)
-    }
+const Counter = ({label, count, onIncrement, onDecrement}) => {
     return (
         <div className='box'>
             <span>{`${label}`}</span>
-            <button onClick={decrement}>Minus</button>
+            <button onClick={onDecrement}>-</button>
             <span>{`${count}`}</span>
-            <button onClick={increment}>Plus</button>
+            <button onClick={onIncrement}>+</button>
         </div>
     )
 }
