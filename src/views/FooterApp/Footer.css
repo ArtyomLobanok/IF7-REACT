@@ -18,3 +18,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.selects {
+    margin: 0 auto;
+    padding: 120px 0;
+    background-color: lightgrey;
+}
+
+.selects select,
+.selects p {
+    position: relative;
+    left: 50%;
+}

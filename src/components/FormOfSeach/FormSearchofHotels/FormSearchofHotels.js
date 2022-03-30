@@ -27,7 +27,6 @@ export const FirstForm = ({setSearchData}) => {
     useEffect(() => {
         setSearchData(values)
     }, [values])
-    console.log(setSearchData)
     return (
         <div className="first__input">
             <input
