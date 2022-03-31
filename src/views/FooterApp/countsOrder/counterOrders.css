@@ -3,3 +3,14 @@
     display: flex;
     justify-content: space-between;
 }
+.btnMin,
+.btnMax {
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+}
+
+.active {
+    color: #3077C6;
+    border-color: #3077C6;
+}

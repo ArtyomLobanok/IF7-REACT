@@ -10,34 +10,42 @@ const OrderData = () => {
             maxValue: 30,
             label: 'Adults',
             count: countOfAdults,
-            onIncrement: () => setCountOfAdults(prevState => prevState + 1),
-            onDecrement: () => setCountOfAdults(prevState => prevState - 1)
+            onIncrement: () => {
+                data.adults.count !== data.adults.maxValue && setCountOfAdults(prevCount => prevCount + 1)
+            },
+            onDecrement: () => {
+                data.adults.count !== data.adults.minValue && setCountOfAdults(prevCount => prevCount - 1)
+            },
         },
+
         children: {
             minValue: 0,
             maxValue: 10,
             label: 'Children',
             count: countOfChildren.length,
-            onIncrement: function () {
-                if (countOfChildren.length < this.maxValue) {
-                    setCountOfChildren(prevState => [...prevState, 1])
-                }
+            onIncrement: () => {
+                data.children.count < data.children.maxValue && setCountOfChildren(prevState => [...prevState, 1])
             },
-            onDecrement: function () {
-                if (countOfChildren.length > this.minValue) {
-                    setCountOfChildren(prevState => prevState.slice(-1))
-                }
-            }
+            onDecrement: () => {
+                data.children.count > data.children.minValue && setCountOfChildren(prevState => prevState.slice(1))
+            },
         },
+
         rooms: {
             minValue: 1,
             maxValue: 30,
             label: 'Rooms',
             count: countOfRooms,
-            onIncrement: () => setCountOfRooms(prevState => prevState + 1),
-            onDecrement: () => setCountOfRooms(prevState => prevState - 1)
-        }
+            onIncrement: () => {
+                data.rooms.count !== data.rooms.maxValue && setCountOfRooms(prevCount => prevCount + 1)
+            },
+            onDecrement: () => {
+                data.rooms.count !== data.rooms.minValue && setCountOfRooms(prevCount => prevCount - 1)
+            },
+        },
+
     }
+
     return (
         {
             data,
@@ -47,22 +55,5 @@ const OrderData = () => {
         }
     )
 }
-
-// function onDecrement() {
-//     if (count === minValue) {
-//         return count
-//     }
-//     onChange(prevCount => prevCount - 1)
-// }
-//
-// function onIncrement() {
-//     if (count === maxValue) {
-//         return count
-//     }
-//     onChange(prevCount => prevCount + 1)
-//     if (label === 'Children'){
-//
-//     }
-// }
 
 export default OrderData;

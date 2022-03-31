@@ -1,19 +1,11 @@
 import React, {useState} from 'react';
 
 
-const Logic = () => {
+const SelectOptions = () => {
     const [value, setValue] = useState('');
 
-    // const NumbersArray = () => {
-    //     let arr = [];
-    //     if (17) for (let i = 1; i <= 17;) arr.push(i++);
-    //     return arr;
-    // }
-
-    // const optionsForSelect = ['Less than 1', ...NumbersArray()];
-
     const options = Array.from(Array(17).keys()).map((text, index) => {
-        return <option key={index+1}> {text+1} years old</option>;
+        return <option key={index}> {text} years old</option>;
     });
     return (
         {
@@ -24,8 +16,8 @@ const Logic = () => {
     )
 }
 
-const Select = () => {
-    const {options, value, setValue} = Logic();
+export const Select = () => {
+    const {options, value, setValue} = SelectOptions();
     return (
         <select value={value} onChange={(event) => setValue(event.target.value)}>
             {options}
@@ -33,4 +25,17 @@ const Select = () => {
     )
 }
 
-export default Select;
+export const AddSelect = () => {
+    const [SelectCallState, setSelectCallState] = useState(false);
+
+    const SelectStateHandler = () => {
+        setSelectCallState({
+            inputCallState: true
+        })
+    }
+    return ({
+        SelectCallState,
+        setSelectCallState,
+        SelectStateHandler
+    });
+}

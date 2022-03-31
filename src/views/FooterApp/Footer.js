@@ -1,8 +1,9 @@
 import React from "react";
 import Counter from "./countsOrder/counterOrders"
 import "./Footer.css"
-import Selects from "./childrenSelects/childrenSelect";
+import { Select } from "./childrenSelects/childrenSelect";
 import OrderData from "./dataOrder/dataOrder"
+
 
 
 const Footer = () => {
@@ -23,8 +24,9 @@ const {data} = OrderData()
             </div>
                 <div className="selects">
                     {
-                        data.adults.count > 1 && <span>Lorem</span>//map select
-                    }<Selects/>
+                        data.children.count > 0 && <span>What is the age of the child you’re<br/> travelling with?</span>
+                    }
+                    <Select/>
                 </div>
             </>
     );
