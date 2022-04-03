@@ -4,6 +4,7 @@ const OrderData = () => {
     const [countOfAdults, setCountOfAdults] = useState(1);
     const [countOfChildren, setCountOfChildren] = useState([]);//here map select
     const [countOfRooms, setCountOfRooms] = useState(1);
+    const [countOfSelect, setCountOfSelect] = useState([]);
     const data = {
         adults: {
             minValue: 1,
@@ -25,12 +26,19 @@ const OrderData = () => {
             count: countOfChildren.length,
             onIncrement: () => {
                 data.children.count < data.children.maxValue && setCountOfChildren(prevState => [...prevState, 1])
+                const addComponent = () => {
+                    setCountOfSelect([...countOfSelect, "Select Component"])
+                }
+                data.children.count < data.children.maxValue && addComponent()
             },
             onDecrement: () => {
                 data.children.count > data.children.minValue && setCountOfChildren(prevState => prevState.slice(1))
+                const RemoveSelect = () => {
+                    setCountOfSelect(prevState => prevState.slice(1))
+                }
+                RemoveSelect()
             },
         },
-
         rooms: {
             minValue: 1,
             maxValue: 30,
@@ -43,15 +51,14 @@ const OrderData = () => {
                 data.rooms.count !== data.rooms.minValue && setCountOfRooms(prevCount => prevCount - 1)
             },
         },
-
     }
-
     return (
         {
             data,
             countOfAdults,
             countOfChildren,
             countOfRooms,
+            countOfSelect,
         }
     )
 }

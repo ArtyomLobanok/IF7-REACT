@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 const SelectOptions = () => {
     const [value, setValue] = useState('');
 
-    const options = Array.from(Array(17).keys()).map((text, index) => {
+    const options = Array.from(Array(18).keys()).map((text, index) => {
         return <option key={index}> {text} years old</option>;
     });
     return (
@@ -16,26 +16,13 @@ const SelectOptions = () => {
     )
 }
 
-export const Select = () => {
+const Select = () => {
     const {options, value, setValue} = SelectOptions();
     return (
-        <select value={value} onChange={(event) => setValue(event.target.value)}>
+        <select value={value} onChange={(e) => setValue(e.target.value)}>
             {options}
         </select>
     )
 }
+export default Select;
 
-export const AddSelect = () => {
-    const [SelectCallState, setSelectCallState] = useState(false);
-
-    const SelectStateHandler = () => {
-        setSelectCallState({
-            inputCallState: true
-        })
-    }
-    return ({
-        SelectCallState,
-        setSelectCallState,
-        SelectStateHandler
-    });
-}

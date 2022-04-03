@@ -1,13 +1,14 @@
 import React from "react";
 import Counter from "./countsOrder/counterOrders"
 import "./Footer.css"
-import { Select } from "./childrenSelects/childrenSelect";
+
 import OrderData from "./dataOrder/dataOrder"
+import Select from "./childrenSelects/childrenSelect";
 
 
 
 const Footer = () => {
-const {data} = OrderData()
+const {data,countOfSelect} = OrderData()
     return (
             <>
             <div className="containerAll">
@@ -26,8 +27,11 @@ const {data} = OrderData()
                     {
                         data.children.count > 0 && <span>What is the age of the child you’re<br/> travelling with?</span>
                     }
-                    <Select/>
+                    <div>
+                        {countOfSelect.map((item, i) => ( <Select/> ))}
+                    </div>
                 </div>
+
             </>
     );
 };

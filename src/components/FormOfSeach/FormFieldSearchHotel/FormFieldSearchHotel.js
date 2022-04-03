@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import '../FormOfSeach.css'
+import '../Form.css'
 
 export const useForm = () => {
     const [values, setValues] = useState({

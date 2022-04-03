@@ -1,6 +1,6 @@
 import React from "react";
 import './InnerTripHouse.css'
-import Form from "../FormOfSeach/FormOfSeach";
+import Form from "../FormOfSeach/Form";
 import googlePlayBadge from "../../assets/Img/IconsFromHeader/google-play-badge.png"
 import appStoreBadge from "../../assets/Img/IconsFromHeader/AppleStoreBadge.svg"
 

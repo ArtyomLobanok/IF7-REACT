@@ -1,7 +1,7 @@
 import React from "react";
-import './FormOfSeach.css'
-import {FirstForm} from './FormSearchofHotels/FormSearchofHotels'
-import MyDataPicker from "./Data-picker/DataPicker";
+import './Form.css'
+import {FirstForm} from './FormFieldSearchHotel/FormFieldSearchHotel'
+import MyDataPicker from "./FormFieldDate/FormFieldDate";
 
 
 
