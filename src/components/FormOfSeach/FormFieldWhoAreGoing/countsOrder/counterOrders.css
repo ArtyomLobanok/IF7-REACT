@@ -1,16 +1,19 @@
 .box {
-    width: 600px;
     display: flex;
     justify-content: space-between;
 }
-.btnMin,
-.btnMax {
+.btn {
     font-size: 18px;
     width: 30px;
     height: 30px;
+    color: #CECECE;
+    border: 1px solid #CECECE;
+    background: #FFF;
+    box-shadow: none;
+    outline: none;
 }
 
 .active {
+    border: 1px solid #3077C6;
     color: #3077C6;
-    border-color: #3077C6;
 }

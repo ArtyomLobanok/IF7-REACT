@@ -11,29 +11,33 @@ const OrderData = () => {
             maxValue: 30,
             label: 'Adults',
             count: countOfAdults,
-            onIncrement: () => {
+            onIncrement: (event) => {
+                event.preventDefault();
                 data.adults.count !== data.adults.maxValue && setCountOfAdults(prevCount => prevCount + 1)
             },
-            onDecrement: () => {
+            onDecrement: (event) => {
+                event.preventDefault();
                 data.adults.count !== data.adults.minValue && setCountOfAdults(prevCount => prevCount - 1)
             },
         },
-
         children: {
             minValue: 0,
             maxValue: 10,
             label: 'Children',
             count: countOfChildren.length,
-            onIncrement: () => {
+            onIncrement: (event) => {
+                event.preventDefault();
                 data.children.count < data.children.maxValue && setCountOfChildren(prevState => [...prevState, 1])
                 const addComponent = () => {
                     setCountOfSelect([...countOfSelect, "Select Component"])
                 }
                 data.children.count < data.children.maxValue && addComponent()
             },
-            onDecrement: () => {
+            onDecrement: (event) => {
+                event.preventDefault();
                 data.children.count > data.children.minValue && setCountOfChildren(prevState => prevState.slice(1))
                 const RemoveSelect = () => {
+                    event.preventDefault();
                     setCountOfSelect(prevState => prevState.slice(1))
                 }
                 RemoveSelect()
@@ -44,10 +48,12 @@ const OrderData = () => {
             maxValue: 30,
             label: 'Rooms',
             count: countOfRooms,
-            onIncrement: () => {
+            onIncrement: (event) => {
+                event.preventDefault();
                 data.rooms.count !== data.rooms.maxValue && setCountOfRooms(prevCount => prevCount + 1)
             },
-            onDecrement: () => {
+            onDecrement: (event) => {
+                event.preventDefault();
                 data.rooms.count !== data.rooms.minValue && setCountOfRooms(prevCount => prevCount - 1)
             },
         },
