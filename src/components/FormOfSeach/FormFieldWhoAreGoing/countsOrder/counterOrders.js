@@ -5,7 +5,7 @@ import './counterOrders.css'
 const Counter = ({label, count, onIncrement, onDecrement, minValue, maxValue}) => {
 
     return (
-        <div className='box'>
+        <div className='counter'>
             <span>{`${label}`}</span>
             <button className={
                 count === minValue ? 'btn' : 'active btn'

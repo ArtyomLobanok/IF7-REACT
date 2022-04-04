@@ -1,4 +1,4 @@
-.box {
+.counter {
     display: flex;
     justify-content: space-between;
 }

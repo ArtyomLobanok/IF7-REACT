@@ -8,23 +8,28 @@ const FormFieldThird = () => {
     const {data, countOfSelect} = OrderData()
     return (
         <>
-            <div className="containerAll">
-                <div className='container1'>
+            <div className="wrapper">
+                <div className='fieldView'>
                     {
-                        Object.keys(data).map(key => `${data[key].label} ${data[key].count}`)
+                        `${data.adults.count} Adults
+                        —
+                        ${data.children.count} Children
+                        —
+                        ${data.rooms.count} Room`
                     }
                 </div>
-                <div className="container2">
-                    {
-                        Object.keys(data).map(key => <Counter {...data[key]} />)
-                    }
-                    {
-                        data.children.count > 0 && <span>What is the age of the child you’re<br/> travelling with?</span>
-                    }
-                    {
-                        countOfSelect.map((item, i) => (<Select/>))
-                    }
-                </div>
+
+            <div className="fieldModalForm">
+                {
+                    Object.keys(data).map(key => <Counter {...data[key]} />)
+                }
+                {
+                    data.children.count > 0 && <span>What is the age of the child you’re<br/> travelling with?</span>
+                }
+                {
+                    countOfSelect.map((item, i) => (<Select/>))
+                }
+            </div>
             </div>
         </>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css"
 // import { BrowserRouter, Routes, Router, Route, Link } from "react-router-dom";
-import App from '../App/App'
+
 const Footer = () => {
     return(
         <h1>Here is footer</h1>

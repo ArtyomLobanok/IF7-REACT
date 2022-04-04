@@ -7,7 +7,6 @@ import appStoreBadge from "../../assets/Img/IconsFromHeader/AppleStoreBadge.svg"
 const Inner = ({setSearchData}) => {
     return (
         <div className="Inner">
-            <>
             <h1 className="Inner__title">Discover stays<br/>
                 to live, work or just relax</h1>
             <Form setSearchData={setSearchData}/>
@@ -19,7 +18,6 @@ const Inner = ({setSearchData}) => {
                         <img src={appStoreBadge} alt="Img apple store"/>
                     </a>
                 </div>
-            </>
         </div>
     );
 }

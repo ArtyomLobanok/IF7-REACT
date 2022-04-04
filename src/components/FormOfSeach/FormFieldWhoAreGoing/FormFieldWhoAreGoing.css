@@ -1,24 +1,30 @@
-.containerAll {
+.wrapper {
     display: flex;
-    width: 27%;
+    justify-content: center;
+    width: 31%;
     border-radius: 0.5rem;
     background-color: #FFF;
 }
 
-.container1 {
-    position: relative;
+.wrapper:hover,
+.wrapper:focus {
+    border: 0.1875rem solid #F5BD41;
+    margin: -0.1875rem 0;
+}
+
+.fieldView {
     display: flex;
+    justify-content: center;
+    padding: 22px 2px;
+    font-size: 18px;
     color: #383838;
 }
 
-.container2 {
+.fieldModalForm {
+    transform: translate3d(0px, 80px, 0);
     position: absolute;
-    top: 68%;
     background: #FFFFFF;
     padding: 22px;
     border-radius: 8px;
     width: 259px;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
 }

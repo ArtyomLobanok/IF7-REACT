@@ -98,10 +98,6 @@
     font-weight: 400;
 }
 
-.positionModalMenu {
-    position: relative;
-}
-
 ::-webkit-scrollbar {
     width: 0;
 }
@@ -218,7 +214,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .intro__form .form__button {
     position: relative;
-    left: 2px;
     padding: 18px 58px;
     background-color: #3077C6;
     border: 0.0625rem solid #3077C6;
