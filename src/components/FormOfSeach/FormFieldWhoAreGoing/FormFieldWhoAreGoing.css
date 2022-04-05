@@ -24,7 +24,21 @@
     transform: translate3d(0px, 80px, 0);
     position: absolute;
     background: #FFFFFF;
-    padding: 22px;
+    padding: 22px 22px 0;
     border-radius: 8px;
     width: 259px;
+}
+
+.labelChildren {
+    margin: 28px 0 12px;
+}
+
+.fieldToggleQuestion {
+    margin: 28px 0 12px;
+    font-size: 12px;
+    color: #333333;
+}
+
+.selectors {
+    display: block;
 }

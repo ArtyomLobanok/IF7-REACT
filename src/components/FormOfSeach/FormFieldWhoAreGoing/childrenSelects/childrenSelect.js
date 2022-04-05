@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import './childrenSelect.css'
 
 const SelectOptions = () => {
     const [value, setValue] = useState('');
@@ -19,9 +19,9 @@ const SelectOptions = () => {
 const Select = () => {
     const {options, value, setValue} = SelectOptions();
     return (
-        <select value={value} onChange={(e) => setValue(e.target.value)}>
-            {options}
-        </select>
+            <select value={value} onChange={(e) => setValue(e.target.value)}>
+                {options}
+            </select>
     )
 }
 export default Select;
