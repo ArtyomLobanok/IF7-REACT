@@ -1,0 +1,21 @@
+select {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    padding-left: 5px;
+    border: 1px solid #3077C6;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+select:nth-child(2n) {
+    margin-left: 12px;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: none;
+    border: solid 1px #3077C6;
+}
