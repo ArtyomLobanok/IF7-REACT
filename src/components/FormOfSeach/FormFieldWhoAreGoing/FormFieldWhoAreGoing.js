@@ -13,7 +13,6 @@ const ModalMenu = () => {
 
     return (
         {
-            setIsOpen,
             isOpen,
             handleClick
         }
@@ -22,7 +21,7 @@ const ModalMenu = () => {
 
 const FormFieldThird = () => {
     const {data, countOfSelect} = OrderData()
-    const {isOpen, handleClick } = ModalMenu()
+    const {isOpen, handleClick} = ModalMenu()
     return (
         <>
             <div className="wrapper">
@@ -35,26 +34,30 @@ const FormFieldThird = () => {
                         ${data.rooms.count} Room`
                     }
                 </div>
-                {isOpen && (
-                <div className="fieldModalForm">
-                    <div>
-                        {
-                            Object.keys(data).map(key => <Counter {...data[key]} />)
-                        }
-                    </div>
-                    <div className="fieldToggleQuestion">
-                    {
-                        data.children.count > 0 &&
-                        <span className="fieldToggleQuestion">What is the age of the child you’re<br/> travelling with?</span>
-                    }
-                    </div>
-                    <div className='selectors'>
-                        {
-                            countOfSelect.map((item, i) => (<Select/>))
-                        }
-                    </div>
-                </div>
-                )}
+                {
+                    isOpen && (
+                        <div className="fieldModalForm">
+                            <div>
+                                {
+                                    Object.keys(data).map(key => <Counter {...data[key]} />)
+                                }
+                            </div>
+                            <div className="fieldToggleQuestion">
+                                {
+                                    data.children.count > 0 &&
+                                    <span className="fieldToggleQuestion">
+                                        What is the age of the child you’re<br/> travelling with?
+                                    </span>
+                                }
+                            </div>
+                            <div className='selectors'>
+                                {
+                                    countOfSelect.map((item, i) => (<Select/>))
+                                }
+                            </div>
+                        </div>
+                    )
+                }
             </div>
         </>
     );
