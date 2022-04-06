@@ -41,7 +41,6 @@ const MyDataPicker = () => {
                 monthsShown={2}
                 dateFormat='E, MMM d'
             />
-
         </div>
     );
 };
