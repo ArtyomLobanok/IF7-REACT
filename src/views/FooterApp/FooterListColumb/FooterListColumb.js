@@ -2,7 +2,7 @@ import React from 'react';
 import ListItem from "./ListItem/ListItem";
 import "./FooterListColumb.css"
 
-const FooterListColumb = () => {
+const FooterList = () => {
     return (
         <div className="footerList">
             <ul className="footerColumn">
@@ -30,4 +30,4 @@ const FooterListColumb = () => {
     )
 }
 
-export default FooterListColumb;
+export default FooterList;

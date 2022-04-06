@@ -1,13 +1,13 @@
 import React from "react";
 import "./Footer.css"
-import FooterListColumb from "./FooterListColumb/FooterListColumb";
+import FooterList from "./FooterListColumb/FooterListColumb";
 
 
 const Footer = () => {
     return (
         <div className="footerSection">
             <div className="container">
-                <FooterListColumb/>
+                <FooterList/>
                 <div className="copyright">© 2020 Triphouse, Inc. All rights reserved</div>
             </div>
         </div>
