@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css"
-import FooterList from "./FooterListColumb/FooterListColumb";
+import FooterList from "../../components/FooterListColumb/FooterListColumb";
 
 
 const Footer = () => {

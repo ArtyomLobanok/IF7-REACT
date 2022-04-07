@@ -1,6 +1,7 @@
 import React from "react";
-import './/HeaderMenu.css'
+import './HeaderMenu.css'
 import Svg from "../../assets/svg/Svg";
+import {Link} from "react-router-dom";
 
 const HeaderMenu = () => {
     return (
@@ -8,9 +9,11 @@ const HeaderMenu = () => {
        <Svg/>
             <header className="header">
                 <div className="header__inner">
+                    <Link className='Link' to={`/`}>
                     <svg className="header__logo">
                         <use href="#logotype"/>
                     </svg>
+                    </Link>
                     <nav className="navigation">
                         <div className="nav__links">
                             <a href="/#">Stays</a>

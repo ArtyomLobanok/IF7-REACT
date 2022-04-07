@@ -1,0 +1,46 @@
+.hotelPage {
+    background: #EAF0F9;
+}
+
+.headerHotelPage {
+    background: #10367C;
+}
+
+.header {
+    padding: 25px 0;
+}
+
+.header__logo {
+    fill: #FFFFFF;
+}
+
+.section__header {
+    width: 100%;
+    margin: 120px auto 104px;
+    text-align: center;
+}
+
+.hotelPageWrapper {
+    display: flex;
+    margin-bottom: 120px;
+}
+
+.hotelPageImg {
+    margin-right: 16px;
+}
+.hotelPageImg > img {
+    width: 100%;
+}
+
+.hotelPageInfo {
+    width: 100%;
+}
+.hotelPageText {
+    font-size: 18px;
+    color: #383838;
+}
+
+.hotelPageText > a {
+    font-size: 20px;
+    color: #3077C6;
+}
