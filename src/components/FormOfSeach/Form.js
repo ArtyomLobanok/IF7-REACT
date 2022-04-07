@@ -1,20 +1,15 @@
 import React from "react";
 import './Form.css'
-import {FirstForm} from './FormFieldSearchHotel/FormFieldSearchHotel'
+import FirstForm from './FormFieldSearchHotel/FormFieldSearchHotel'
 import MyDataPicker from "./FormFieldDate/FormFieldDate";
 import FormFieldThird from "./FormFieldWhoAreGoing/FormFieldWhoAreGoing";
 
 
 
 function Form ({setSearchData}) {
-
-    const handleClick = () => {
-
-
-    };
     return (
             <div className="intro__content">
-                <form className="intro__form" id="mainForm" onClick={handleClick}>
+                <form className="intro__form" id="mainForm">
                     {/*//Search --->*/}
                     <FirstForm setSearchData={setSearchData}/>
                     {/*//Calendar --->*/}

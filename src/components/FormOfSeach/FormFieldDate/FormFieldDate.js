@@ -3,19 +3,6 @@ import DatePicker from "react-datepicker";
 import '../../Contaiter/Container.css'
 import "react-datepicker/dist/react-datepicker.css";
 import './FormFieldDate.css'
-// <div className="second__input">
-//     <div className="form__item">
-//         <input autoComplete="off" name="in_date" id="in_date" className="form__input" required/>
-//         <label className="form__label" htmlFor="in_date">Check-in date</label>
-//     </div>
-//     <div className="form__item">
-//         <input autoComplete="off" name="out_date" id="out_date" className="form__input"
-//                required/>
-//         <label className="form__label" htmlFor="out_date">Check-out date</label>
-//     </div>
-// </div>
-
-
 
 const MyDataPicker = () => {
     const [startDate, setStartDate] = useState(null);
@@ -40,6 +27,7 @@ const MyDataPicker = () => {
                 selectsRange
                 monthsShown={2}
                 dateFormat='E, MMM d'
+                placeholderText='Check-in — Check-out'
             />
         </div>
     );
