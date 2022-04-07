@@ -1,0 +1,15 @@
+.footerSection {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 7.5rem 0;
+    background-color: #10367C;
+}
+
+.copyright {
+    margin-top: 64px;
+    font-size: 0.875rem;
+    color: #FFFFFF;
+    font-weight: 400;
+}

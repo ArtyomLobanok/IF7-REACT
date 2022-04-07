@@ -1,20 +1,16 @@
 import React from "react";
 import "./Footer.css"
-// import { BrowserRouter, Routes, Router, Route, Link } from "react-router-dom";
+import FooterList from "../../components/FooterListColumb/FooterListColumb";
+
 
 const Footer = () => {
-    return(
-        <h1>Here is footer</h1>
-        // <BrowserRouter>
-        //     <Routes>
-        //         <Route path="/" element={<template/>}>
-        //             <Route index element={<template/>} />
-        //             <Route path="blogs" element={<template/>} />
-        //             <Route path="contact" element={<template/>} />
-        //             <Route path="*" element={<template/>} />
-        //         </Route>
-        //     </Routes>
-        // </BrowserRouter>
+    return (
+        <div className="footerSection">
+            <div className="container">
+                <FooterList/>
+                <div className="copyright">© 2020 Triphouse, Inc. All rights reserved</div>
+            </div>
+        </div>
     )
 };
 

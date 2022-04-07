@@ -1,13 +1,12 @@
 import React from 'react';
 import '../HomesGuestsLoves/HomesGuestsLoves.css';
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
-import '../../components/Contaiter/Container.css'
 import HotelCard from '../../components/HotelCard/HotelCard';
 
 
-const AvailableHotels = ({data, array}) => {
 
-    console.log({data})
+const AvailableHotels = ({array}) => {
+    console.log({array})
     return (
         <>
             <section className='section__overviews'>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import '../Form.css'
+import './FormFieldSearchHotel.css'
 
 export const useForm = () => {
     const [values, setValues] = useState({
@@ -22,7 +22,7 @@ export const useForm = () => {
     }
 }
 
-export const FirstForm = ({setSearchData}) => {
+const FirstForm = ({setSearchData}) => {
     const {values, handleChange} = useForm();
     useEffect(() => {
         setSearchData(values)
@@ -37,13 +37,11 @@ export const FirstForm = ({setSearchData}) => {
                 value={values.name}
                 onChange={handleChange}
                 autoComplete='off'
+                placeholder='Your destination or hotel
+                name'
             />
-            <label
-                className='form__label'
-                htmlFor='nameOfSearch'>
-                Your destination or hotel
-                name
-            </label>
         </div>
     )
 }
+
+export default FirstForm;

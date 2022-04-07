@@ -1,0 +1,11 @@
+.footerLink {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.footerLink:hover {
+    -webkit-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+    color: #F5BD41;
+    text-decoration: underline;
+}

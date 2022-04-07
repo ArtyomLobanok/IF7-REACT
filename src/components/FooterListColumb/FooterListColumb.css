@@ -1,0 +1,29 @@
+.footerList {
+    display: flex;
+}
+.footerList ul {
+    margin-right: 16px;
+}
+
+.footerList ul:last-child {
+    margin-right: 0;
+}
+
+.footerColumn {
+    width: calc(var(--image-height) / 3);
+}
+
+.footerColumn > li {
+    list-style-type: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+}
+
+.footerColumn > li:first-child {
+    font-weight: 500;
+}
+
+.footerColumn > li:last-child {
+    margin-bottom: 0;
+}
