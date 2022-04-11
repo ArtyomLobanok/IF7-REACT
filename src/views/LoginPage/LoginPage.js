@@ -2,20 +2,22 @@ import React from "react";
 import "./LoginPage.css"
 import {Link} from "react-router-dom";
 import {Login} from "../../components/FormSingUp/Login";
+import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
 
 const LoginPage = () => {
     return (
-        <>
-
-                    <div className="singInWindow">
-                        <h3 className="singInTitle">Login</h3>
-                        <Login/>
-                        <p className="additionallyOffer">
-                            Or <Link to="/register">register</Link>
-                        </p>
-                    </div>
-
-        </>
+        <section className="SignInSection">
+            <div className="container">
+                <HeaderMenu/>
+                <div className="singInWindow">
+                    <h3 className="singInTitle">Login</h3>
+                    <Login/>
+                    <p className="additionallyOffer">
+                        Or <Link to="/register">Register</Link>
+                    </p>
+                </div>
+            </div>
+        </section>
     )
 }
 export default LoginPage;

@@ -1,22 +1,26 @@
 import {useState} from 'react';
+import "./Form..css"
 
 const Form = ({title, handleClick}) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-
     return (
-        <div>
+        <div className="signIn">
+            <label>
+                Email address
+            </label>
             <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="email"
             />
+            <label>
+                Password
+            </label>
             <input
                 type="password"
                 value={pass}
                 onChange={(e) => setPass(e.target.value)}
-                placeholder="password"
             />
             <button
                 onClick={() => handleClick(email, pass)}

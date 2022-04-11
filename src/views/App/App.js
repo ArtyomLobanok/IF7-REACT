@@ -10,8 +10,6 @@ import Footer from "../FooterApp/Footer";
 import useAuth from "../../../src/hooks/use-auth"
 
 function App() {
-
-
     const [searchData, setSearchData] = useState('')
     const {array} = useFeatch(searchData.nameOfSearch && url.searchUrl(searchData.nameOfSearch));
     const {isAuth} = useAuth();

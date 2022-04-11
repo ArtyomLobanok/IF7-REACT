@@ -21,12 +21,12 @@ const Login = () => {
                 }));
                 navigate('/');
             })
-            .catch(() => alert('Invalid user!'))
+            .catch(() => alert('Введены неверные данные... Оставайтесь на месте, за вами выехали!'))
     }
 
     return (
         <Form
-            title="sign in"
+            title="Sign in"
             handleClick={handleLogin}
         />
     )
