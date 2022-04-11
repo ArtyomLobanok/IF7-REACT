@@ -2,15 +2,20 @@ import React from "react";
 import './HeaderMenu.css'
 import Svg from "../../assets/svg/Svg";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import useAuth from "../../hooks/use-auth";
+import {removeUser} from '../../redux/slices/userSlice'
 
-const HeaderMenu = () => {
+const HeaderMenu = (propsStyleHeader, propsStyleLogo) => {
+    const dispatch = useDispatch();
+    const { email } = useAuth();
     return (
         <>
        <Svg/>
-            <header className="header">
+            <header className="header" style={propsStyleHeader}>
                 <div className="header__inner">
                     <Link className='Link' to={`/`}>
-                    <svg className="header__logo">
+                    <svg style={propsStyleLogo} className="header__logo" >
                         <use href="#logotype"/>
                     </svg>
                     </Link>
@@ -25,11 +30,14 @@ const HeaderMenu = () => {
                                     <use href="#styleTimeSwitch"/>
                                 </svg>
                             </a>
-                            <a href="/#">
+                            <Link to="/login">
                                 <svg className="header__account">
                                     <use href="#account"/>
                                 </svg>
-                            </a>
+                                <button
+                                    onClick={()=> dispatch(removeUser())}
+                                >Log out from {email}</button>
+                            </Link>
                         </div>
                     </nav>
                 </div>

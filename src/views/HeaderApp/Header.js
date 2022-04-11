@@ -6,12 +6,12 @@ import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
 
 const Header = ({setSearchData}) => {
     return (
-        <header className="Header">
+        <div className="Header">
             <div className="container">
                 <HeaderMenu/>
                 <Inner setSearchData={setSearchData}/>
             </div>
-        </header>
+        </div>
     );
 }
 

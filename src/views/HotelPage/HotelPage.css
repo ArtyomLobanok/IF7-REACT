@@ -6,14 +6,6 @@
     background: #10367C;
 }
 
-.header {
-    padding: 25px 0;
-}
-
-.header__logo {
-    fill: #FFFFFF;
-}
-
 .section__header {
     width: 100%;
     margin: 120px auto 104px;
@@ -29,7 +21,9 @@
     margin-right: 16px;
 }
 .hotelPageImg > img {
-    width: 100%;
+    width: 450px;
+    height: 450px;
+    object-fit: contain;
 }
 
 .hotelPageInfo {

@@ -4,7 +4,11 @@ import {useEffect, useState} from "react";
 const HotelPageFetch = () => {
     const {id} = useParams()
     const url = `https://fe-student-api.herokuapp.com/api/hotels/${id}`;
-    const [data, setData] = useState({})
+    const [data, setData] = useState({
+        country: undefined,
+        imageUrl: undefined,
+        city: undefined
+    })
     useEffect(() => {
             window.scrollTo(0, 0)
             fetch(url)

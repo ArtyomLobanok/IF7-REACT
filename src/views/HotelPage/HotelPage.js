@@ -4,13 +4,21 @@ import Footer from "../FooterApp/Footer";
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
 import HotelPageFetch from "../../components/HotelPageFetch/HotelPageFetch"
 
+
 const HotelPage = () => {
-    const { data, handleClickLink } = HotelPageFetch()
+    const {data, handleClickLink} = HotelPageFetch()
     return (
         <section className="hotelPage">
             <div className="headerHotelPage">
                 <div className="container">
-                    <HeaderMenu/>
+                    <HeaderMenu
+                        propsStyleHeader={{
+                            padding: "25px 0 25px 0"
+                        }}
+                        propsStyleLogo={{
+                            fill: "#FFFFFF"
+                        }}
+                    />
                 </div>
             </div>
             <div className="container">
@@ -22,7 +30,7 @@ const HotelPage = () => {
                         <img src={data.imageUrl} alt={`hotel ${data.name}`}/>
                     </div>
                     <div className='hotelPageInfo'>
-                        <spam className="hotelPageText">
+                        <span className="hotelPageText">
                             We are glad to welcome you!
                             <br/>
                             This hotel is located in the country <a href="/#"
@@ -38,7 +46,7 @@ const HotelPage = () => {
                             reiciendis rerum sint sit ullam veritatis! Ab, adipisci alias, amet aperiam culpa cum
                             doloremque dolores ducimus eum facere facilis illum magni mollitia nemo nesciunt officia
                             quas, quia quis quod rem repellendus rerum tempore ut voluptatem voluptates.
-                        </spam>
+                        </span>
                     </div>
                 </div>
             </div>
