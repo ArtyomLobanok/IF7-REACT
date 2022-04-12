@@ -3,19 +3,19 @@ import './HeaderMenu.css'
 import Svg from "../../assets/svg/Svg";
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import useAuth from "../../hooks/use-auth";
 import {removeUser} from '../../redux/slices/userSlice'
-
-const HeaderMenu = (propsStyleHeader, propsStyleLogo) => {
+import { useAuth } from '../../hooks/'
+const HeaderMenu = ({propsStyleHeader, propsStyleLogo, propsStyleAccount}) => {
     const dispatch = useDispatch();
-    const { email } = useAuth();
+    const {email} = useAuth();
+    console.log(propsStyleHeader);
     return (
         <>
        <Svg/>
             <header className="header" style={propsStyleHeader}>
                 <div className="header__inner">
                     <Link className='Link' to={`/`}>
-                    <svg style={propsStyleLogo} className="header__logo" >
+                    <svg style={propsStyleLogo} className="header__logo" fill={"#3077C6"} >
                         <use href="#logotype"/>
                     </svg>
                     </Link>
@@ -31,13 +31,16 @@ const HeaderMenu = (propsStyleHeader, propsStyleLogo) => {
                                 </svg>
                             </a>
                             <Link to="/login">
-                                <svg className="header__account">
+                                <svg className="header__account" style={propsStyleAccount}>
                                     <use href="#account"/>
                                 </svg>
-                                <button
-                                    onClick={()=> dispatch(removeUser())}
-                                >Log out from {email}</button>
                             </Link>
+                            <button className="header__singOutBtn" onClick={()=> dispatch(removeUser({email}))}>
+                                <svg fill={"#333333"} className="header__singOutAcc">
+                                    <use href="#singOut"/>
+                                </svg>
+                                Sign out
+                            </button>
                         </div>
                     </nav>
                 </div>

@@ -8,7 +8,7 @@ const LoginPage = () => {
     return (
         <section className="SignInSection">
             <div className="container">
-                <HeaderMenu/>
+                <HeaderMenu propsStyleAccount={{fill: "#FFFFFF"}}/>
                 <div className="singInWindow">
                     <h3 className="singInTitle">Register</h3>
                     <SignUp/>

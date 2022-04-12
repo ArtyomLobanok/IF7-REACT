@@ -22,7 +22,25 @@
     display: block;
     max-width: 12.8125rem;
     max-height: 2.5rem;
-    fill: #3077C6;
+}
+
+.header__singOutAcc {
+    width: 20px;
+    height: 18px;
+}
+
+.header__singOutBtn {
+    display: flex;
+    align-items: center;
+    padding: 14px 67px 13px 16px;
+    right: 0;
+    width: 192px;
+    height: 50px;
+    position: absolute;
+    bottom: -75px;
+    font-size: 20px;
+    color: #333333;
+    cursor: pointer;
 }
 
 .navigation {
@@ -80,6 +98,7 @@
     opacity: 1;
 }
 .navigation .nav__icons {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -114,7 +133,7 @@
     display: block;
     max-width: 2.5rem;
     max-height: 2.5rem;
-    fill: #FFFFFF;
+    fill: #F5BD41;
 }
 .navigation .nav__toggle {
     width: 1.5rem;
@@ -152,3 +171,4 @@
     -webkit-transform-origin: right bottom;
     transform-origin: right bottom;
 }
+
