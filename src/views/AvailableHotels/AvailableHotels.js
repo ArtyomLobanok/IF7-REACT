@@ -6,7 +6,6 @@ import HotelCard from '../../components/HotelCard/HotelCard';
 
 
 const AvailableHotels = ({array}) => {
-    console.log({array})
     return (
         <>
             <section className='section__overviews'>

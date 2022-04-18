@@ -11,7 +11,7 @@ function HomesGuestsLoves() {
                 <div className='section__header'>
                     <TextOfHeaders text='Homes guests loves'/>
                 </div>
-                    <DrawHotel url="https://fe-student-api.herokuapp.com/api/hotels/popular"/>
+                    <DrawHotel/>
             </div>
         </section>
 );
