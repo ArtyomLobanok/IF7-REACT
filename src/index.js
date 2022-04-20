@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './views/App/App';
 import HotelPage from "./views/HotelPage/HotelPage";
-import {Provider} from "react-redux";
-import {store} from "./redux/store"
+import { Provider } from "react-redux";
+import { store } from "./redux/store"
 import LoginPage from "./views/LoginPage/LoginPage";
 import RegisterPage from "./views/RegisterPage/RegisterPage";
 import '../src/firebase'
