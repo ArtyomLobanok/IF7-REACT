@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./FormFieldWhoAreGoing.css"
 import Counter from "./countsOrder/counterOrders"
 import OrderData from "./dataOrder/dataOrder"
 import Select from "./childrenSelects/childrenSelect";
+import {useDispatch} from "react-redux";
+import {adultsCounter, childrenCounter, roomsCounter} from "../../../redux/actions";
 
 const ModalMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +24,16 @@ const ModalMenu = () => {
 const FormFieldThird = () => {
     const {data, countOfSelect} = OrderData()
     const {isOpen, handleClick} = ModalMenu()
+
+
+
+
+
     return (
         <>
             <div className="wrapper">
-                <div className='fieldView' onClick={handleClick}>
+                <div className='fieldView' onClick={
+                    handleClick}>
                     {
                         `${data.adults.count} Adults
                         —
@@ -39,7 +47,7 @@ const FormFieldThird = () => {
                         <div className="fieldModalForm">
                             <div>
                                 {
-                                    Object.keys(data).map(key => <Counter {...data[key]} />)
+                                    Object.keys(data).map(key => <Counter{...data[key]} />)
                                 }
                             </div>
                             <div className="fieldToggleQuestion">

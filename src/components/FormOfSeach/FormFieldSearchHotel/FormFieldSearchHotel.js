@@ -1,32 +1,21 @@
 import React, {useEffect, useState} from "react";
 import './FormFieldSearchHotel.css'
-
-export const useForm = () => {
-    const [values, setValues] = useState({
-        nameOfSearch: '',
-    });
-
-    const handleChange = (e) => {
-        const {name: inputName} = e.target;
+import {useDispatch, useSelector} from "react-redux";
+import {inputText} from "../../../redux/actions";
 
 
-        setValues({
-            ...values,
-            [inputName]: e.target.value,
-        });
+
+const FirstForm = () => {
+    const [values, setValues] = useState('');
+
+    const dispatch = useDispatch();
+
+
+    const handleChange = (value) => {
+        dispatch(inputText(value))
     }
 
-    return {
-        values,
-        handleChange,
-    }
-}
 
-const FirstForm = ({setSearchData}) => {
-    const {values, handleChange} = useForm();
-    useEffect(() => {
-        setSearchData(values)
-    }, [values])
     return (
         <div className="first__input">
             <input
@@ -34,8 +23,11 @@ const FirstForm = ({setSearchData}) => {
                 type='text'
                 id='searchName'
                 className='form__input'
-                value={values.name}
-                onChange={handleChange}
+                value={values}
+                onChange={(e)=> {
+                    setValues(e.target.value)
+                    handleChange(e.target.value)
+                }}
                 autoComplete='off'
                 placeholder='Your destination or hotel
                 name'

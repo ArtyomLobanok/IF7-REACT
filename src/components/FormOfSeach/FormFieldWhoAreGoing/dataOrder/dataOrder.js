@@ -1,10 +1,20 @@
 import {useState} from "react";
+import {useDispatch} from "react-redux";
+import {adultsCounter, childrenCounter, roomsCounter} from "../../../../redux/actions";
 
 const OrderData = () => {
     const [countOfAdults, setCountOfAdults] = useState(1);
     const [countOfChildren, setCountOfChildren] = useState([]);//here map select
     const [countOfRooms, setCountOfRooms] = useState(1);
     const [countOfSelect, setCountOfSelect] = useState([]);
+
+    const dispatch = useDispatch();
+    const dispatchCounters = () => {
+        dispatch(adultsCounter(countOfAdults))
+        dispatch(childrenCounter(countOfChildren))
+        dispatch(roomsCounter(countOfRooms))
+    }
+
     const data = {
         adults: {
             minValue: 1,
@@ -12,6 +22,7 @@ const OrderData = () => {
             label: 'Adults',
             count: countOfAdults,
             onIncrement: (event) => {
+                dispatchCounters()
                 event.preventDefault();
                 data.adults.count !== data.adults.maxValue && setCountOfAdults(prevCount => prevCount + 1)
             },

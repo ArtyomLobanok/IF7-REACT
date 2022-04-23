@@ -11,7 +11,9 @@ const Counter = ({label, count, onIncrement, onDecrement, minValue, maxValue}) =
                 <div className='counterChanger'>
                     <button className={
                         count === minValue ? 'btn' : 'active btn'
-                    } onClick={onDecrement}>-
+                    } onClick={
+                        onDecrement
+                    }>-
                     </button>
                     <div>
                         <input disabled value={`${count}`}/>
