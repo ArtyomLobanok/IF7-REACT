@@ -11,15 +11,16 @@ function Form() {
 
     const dispatch = useDispatch()
     const queryParams = useSelector(state => {
-        const {inputReducer} = state;
-        return inputReducer;
+        const {formReducer} = state;
+        return formReducer;
     });
-
-    console.log(new URLSearchParams(queryParams).toString())
+    const params = new URLSearchParams(queryParams).toString()
+    console.log(params)
 
     const handleChange = (e) => {
-        dispatch(hotelsLoad(new URLSearchParams(queryParams).toString()));
         e.preventDefault()
+        dispatch(hotelsLoad(params));
+        console.log(params)
     }
 
     return (

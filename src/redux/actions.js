@@ -66,7 +66,7 @@ export const roomsCounter = (roomsNumber) => {
 
 export const hotelsLoad = () => {
     return async dispatch => {
-        const response = await fetch(`https://fe-student-api.herokuapp.com/api/hotels`);
+        const response = await fetch(`https://fe-student-api.herokuapp.com/api/hotels?`);
         const jsonData = await response.json();
         dispatch({
             type: HOTEL_DATA_LOAD,

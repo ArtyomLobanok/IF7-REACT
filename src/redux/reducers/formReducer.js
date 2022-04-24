@@ -3,7 +3,7 @@ import {INPUT_TEXT, DATE_START, DATE_END, ADULTS_COUNTER, CHILDREN_COUNTER, ROOM
 const initialState = {search: '', dateFrom: '', dateTo: '', adults: '', children: '', rooms: ''}
 
 const formReducer = (state = initialState, action) => {
-    console.log('input text Reducer >>', action)
+    console.log('form Reducer >>', action)
 
     switch (action.type) {
         case INPUT_TEXT:
