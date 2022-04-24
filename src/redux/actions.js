@@ -25,21 +25,21 @@ export const decrementAdults = () => {
 export const inputText = (search) => {
     return {
         type: INPUT_TEXT,
-        text: search
+        search
     }
 }
 
-export const datePickerStart = (startDate) => {
+export const datePickerStart = (dateFrom) => {
     return {
         type: DATE_START,
-        startDate
+        dateFrom
     }
 }
 
-export const datePickerEnd = (endDate) => {
+export const datePickerEnd = (dateTo) => {
     return {
         type: DATE_END,
-        endDate
+        dateTo
     }
 }
 

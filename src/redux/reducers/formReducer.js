@@ -1,6 +1,6 @@
 import {INPUT_TEXT, DATE_START, DATE_END, ADULTS_COUNTER, CHILDREN_COUNTER, ROOMS_COUNTER} from "../types";
 
-const initialState = {search: '', startDate: '', endDate: '', adults: '', children: '', rooms: ''}
+const initialState = {search: '', dateFrom: '', dateTo: '', adults: '', children: '', rooms: ''}
 
 const formReducer = (state = initialState, action) => {
     console.log('input text Reducer >>', action)
@@ -14,12 +14,12 @@ const formReducer = (state = initialState, action) => {
         case DATE_START:
             return {
                 ...state,
-                startDate: action.startDate
+                dateFrom: action.dateFrom
             }
         case DATE_END:
             return {
                 ...state,
-                endDate: action.endDate
+                dateTo: action.dateTo
             }
         case ADULTS_COUNTER:
             return {
