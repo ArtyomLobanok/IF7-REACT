@@ -3,7 +3,6 @@ export const DECREMENT = 'DECREMENT';
 export const INPUT_TEXT = 'INPUT_TEXT';
 export const DATE_START = 'DATE_START';
 export const DATE_END = 'DATE_END';
-export const CARD_HOTEL_CREATE = 'CARD_HOTEL_CREATE';
 export const HOTEL_DATA_LOAD = 'HOTEL_DATA_LOAD';
 export const ADULTS_COUNTER = 'ADULTS_COUNTER';
 export const CHILDREN_COUNTER = 'CHILDREN_COUNTER';

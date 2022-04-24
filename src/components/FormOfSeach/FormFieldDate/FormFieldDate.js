@@ -3,30 +3,18 @@ import DatePicker from "react-datepicker";
 import '../../Contaiter/Container.css'
 import "react-datepicker/dist/react-datepicker.css";
 import './FormFieldDate.css'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {datePickerStart,datePickerEnd} from "../../../redux/actions";
+import formReducer from "../../../redux/reducers/formReducer";
 
 const MyDataPicker = () => {
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
-    const formattedStartDate = new Date(startDate).getTime()
-    const formattedEndDate = new Date(endDate).getTime()
+    const form = useSelector(state => state.formReducer)
     const dispatch = useDispatch();
-
-    const dispatchDates = () => {
-        dispatch(datePickerEnd(formattedEndDate))
-        dispatch(datePickerStart(formattedStartDate))
-    }
-
     const onChange = (dates) => {
         const [start, end] = dates;
-        setStartDate(start);
-        setEndDate(end);
+        dispatch(datePickerEnd(new Date(end).getTime()))
+        dispatch(datePickerStart(new Date(start).getTime()))
     };
-
-    useEffect(()=>{
-        dispatchDates()
-    },[startDate,endDate])
 
     return (
         <div className="second__input">
@@ -34,12 +22,12 @@ const MyDataPicker = () => {
                 name="datepicker"
                 Label="Timeless"
                 className="form__item"
-                selected={startDate}
+                selected={form.dateFrom}
                 minDate={new Date()}
                 onChange={onChange}
                 unf
-                startDate={startDate}
-                endDate={endDate}
+                startDate={form.dateFrom}
+                endDate={form.dateTo}
                 selectsRange
                 monthsShown={2}
                 dateFormat='E, MMM d'
