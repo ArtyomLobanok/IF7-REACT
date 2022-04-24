@@ -43,24 +43,24 @@ export const datePickerEnd = (dateTo) => {
     }
 }
 
-export const adultsCounter = (adultsNumber) => {
+export const adultsCounter = (adults) => {
     return {
         type: ADULTS_COUNTER,
-        adults: adultsNumber
+        adults
     }
 }
 
-export const childrenCounter = (childrenNumber) => {
+export const childrenCounter = (children) => {
     return {
         type: CHILDREN_COUNTER,
-        children: childrenNumber
+        children
     }
 }
 
-export const roomsCounter = (roomsNumber) => {
+export const roomsCounter = (rooms) => {
     return {
         type: ROOMS_COUNTER,
-        rooms: roomsNumber
+        rooms
     }
 }
 

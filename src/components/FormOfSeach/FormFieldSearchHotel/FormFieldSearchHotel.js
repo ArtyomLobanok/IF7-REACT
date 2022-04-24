@@ -5,15 +5,10 @@ import {inputText} from "../../../redux/actions";
 
 const FirstForm = () => {
     const [values, setValues] = useState('');
-
     const dispatch = useDispatch();
-
-
     const handleChange = (value) => {
         dispatch(inputText(value))
     }
-
-
     return (
         <div className="first__input">
             <input

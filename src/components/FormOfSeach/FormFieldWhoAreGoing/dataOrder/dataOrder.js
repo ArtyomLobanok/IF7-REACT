@@ -26,6 +26,7 @@ const OrderData = () => {
                 data.adults.count !== data.adults.maxValue && setCountOfAdults(prevCount => prevCount + 1)
             },
             onDecrement: (event) => {
+                dispatchCounters()
                 event.preventDefault();
                 data.adults.count !== data.adults.minValue && setCountOfAdults(prevCount => prevCount - 1)
             },
@@ -37,6 +38,7 @@ const OrderData = () => {
             count: countOfChildren.length,
             onIncrement: (event) => {
                 event.preventDefault();
+                dispatchCounters()
                 data.children.count < data.children.maxValue && setCountOfChildren(prevState => [...prevState, 1])
                 const addComponent = () => {
                     setCountOfSelect([...countOfSelect, "Select Component"])
@@ -45,6 +47,7 @@ const OrderData = () => {
             },
             onDecrement: (event) => {
                 event.preventDefault();
+                dispatchCounters()
                 data.children.count > data.children.minValue && setCountOfChildren(prevState => prevState.slice(1))
                 const RemoveSelect = () => {
                     event.preventDefault();
@@ -60,10 +63,12 @@ const OrderData = () => {
             count: countOfRooms,
             onIncrement: (event) => {
                 event.preventDefault();
+                dispatchCounters()
                 data.rooms.count !== data.rooms.maxValue && setCountOfRooms(prevCount => prevCount + 1)
             },
             onDecrement: (event) => {
                 event.preventDefault();
+                dispatchCounters()
                 data.rooms.count !== data.rooms.minValue && setCountOfRooms(prevCount => prevCount - 1)
             },
         },

@@ -7,7 +7,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {hotelsLoad} from "../../redux/actions";
 
 function Form() {
-    const mock = {searchText: '1723', startDate: '5123', endDate: '1423', adults: '1233', children: '321'}
 
     const dispatch = useDispatch()
     const queryParams = useSelector(state => {
