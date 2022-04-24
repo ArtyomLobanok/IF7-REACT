@@ -7,7 +7,6 @@ const OrderData = () => {
     const [countOfChildren, setCountOfChildren] = useState([]);//here map select
     const [countOfRooms, setCountOfRooms] = useState(1);
     const [countOfSelect, setCountOfSelect] = useState([]);
-
     const dispatch = useDispatch();
     const dispatchCounters = () => {
         dispatch(adultsCounter(countOfAdults))

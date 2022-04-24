@@ -1,7 +1,3 @@
-import { hotelsLoad} from "../../redux/actions";
-import {useState, useEffect} from "react";
-import { useDispatch } from 'react-redux'
-
 
 const HotelsCards = (props) => {
     console.log('HotelCards here >>>>', props)

@@ -22,10 +22,10 @@ export const decrementAdults = () => {
     }
 }
 
-export const inputText = (searchText) => {
+export const inputText = (search) => {
     return {
         type: INPUT_TEXT,
-        searchText
+        text: search
     }
 }
 
@@ -63,7 +63,6 @@ export const roomsCounter = (roomsNumber) => {
         rooms: roomsNumber
     }
 }
-
 
 export const hotelsLoad = () => {
     return async dispatch => {

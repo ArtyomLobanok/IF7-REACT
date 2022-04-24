@@ -8,11 +8,9 @@ import {adultsCounter, childrenCounter, roomsCounter} from "../../../redux/actio
 
 const ModalMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
-
     const handleClick = () => {
         setIsOpen(!isOpen)
     }
-
     return (
         {
             isOpen,
@@ -24,11 +22,6 @@ const ModalMenu = () => {
 const FormFieldThird = () => {
     const {data, countOfSelect} = OrderData()
     const {isOpen, handleClick} = ModalMenu()
-
-
-
-
-
     return (
         <>
             <div className="wrapper">

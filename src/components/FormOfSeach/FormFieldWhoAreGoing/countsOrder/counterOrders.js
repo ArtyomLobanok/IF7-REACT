@@ -3,7 +3,6 @@ import './counterOrders.css'
 
 
 const Counter = ({label, count, onIncrement, onDecrement, minValue, maxValue}) => {
-
     return (
         <>
             <div className="counterWrapper">

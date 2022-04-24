@@ -6,39 +6,31 @@ import FormFieldThird from "./FormFieldWhoAreGoing/FormFieldWhoAreGoing";
 import {useDispatch, useSelector} from "react-redux";
 import {hotelsLoad} from "../../redux/actions";
 
-
-
-function Form ({setSearchData}){
-
+function Form() {
     const mock = {searchText: '1723', startDate: '5123', endDate: '1423', adults: '1233', children: '321'}
 
-
-
     const dispatch = useDispatch()
-
     const queryParams = useSelector(state => {
-        const { inputReducer } = state;
+        const {inputReducer} = state;
         return inputReducer;
     });
 
     console.log(new URLSearchParams(queryParams).toString())
 
-
     const handleChange = (e) => {
-        dispatch(hotelsLoad());
-
+        dispatch(hotelsLoad(new URLSearchParams(queryParams).toString()));
         e.preventDefault()
-}
+    }
 
     return (
-            <div className="intro__content">
-                <form className="intro__form" id="mainForm">
-                    <FirstForm setSearchData={setSearchData}/>
-                    <MyDataPicker/>
-                    <FormFieldThird/>
-                    <button onClick={handleChange} type='submit' className="form__button search">Search</button>
-                </form>
-            </div>
+        <div className="intro__content">
+            <form className="intro__form" id="mainForm">
+                <FirstForm/>
+                <MyDataPicker/>
+                <FormFieldThird/>
+                <button onClick={handleChange} type='submit' className="form__button search">Search</button>
+            </form>
+        </div>
     );
 }
 

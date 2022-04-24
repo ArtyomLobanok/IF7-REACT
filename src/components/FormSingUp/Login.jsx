@@ -21,7 +21,7 @@ const Login = () => {
                 }));
                 navigate('/');
             })
-            .catch(() => alert('Введены неверные данные... Оставайтесь на месте, за вами выехали!'))
+            .catch(() => alert('Attantion', Error))
     }
 
     return (
