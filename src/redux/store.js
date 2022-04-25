@@ -7,7 +7,7 @@ import userReducer from './slices/userSlice';
 import formReducer from "./reducers/formReducer";
 import hotelsLoadReducer from "./reducers/DataLoadReducer";
 
-const reducers = combineReducers({
+const rootReducer = combineReducers({
     user: userReducer,
     formReducer,
     hotelsLoadReducer,
@@ -18,7 +18,7 @@ const persistConfig = {
     storage
 };
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
     reducer: persistedReducer,
