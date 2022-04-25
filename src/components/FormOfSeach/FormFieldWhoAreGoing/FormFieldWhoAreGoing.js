@@ -39,7 +39,7 @@ const FormFieldThird = () => {
                         <div className="fieldModalForm">
                             <div>
                                 {
-                                    Object.keys(data).map(key => <Counter key={uniqid()} {...data[key]} />)
+                                    Object.keys(data).map(key => <Counter key={uniqid('counter-')} {...data[key]} />)
                                 }
                             </div>
                             <div className="fieldToggleQuestion">
@@ -52,7 +52,7 @@ const FormFieldThird = () => {
                             </div>
                             <div className='selectors'>
                                 {
-                                    countOfSelect.map((item, i) => (<Select key={uniqid()}/>))
+                                    countOfSelect.map((item, i) => (<Select key={uniqid('select-')}/>))
                                 }
                             </div>
                         </div>
