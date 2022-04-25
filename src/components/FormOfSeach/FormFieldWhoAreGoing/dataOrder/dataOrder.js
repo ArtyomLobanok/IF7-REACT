@@ -1,17 +1,21 @@
 import {useState} from "react";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import {adultsCounter, childrenCounter, roomsCounter} from "../../../../redux/actions";
 
 const OrderData = () => {
+
     const [countOfAdults, setCountOfAdults] = useState(1);
-    const [countOfChildren, setCountOfChildren] = useState([]);//here map select
+    const [countOfChildren, setCountOfChildren] = useState([]);
     const [countOfRooms, setCountOfRooms] = useState(1);
     const [countOfSelect, setCountOfSelect] = useState([]);
+
+    // const dataOrder = useSelector(state => state.formReducer)
+
     const dispatch = useDispatch();
     const dispatchCounters = () => {
-        dispatch(adultsCounter(countOfAdults))
-        dispatch(childrenCounter(countOfChildren))
-        dispatch(roomsCounter(countOfRooms))
+        dispatch(adultsCounter(data.adults.count))
+        dispatch(childrenCounter(data.children.count))
+        dispatch(roomsCounter(data.rooms.count))
     }
 
     const data = {

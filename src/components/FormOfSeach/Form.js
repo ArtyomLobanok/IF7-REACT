@@ -10,7 +10,7 @@ function Form() {
 
     const dispatch = useDispatch()
     const queryParams = useSelector(state => {
-        const {formReducer} = state;
+        const { formReducer } = state;
         return formReducer;
     });
     const params = new URLSearchParams(queryParams).toString()
