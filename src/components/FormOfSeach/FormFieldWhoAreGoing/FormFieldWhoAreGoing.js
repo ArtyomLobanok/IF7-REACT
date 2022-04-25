@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState } from "react";
 import "./FormFieldWhoAreGoing.css"
 import Counter from "./countsOrder/counterOrders"
 import OrderData from "./dataOrder/dataOrder"
 import Select from "./childrenSelects/childrenSelect";
-import {useDispatch} from "react-redux";
-import {adultsCounter, childrenCounter, roomsCounter} from "../../../redux/actions";
+import uniqid from 'uniqid';
 
 const ModalMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +39,7 @@ const FormFieldThird = () => {
                         <div className="fieldModalForm">
                             <div>
                                 {
-                                    Object.keys(data).map(key => <Counter{...data[key]} />)
+                                    Object.keys(data).map(key => <Counter key={uniqid()} {...data[key]} />)
                                 }
                             </div>
                             <div className="fieldToggleQuestion">
@@ -53,7 +52,7 @@ const FormFieldThird = () => {
                             </div>
                             <div className='selectors'>
                                 {
-                                    countOfSelect.map((item, i) => (<Select/>))
+                                    countOfSelect.map((item, i) => (<Select key={uniqid()}/>))
                                 }
                             </div>
                         </div>
