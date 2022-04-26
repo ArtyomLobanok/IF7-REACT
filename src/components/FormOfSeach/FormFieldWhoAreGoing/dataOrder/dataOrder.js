@@ -2,16 +2,17 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
     childrenCounter,
-    decrementAdults, decrementRooms,
-    incrementAdults, incrementRooms,
-} from "../../../../redux/actions";
+    decrementAdults,
+    decrementRooms,
+    incrementAdults,
+    incrementRooms,
+}
+from "../../../../redux/actions";
 
 const OrderData = () => {
     const [countOfChildren, setCountOfChildren] = useState([]);
     const [countOfSelect, setCountOfSelect] = useState([]);
-
     const form = useSelector(state => state.formReducer)
-
     const dispatch = useDispatch();
 
     const data = {
