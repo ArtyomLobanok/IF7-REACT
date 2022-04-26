@@ -3,8 +3,8 @@ import './Form.css'
 import FirstForm from './FormFieldSearchHotel/FormFieldSearchHotel'
 import MyDataPicker from "./FormFieldDate/FormFieldDate";
 import FormFieldThird from "./FormFieldWhoAreGoing/FormFieldWhoAreGoing";
-import {useDispatch, useSelector} from "react-redux";
-import {hotelsLoad} from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { hotelsLoad } from "../../redux/actions";
 
 function Form() {
 

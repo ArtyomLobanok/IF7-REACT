@@ -22,21 +22,25 @@ const formReducer = (state = initialState, action) => {
                 ...state,
                 search: action.search
             }
+
         case DATE_START:
             return {
                 ...state,
                 dateFrom: action.dateFrom
             }
+
         case DATE_END:
             return {
                 ...state,
                 dateTo: action.dateTo
             }
+
         case CHILDREN_COUNTER:
             return {
                 ...state,
                 children: action.children
             }
+
         case INCREMENT_ADULTS:
             return {
                 ...state,
@@ -47,6 +51,7 @@ const formReducer = (state = initialState, action) => {
                 ...state,
                 adults: state.adults - 1
             }
+
         case INCREMENT_CHILDREN:
             return {
                 ...state,
@@ -57,6 +62,7 @@ const formReducer = (state = initialState, action) => {
                 ...state,
                 countChildren: state.children - 1
             }
+
         case INCREMENT_ROOMS:
             return {
                 ...state,
