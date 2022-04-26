@@ -12,6 +12,7 @@ const MyDataPicker = () => {
         const [start, end] = dates;
         dispatch(datePickerStart(new Date(start).getTime()));
         dispatch(datePickerEnd(new Date(end).getTime()));
+
     };
 
     return (

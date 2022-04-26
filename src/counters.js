@@ -11,7 +11,7 @@ const Counters = (props) => {
             >-</button>
             <p
                 style={{color: "red", padding: '20px', fontSize:"30px"}}>
-                {props.countAdults}
+                {props.adults}
             </p>
             <button onClick={props.onIncrementAdults}
                     className='incrementAdults'
@@ -22,9 +22,9 @@ const Counters = (props) => {
 }
 
 function mapStateToProps(state) {
-    const {testReducer} = state;
+    const {formReducer} = state;
     return {
-        countAdults: testReducer.countAdults
+        countAdults: formReducer.adults
     }
 }
 

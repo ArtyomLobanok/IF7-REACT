@@ -1,24 +1,51 @@
 import {
-    INCREMENT,
-    DECREMENT,
+    INCREMENT_ADULTS,
+    DECREMENT_ADULTS,
+    INCREMENT_CHILDREN,
+    DECREMENT_CHILDREN,
+    INCREMENT_ROOMS,
+    DECREMENT_ROOMS,
     INPUT_TEXT,
     HOTEL_DATA_LOAD,
     DATE_START,
     DATE_END,
     CHILDREN_COUNTER,
-    ROOMS_COUNTER,
-    ADULTS_COUNTER
+
 } from "./types";
 
 export const incrementAdults = () => {
     return {
-        type: INCREMENT
+        type: INCREMENT_ADULTS
     }
 }
 
 export const decrementAdults = () => {
     return {
-        type: DECREMENT
+        type: DECREMENT_ADULTS
+    }
+}
+
+export const incrementChildren = () => {
+    return {
+        type: INCREMENT_CHILDREN
+    }
+}
+
+export const decrementChildren = () => {
+    return {
+        type: DECREMENT_CHILDREN
+    }
+}
+
+export const incrementRooms = () => {
+    return {
+        type: INCREMENT_ROOMS
+    }
+}
+
+export const decrementRooms = () => {
+    return {
+        type: DECREMENT_ROOMS
     }
 }
 
@@ -43,24 +70,10 @@ export const datePickerEnd = (dateTo) => {
     }
 }
 
-export const adultsCounter = (adults) => {
-    return {
-        type: ADULTS_COUNTER,
-        adults
-    }
-}
-
 export const childrenCounter = (children) => {
     return {
         type: CHILDREN_COUNTER,
         children
-    }
-}
-
-export const roomsCounter = (rooms) => {
-    return {
-        type: ROOMS_COUNTER,
-        rooms
     }
 }
 

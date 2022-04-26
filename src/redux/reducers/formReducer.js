@@ -1,4 +1,15 @@
-import {INPUT_TEXT, DATE_START, DATE_END, ADULTS_COUNTER, CHILDREN_COUNTER, ROOMS_COUNTER} from "../types";
+import {
+    INPUT_TEXT,
+    DATE_START,
+    DATE_END,
+    CHILDREN_COUNTER,
+    INCREMENT_ADULTS,
+    DECREMENT_ADULTS,
+    INCREMENT_CHILDREN,
+    DECREMENT_CHILDREN,
+    INCREMENT_ROOMS,
+    DECREMENT_ROOMS,
+} from "../types";
 
 const initialState = {search: '', dateFrom: Date.now(), dateTo: Date.now(), adults: 1, children: 0, rooms: 1}
 
@@ -21,20 +32,40 @@ const formReducer = (state = initialState, action) => {
                 ...state,
                 dateTo: action.dateTo
             }
-        case ADULTS_COUNTER:
-            return {
-                ...state,
-                adults: action.adults
-            }
         case CHILDREN_COUNTER:
             return {
                 ...state,
                 children: action.children
             }
-        case ROOMS_COUNTER:
+        case INCREMENT_ADULTS:
             return {
                 ...state,
-                rooms: action.rooms
+                adults: state.adults + 1
+            }
+        case DECREMENT_ADULTS:
+            return {
+                ...state,
+                adults: state.adults - 1
+            }
+        case INCREMENT_CHILDREN:
+            return {
+                ...state,
+                countChildren: state.children + 1
+            }
+        case DECREMENT_CHILDREN:
+            return {
+                ...state,
+                countChildren: state.children - 1
+            }
+        case INCREMENT_ROOMS:
+            return {
+                ...state,
+                rooms: state.rooms + 1
+            }
+        case DECREMENT_ROOMS:
+            return {
+                ...state,
+                rooms: state.rooms - 1
             }
         default:
             return state;

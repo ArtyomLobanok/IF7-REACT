@@ -1,38 +1,32 @@
-import {useState} from "react";
-import { useDispatch } from "react-redux";
-import {adultsCounter, childrenCounter, roomsCounter} from "../../../../redux/actions";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+    childrenCounter,
+    decrementAdults, decrementRooms,
+    incrementAdults, incrementRooms,
+} from "../../../../redux/actions";
 
 const OrderData = () => {
-
-    const [countOfAdults, setCountOfAdults] = useState(1);
     const [countOfChildren, setCountOfChildren] = useState([]);
-    const [countOfRooms, setCountOfRooms] = useState(1);
     const [countOfSelect, setCountOfSelect] = useState([]);
 
-    // const dataOrder = useSelector(state => state.formReducer)
+    const form = useSelector(state => state.formReducer)
 
     const dispatch = useDispatch();
-    const dispatchCounters = () => {
-        dispatch(adultsCounter(data.adults.count))
-        dispatch(childrenCounter(data.children.count))
-        dispatch(roomsCounter(data.rooms.count))
-    }
 
     const data = {
         adults: {
             minValue: 1,
             maxValue: 30,
             label: 'Adults',
-            count: countOfAdults,
+            count: form.adults,
             onIncrement: (event) => {
-                dispatchCounters()
                 event.preventDefault();
-                data.adults.count !== data.adults.maxValue && setCountOfAdults(prevCount => prevCount + 1)
+                data.adults.count !== data.adults.maxValue && dispatch(incrementAdults())
             },
             onDecrement: (event) => {
-                dispatchCounters()
                 event.preventDefault();
-                data.adults.count !== data.adults.minValue && setCountOfAdults(prevCount => prevCount - 1)
+                data.adults.count !== data.adults.minValue && dispatch(decrementAdults())
             },
         },
         children: {
@@ -42,47 +36,44 @@ const OrderData = () => {
             count: countOfChildren.length,
             onIncrement: (event) => {
                 event.preventDefault();
-                dispatchCounters()
                 data.children.count < data.children.maxValue && setCountOfChildren(prevState => [...prevState, 1])
                 const addComponent = () => {
                     setCountOfSelect([...countOfSelect, "Select Component"])
                 }
                 data.children.count < data.children.maxValue && addComponent()
+                dispatch(childrenCounter(data.children.count));
             },
             onDecrement: (event) => {
                 event.preventDefault();
-                dispatchCounters()
+
                 data.children.count > data.children.minValue && setCountOfChildren(prevState => prevState.slice(1))
                 const RemoveSelect = () => {
                     event.preventDefault();
                     setCountOfSelect(prevState => prevState.slice(1))
                 }
                 RemoveSelect()
+                dispatch(childrenCounter(data.children.count));
             },
         },
         rooms: {
             minValue: 1,
             maxValue: 30,
             label: 'Rooms',
-            count: countOfRooms,
+            count: form.rooms,
             onIncrement: (event) => {
                 event.preventDefault();
-                dispatchCounters()
-                data.rooms.count !== data.rooms.maxValue && setCountOfRooms(prevCount => prevCount + 1)
+                data.rooms.count !== data.rooms.maxValue && dispatch(incrementRooms());
             },
             onDecrement: (event) => {
                 event.preventDefault();
-                dispatchCounters()
-                data.rooms.count !== data.rooms.minValue && setCountOfRooms(prevCount => prevCount - 1)
+                data.rooms.count !== data.rooms.minValue && dispatch(decrementRooms());
             },
         },
     }
     return (
         {
             data,
-            countOfAdults,
             countOfChildren,
-            countOfRooms,
             countOfSelect,
         }
     )
