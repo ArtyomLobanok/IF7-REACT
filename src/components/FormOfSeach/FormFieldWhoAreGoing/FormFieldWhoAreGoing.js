@@ -23,7 +23,6 @@ const FormFieldThird = () => {
     const selectArray = useSelector(state => state.formReducer.children)
     const {data } = OrderData()
     const {isOpen, handleClick} = ModalMenu()
-    console.log(selectArray)
     return (
         <>
             <div className="wrapper">

@@ -1,8 +1,8 @@
 import {
     INCREMENT_ADULTS,
     DECREMENT_ADULTS,
-    INCREMENT_CHILDREN,
-    DECREMENT_CHILDREN,
+    ADD_CHILDREN,
+    DELETE_CHILDREN,
     INCREMENT_ROOMS,
     DECREMENT_ROOMS,
     INPUT_TEXT,
@@ -27,13 +27,20 @@ export const decrementAdults = () => {
 
 export const incrementChildren = () => {
     return {
-        type: INCREMENT_CHILDREN
+        type: ADD_CHILDREN
+    }
+}
+
+export const setChildAge = (childData) => {
+    return {
+        type: SET_CHILD_AGE,
+        childData
     }
 }
 
 export const decrementChildren = () => {
     return {
-        type: DECREMENT_CHILDREN
+        type: DELETE_CHILDREN
     }
 }
 
@@ -67,13 +74,6 @@ export const datePickerEnd = (dateTo) => {
     return {
         type: DATE_END,
         dateTo
-    }
-}
-
-export const setChildAge = (childData) => {
-    return {
-        type: SET_CHILD_AGE,
-        childData
     }
 }
 

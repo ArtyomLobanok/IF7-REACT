@@ -5,7 +5,6 @@ const initialState = {
 }
 
 const hotelsLoadReducer = (state = initialState, action) => {
-    console.log('hotel load Reducer >>', action)
     switch (action.type) {
         case HOTEL_DATA_LOAD:
             const hotelArray = action.data.map(response => {

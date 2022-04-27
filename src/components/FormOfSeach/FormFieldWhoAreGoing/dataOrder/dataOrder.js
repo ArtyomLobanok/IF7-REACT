@@ -11,8 +11,6 @@ const OrderData = () => {
     const form = useSelector(state => state.formReducer)
     const dispatch = useDispatch();
 
-    console.log(form)
-
     const data = {
         adults: {
             minValue: 1,

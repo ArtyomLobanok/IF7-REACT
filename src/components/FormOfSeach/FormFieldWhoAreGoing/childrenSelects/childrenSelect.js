@@ -6,7 +6,6 @@ const SelectOptions = () => {
     const options = Array.from(Array(18).keys()).map((text, index) => {
         return <option value={text} key={index}> {text} years old</option>;
     });
-
     return (
         {
             options,
@@ -16,7 +15,6 @@ const SelectOptions = () => {
 
 const Select = ({value, index}) => {
     const onChange= (e) => {
-        console.log('here')
         dispatch(setChildAge({value: e.target.value, index}))
     }
     const dispatch = useDispatch()
@@ -27,5 +25,6 @@ const Select = ({value, index}) => {
             </select>
     )
 }
+
 export default Select;
 
