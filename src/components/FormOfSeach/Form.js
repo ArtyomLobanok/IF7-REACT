@@ -9,11 +9,13 @@ import { hotelsLoad } from "../../redux/actions";
 function Form() {
 
     const dispatch = useDispatch()
-    const queryParams = useSelector(state => {
+    const { search, dateFrom, dateTo, adults, children, rooms } = useSelector(state => {
         const { formReducer } = state;
         return formReducer;
     });
-    const params = new URLSearchParams(queryParams).toString()
+
+    const params = `search=${search}&dateFrom=${dateFrom}&dateTo=${dateTo}&adults=${adults}&children=${children.toString()}&rooms=${rooms}`
+
     console.log(params)
 
     const handleChange = (e) => {

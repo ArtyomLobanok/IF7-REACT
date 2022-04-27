@@ -1,19 +1,17 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {
-    childrenCounter,
-    decrementAdults,
+    decrementAdults, decrementChildren,
     decrementRooms,
-    incrementAdults,
+    incrementAdults, incrementChildren,
     incrementRooms,
 }
-from "../../../../redux/actions";
+    from "../../../../redux/actions";
 
 const OrderData = () => {
-    const [countOfChildren, setCountOfChildren] = useState([]);
-    const [countOfSelect, setCountOfSelect] = useState([]);
     const form = useSelector(state => state.formReducer)
     const dispatch = useDispatch();
+
+    console.log(form)
 
     const data = {
         adults: {
@@ -34,26 +32,15 @@ const OrderData = () => {
             minValue: 0,
             maxValue: 10,
             label: 'Children',
-            count: countOfChildren.length,
+            count: form.children.length,
             onIncrement: (event) => {
                 event.preventDefault();
-                data.children.count < data.children.maxValue && setCountOfChildren(prevState => [...prevState, 1])
-                const addComponent = () => {
-                    setCountOfSelect([...countOfSelect, "Select Component"])
-                }
-                data.children.count < data.children.maxValue && addComponent()
-                dispatch(childrenCounter(data.children.count));
+                data.children.count < data.children.maxValue && dispatch(incrementChildren())
+
             },
             onDecrement: (event) => {
                 event.preventDefault();
-
-                data.children.count > data.children.minValue && setCountOfChildren(prevState => prevState.slice(1))
-                const RemoveSelect = () => {
-                    event.preventDefault();
-                    setCountOfSelect(prevState => prevState.slice(1))
-                }
-                RemoveSelect()
-                dispatch(childrenCounter(data.children.count));
+                data.children.count > data.children.minValue && dispatch(decrementChildren())
             },
         },
         rooms: {
@@ -74,8 +61,6 @@ const OrderData = () => {
     return (
         {
             data,
-            countOfChildren,
-            countOfSelect,
         }
     )
 }

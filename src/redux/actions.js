@@ -9,7 +9,7 @@ import {
     HOTEL_DATA_LOAD,
     DATE_START,
     DATE_END,
-    CHILDREN_COUNTER,
+    SET_CHILD_AGE,
 
 } from "./types";
 
@@ -70,10 +70,10 @@ export const datePickerEnd = (dateTo) => {
     }
 }
 
-export const childrenCounter = (children) => {
+export const setChildAge = (childData) => {
     return {
-        type: CHILDREN_COUNTER,
-        children
+        type: SET_CHILD_AGE,
+        childData
     }
 }
 

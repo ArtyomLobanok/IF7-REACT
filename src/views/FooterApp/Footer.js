@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css"
 import FooterList from "../../components/FooterListColumb/FooterListColumb";
-import Counters from "../../counters"
+
 
 const Footer = () => {
     return (
@@ -12,7 +12,6 @@ const Footer = () => {
                 <div className="copyright">© 2020 Triphouse, Inc. All rights reserved</div>
             </div>
         </div>
-            <Counters/>
         </>
     )
 };

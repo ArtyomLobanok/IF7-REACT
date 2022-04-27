@@ -4,6 +4,7 @@ import Counter from "./countsOrder/counterOrders"
 import OrderData from "./dataOrder/dataOrder"
 import Select from "./childrenSelects/childrenSelect";
 import uniqid from 'uniqid';
+import {useSelector} from "react-redux";
 
 const ModalMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +20,10 @@ const ModalMenu = () => {
 }
 
 const FormFieldThird = () => {
-    const {data, countOfSelect} = OrderData()
+    const selectArray = useSelector(state => state.formReducer.children)
+    const {data } = OrderData()
     const {isOpen, handleClick} = ModalMenu()
+    console.log(selectArray)
     return (
         <>
             <div className="wrapper">
@@ -52,7 +55,7 @@ const FormFieldThird = () => {
                             </div>
                             <div className='selectors'>
                                 {
-                                    countOfSelect.map((item, i) => (<Select key={uniqid('select-')}/>))
+                                    selectArray.map((item, index) => (<Select index={index} value={item} key={uniqid('select-')}/>))
                                 }
                             </div>
                         </div>

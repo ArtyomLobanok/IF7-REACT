@@ -2,7 +2,7 @@ import {
     INPUT_TEXT,
     DATE_START,
     DATE_END,
-    CHILDREN_COUNTER,
+    SET_CHILD_AGE,
     INCREMENT_ADULTS,
     DECREMENT_ADULTS,
     INCREMENT_CHILDREN,
@@ -11,7 +11,7 @@ import {
     DECREMENT_ROOMS,
 } from "../types";
 
-const initialState = {search: '', dateFrom: Date.now(), dateTo: Date.now(), adults: 1, children: 0, rooms: 1}
+const initialState = {search: '', dateFrom: Date.now(), dateTo: Date.now(), adults: 1, children: [], rooms: 1}
 
 const formReducer = (state = initialState, action) => {
     console.log('form Reducer >>', action)
@@ -35,10 +35,10 @@ const formReducer = (state = initialState, action) => {
                 dateTo: action.dateTo
             }
 
-        case CHILDREN_COUNTER:
+        case SET_CHILD_AGE:
             return {
                 ...state,
-                children: action.children
+                children: [...state.children.slice(0, action.childData.index), action.childData.value, ...state.children.slice(action.childData.index + 1)]
             }
 
         case INCREMENT_ADULTS:
@@ -55,12 +55,12 @@ const formReducer = (state = initialState, action) => {
         case INCREMENT_CHILDREN:
             return {
                 ...state,
-                countChildren: state.children + 1
+                children: [ ...state.children, 1 ]
             }
         case DECREMENT_CHILDREN:
             return {
                 ...state,
-                countChildren: state.children - 1
+                children: state.children.slice(1)
             }
 
         case INCREMENT_ROOMS:
