@@ -1,0 +1,13 @@
+.slick-next {
+    transform: translate3d(-40px, -65px, 0);
+}
+
+.slick-prev:before, .slick-next:before  {
+    content: '' !important;
+}
+
+.slick-prev {
+    z-index: 1000;
+    transform: translate3d(7px, -65px, 0);
+}
+

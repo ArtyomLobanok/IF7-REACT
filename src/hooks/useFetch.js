@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 
-function useFeatch(url) {
+const useFeatch = () => {
+    const url = "https://fe-student-api.herokuapp.com/api/hotels/popular";
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [array, setArray] = useState([]);
