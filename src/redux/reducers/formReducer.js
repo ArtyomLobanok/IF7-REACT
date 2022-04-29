@@ -11,7 +11,7 @@ import {
     DECREMENT_ROOMS,
 } from "../types";
 
-const initialState = {search: '', dateFrom: Date.now(), dateTo: Date.now(), adults: 1, children: [], rooms: 1}
+const initialState = {search: '', dateFrom: null, dateTo: null, adults: 1, children: [], rooms: 1}
 
 const formReducer = (state = initialState, action) => {
     switch (action.type) {

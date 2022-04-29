@@ -1,7 +1,6 @@
 import React from 'react';
 import './HomesGuestsLoves.css';
 import DrawHotel from "../../components/HomesGuestsLovesSlider/HomesGuestsLovesSlider";
-import '../../components/Contaiter/Container.css'
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
 
 function HomesGuestsLoves() {

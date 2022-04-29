@@ -16,6 +16,28 @@
     border: 0.1875rem solid #F5BD41;
     margin: -0.1875rem 0;
 }
+.second__input .label__wrapper {
+    position: absolute;
+    width: 100%;
+}
+
+.second__input .label__wrapper label{
+    z-index: 1000;
+    position:absolute;
+    font-size: 18px;
+    top:21px;
+    left:24px;
+    color: #383838;
+    transition:.5s;
+    pointer-events:none;
+}
+
+.second__input .label__wrapper label.active {
+    transform: translateY(-56px);
+    transition:.5s;
+    color: #FFFFFF;
+    border: none;
+}
 
 .second__input {
     display: flex;

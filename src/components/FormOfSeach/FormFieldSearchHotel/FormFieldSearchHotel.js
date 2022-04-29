@@ -11,7 +11,6 @@ const FirstForm = () => {
     );
 
     const activateField = (e) => {
-        console.log();
         setValues({
             ...values,
             [`${e.target.name}Active`]: true
