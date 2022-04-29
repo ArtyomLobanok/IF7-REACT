@@ -21,7 +21,7 @@ const Login = () => {
                 }));
                 navigate('/');
             })
-            .catch(() => alert('Attantion', Error))
+            .catch(console.error)
     }
 
     return (

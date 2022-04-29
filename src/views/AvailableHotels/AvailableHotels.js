@@ -76,11 +76,13 @@ const AvailableHotels = () => {
                         <div className='section__header'>
                             <TextOfHeaders text='Available hotels'/>
                         </div>
-                        <Slider {...settings}>
-                            {hotelCards.map(hotelCard => (
-                                <HotelCard key={hotelCard.id} card={hotelCard}/>
-                            ))}
-                        </Slider>
+                        <div className="wrapperSlider">
+                            <Slider {...settings}>
+                                {hotelCards.map(hotelCard => (
+                                    <HotelCard key={hotelCard.id} card={hotelCard}/>
+                                ))}
+                            </Slider>
+                        </div>
                     </div>
                 </section>
             }

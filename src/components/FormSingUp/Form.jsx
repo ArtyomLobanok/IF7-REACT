@@ -4,30 +4,33 @@ import "./Form..css"
 const Form = ({title, handleClick}) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
     return (
-        <div className="signIn">
+        <form onSubmit={handleSubmit} className="signIn">
             <label>
                 Email address
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
             </label>
-            <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
             <label>
                 Password
+                <input
+                    type="password"
+                    value={pass}
+                    onChange={(e) => setPass(e.target.value)}
+                />
             </label>
-            <input
-                type="password"
-                value={pass}
-                onChange={(e) => setPass(e.target.value)}
-            />
             <button
                 onClick={() => handleClick(email, pass)}
             >
                 {title}
             </button>
-        </div>
+        </form>
     )
 }
 
