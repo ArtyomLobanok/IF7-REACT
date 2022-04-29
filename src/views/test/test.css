@@ -1,0 +1,37 @@
+.test {
+    padding: 120px 0;
+    margin: 0 auto;
+}
+
+input {
+    padding: 10px 0;
+    box-sizing:border-box;
+    box-shadow:none;
+    outline:none;
+    border:none;
+    border-bottom: 2px solid #999;
+    width:100%;
+}
+
+.field-group {
+    margin:100px;
+    position:relative;
+}
+
+label  {
+    position:absolute;
+    top:10px;
+    left:0;
+    color: #999;
+    transition:.5s;
+    pointer-events:none;
+
+}
+
+label.active {
+    transform: translateY(-25px);
+    transition:.5s;
+    color: crimson;
+    font-weight:bold;
+    border: none;
+}

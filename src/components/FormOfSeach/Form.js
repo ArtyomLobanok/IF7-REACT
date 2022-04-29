@@ -16,12 +16,9 @@ function Form() {
 
     const params = `search=${search}&dateFrom=${dateFrom}&dateTo=${dateTo}&adults=${adults}&children=${children.toString()}&rooms=${rooms}`
 
-    console.log(params)
-
     const handleChange = (e) => {
         e.preventDefault()
         dispatch(hotelsLoad(params));
-        console.log(params)
     }
 
     return (

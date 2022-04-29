@@ -6,7 +6,6 @@ import AvailableHotels from "../AvailableHotels/AvailableHotels";
 import Footer from "../FooterApp/Footer";
 import useAuth from "../../../src/hooks/use-auth"
 
-
 function App() {
     const {isAuth} = useAuth();
     return isAuth ? (
