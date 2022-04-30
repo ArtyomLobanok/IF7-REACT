@@ -71,7 +71,7 @@ const AvailableHotels = () => {
         <>
             {
                 hotelCards.length > 0 &&
-                <section className='section__overviews'>
+                <section className='section__overviews' id='AvailableHotels'>
                     <div className="container">
                         <div className='section__header'>
                             <TextOfHeaders text='Available hotels'/>

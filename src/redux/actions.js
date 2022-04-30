@@ -10,7 +10,6 @@ import {
     DATE_START,
     DATE_END,
     SET_CHILD_AGE,
-
 } from "./types";
 
 export const incrementAdults = () => {

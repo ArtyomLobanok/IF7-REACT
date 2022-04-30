@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './FormFieldDate.css'
@@ -39,24 +39,24 @@ const MyDataPicker = () => {
             <div className="label__wrapper">
                 <label className={isActive ? "active" : ""}>Check-in — Check-out</label>
             </div>
-                <DatePicker
-                    onFocus={handleFocus}
-                    onBlur={disableFocus}
-                    onChangeRaw={onChangeRaw}
-                    name="datepicker"
-                    Label="Timeless"
-                    className="form__item"
-                    selected={form.dateFrom}
-                    minDate={new Date()}
-                    onChange={onChange}
-                    unf
-                    startDate={form.dateFrom}
-                    endDate={form.dateTo}
-                    selectsRange
-                    monthsShown={2}
-                    dateFormat='E, MMM d'
-                    autoComplete='off'
-                />
+            <DatePicker
+                onFocus={handleFocus}
+                onBlur={disableFocus}
+                onChangeRaw={onChangeRaw}
+                name="datepicker"
+                Label="Timeless"
+                className="form__item"
+                selected={form.dateFrom}
+                minDate={new Date()}
+                onChange={onChange}
+                unf
+                startDate={form.dateFrom}
+                endDate={form.dateTo}
+                selectsRange
+                monthsShown={2}
+                dateFormat='E, MMM d'
+                autoComplete='off'
+            />
         </div>
     );
 };

@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { combineReducers } from "redux";
+import {configureStore} from '@reduxjs/toolkit'
+import {combineReducers} from "redux";
 import thunk from "redux-thunk";
-import { persistStore, persistReducer } from 'redux-persist'
+import {persistStore, persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import userReducer from './slices/userSlice';
 import formReducer from "./reducers/formReducer";
@@ -12,12 +12,11 @@ const rootReducer = combineReducers({
     hotelsLoadReducer,
     formReducer
 });
-console.log(rootReducer)
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist:['user']
+    whitelist: ['user']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,4 +1,3 @@
-import React, {Component} from "react";
 import Slider from "react-slick";
 import './HomesGuestsLovesSlider.css'
 import HotelCard from "../HotelCard/HotelCard";

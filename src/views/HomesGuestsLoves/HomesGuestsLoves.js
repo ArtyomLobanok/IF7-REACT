@@ -10,10 +10,10 @@ function HomesGuestsLoves() {
                 <div className='section__header'>
                     <TextOfHeaders text='Homes guests loves'/>
                 </div>
-                    <DrawHotel/>
+                <DrawHotel/>
             </div>
         </section>
-);
+    );
 }
 
 export default HomesGuestsLoves;
