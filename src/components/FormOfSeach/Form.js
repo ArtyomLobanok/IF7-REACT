@@ -6,8 +6,6 @@ import FormFieldThird from "./FormFieldWhoAreGoing/FormFieldWhoAreGoing";
 import {useDispatch, useSelector} from "react-redux";
 import {hotelsLoad} from "../../redux/actions";
 
-
-
 function Form() {
     const hotelArray = useSelector(state => state.hotelsLoadReducer.hotelData)
     const dispatch = useDispatch()
@@ -20,7 +18,7 @@ function Form() {
         ()=> {
             if (hotelArray.length !== 0){
                 window.scrollTo({
-                    top: 1000,
+                    top: 1600,
                     behavior: "smooth"
                 });
             }

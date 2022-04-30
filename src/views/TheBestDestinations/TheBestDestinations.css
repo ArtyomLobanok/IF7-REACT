@@ -1,3 +1,45 @@
-.destinationsButtonsWrapper {
+.destinationsDataCollapse {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    color: #3077C6;
+    font-size: 24px;
+    padding: 0 -16px;
+}
+
+.destinations__tabs {
+    display: flex;
+    max-width: 622px;
+    border-radius: 0.5rem;
+    background-color: #F3F3F4;
     margin-bottom: 65px;
+}
+
+.destinations__tabs .tabs__category {
+    border: none;
+    border-radius: 0.5rem;
+    display: block;
+    padding: 17px 53px;
+    font-size: 1.5rem;
+    color: #383838;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+}
+
+.destinations__tabs .tabs__category:last-child {
+    width: 100%;
+    padding: 17px 25px;
+}
+
+.destinations__tabs .tabs__category:hover {
+    color: #F5BD41;
+    background-color: #3077C6;
+    border-radius: 0.5rem;
+}
+
+.destinations__tabs .tabs-triggers__item--active {
+    color: #FFFFFF;
+    background-color: #3077C6;
+    border-radius: 0.5rem;
 }
