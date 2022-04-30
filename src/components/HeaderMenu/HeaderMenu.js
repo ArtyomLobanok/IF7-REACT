@@ -88,5 +88,4 @@ const HeaderMenu = ({propsStyleHeader, propsStyleLogo, propsStyleAccount}) => {
             </>
         )
 }
-
 export default HeaderMenu;
