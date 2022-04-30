@@ -7,31 +7,29 @@ import {useDispatch, useSelector} from "react-redux";
 import {hotelsLoad} from "../../redux/actions";
 
 function Form() {
-    const hotelArray = useSelector(state => state.hotelsLoadReducer.hotelData)
     const dispatch = useDispatch()
     const {search, dateFrom, dateTo, adults, children, rooms} = useSelector(state => {
         const {formReducer} = state;
         return formReducer;
     });
-    console.log(hotelArray)
-    useEffect(
-        ()=> {
-            if (hotelArray.length !== 0){
-                window.scrollTo({
-                    top: 1000,
-                    behavior: "smooth"
-                });
-            }
-        },[hotelArray]
-    )
-
     const params = `search=${search}&dateFrom=${dateFrom}&dateTo=${dateTo}&adults=${adults}&children=${children.toString()}&rooms=${rooms}`
-    console.log(params)
+
     const handleChange = (e) => {
         e.preventDefault()
         dispatch(hotelsLoad(params));
     }
 
+    const hotelArray = useSelector(state => state.hotelsLoadReducer.hotelData)
+    useEffect(
+        ()=> {
+            if (hotelArray.length !== 0){
+                window.scrollTo({
+                    top: 900,
+                    behavior: "smooth"
+                });
+            }
+        },[hotelArray]
+    )
     return (<>
             <div className="intro__content">
                 <form className="intro__form" id="mainForm">
@@ -44,5 +42,4 @@ function Form() {
         </>
     );
 }
-
 export default Form;

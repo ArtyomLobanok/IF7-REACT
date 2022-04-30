@@ -1,40 +1,34 @@
 .hotelPage {
     background: #EAF0F9;
+    padding: 120px 0;
 }
 
-.headerHotelPage {
+.hotelPage__header {
     background: #10367C;
 }
 
-.section__header {
-    width: 100%;
-    margin: 120px auto 104px;
-    text-align: center;
-}
-
-.hotelPageWrapper {
+.hotelPage__wrapper {
     display: flex;
-    margin-bottom: 120px;
 }
 
-.hotelPageImg {
+.hotelPage__img {
+    display: block;
     margin-right: 16px;
 }
-.hotelPageImg > img {
+.hotelPage__img > img {
     width: 450px;
     height: 450px;
-    object-fit: contain;
 }
 
-.hotelPageInfo {
+.hotelPage__Info {
     width: 100%;
 }
-.hotelPageText {
+.hotelPage__Text {
     font-size: 18px;
     color: #383838;
 }
 
-.hotelPageText > a {
+.hotelPage__Text > a {
     font-size: 20px;
     color: #3077C6;
 }

@@ -3,13 +3,13 @@ import HeaderMenu from "../../components/HeaderMenu/HeaderMenu"
 import Footer from "../FooterApp/Footer";
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
 import HotelPageFetch from "../../components/HotelPageFetch/HotelPageFetch"
-
+import React from "react";
 
 const HotelPage = () => {
     const {data, handleClickLink} = HotelPageFetch()
     return (
-        <section className="hotelPage">
-            <div className="headerHotelPage">
+        <>
+            <div className="hotelPage__header">
                 <div className="container">
                     <HeaderMenu
                         propsStyleHeader={{
@@ -21,20 +21,21 @@ const HotelPage = () => {
                     />
                 </div>
             </div>
-            <div className="container">
-                <div className="section__header">
-                    <TextOfHeaders text={data.name}/>
-                </div>
-                <div className="hotelPageWrapper">
-                    <div className='hotelPageImg'>
-                        <img src={data.imageUrl} alt={`hotel ${data.name}`}/>
+            <section className="hotelPage">
+                <div className="container">
+                    <div className="section__header">
+                        <TextOfHeaders text={data.name}/>
                     </div>
-                    <div className='hotelPageInfo'>
-                        <span className="hotelPageText">
+                    <div className="hotelPage__wrapper">
+                        <div className='hotelPage__img'>
+                            <img src={data.imageUrl} alt={`hotel ${data.name}`}/>
+                        </div>
+                        <div className='hotelPage__Info'>
+                        <span className="hotelPage__Text">
                             We are glad to welcome you!
                             <br/>
-                            This hotel is located in the country <a href="/#"
-                                                                    onClick={handleClickLink}>{data.country}</a> in the
+                            This hotel is located in the country
+                            <a href="/#" onClick={handleClickLink}>{data.country}</a> in the
                             city
                             called <a href="/#" onClick={handleClickLink}>{data.city}</a>.
                             <br/>
@@ -47,11 +48,12 @@ const HotelPage = () => {
                             doloremque dolores ducimus eum facere facilis illum magni mollitia nemo nesciunt officia
                             quas, quia quis quod rem repellendus rerum tempore ut voluptatem voluptates.
                         </span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <Footer/>
-        </section>
+        </>
     )
 }
 
