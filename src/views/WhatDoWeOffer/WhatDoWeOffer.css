@@ -1,0 +1,27 @@
+.WhatDoWeOfferWrapper {
+    display: flex;
+    color: #383838;
+    font-size: 24px;
+}
+.WhatDoWeOfferWrapper div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+    margin-right: 16px;
+}
+.WhatDoWeOfferWrapper div:last-child{
+    margin-right: 0;
+}
+
+.WhatDoWeOfferWrapper svg {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    fill: #3077C6;
+}
+
+.WhatDoWeOfferWrapper p {
+    margin-top: 48px;
+}

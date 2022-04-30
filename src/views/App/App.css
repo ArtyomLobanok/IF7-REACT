@@ -76,3 +76,7 @@ body {
     flex-direction: column;
     background: #EAF0F9;
 }
+
+.section__noneColor {
+    padding-bottom: 120px;
+}

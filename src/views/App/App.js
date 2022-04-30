@@ -7,6 +7,7 @@ import Footer from "../FooterApp/Footer";
 import useAuth from "../../../src/hooks/use-auth"
 import React from "react";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
+import WhatDoWeOffer from "../WhatDoWeOffer/WhatDoWeOffer";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <>
             <ScrollToTop/>
             <Header/>
+            <WhatDoWeOffer/>
             <AvailableHotels/>
             <HomesGuestsLoves/>
             <Footer/>
