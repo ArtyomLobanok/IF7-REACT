@@ -18,7 +18,7 @@ function Form() {
         ()=> {
             if (hotelArray.length !== 0){
                 window.scrollTo({
-                    top: 1600,
+                    top: 1000,
                     behavior: "smooth"
                 });
             }

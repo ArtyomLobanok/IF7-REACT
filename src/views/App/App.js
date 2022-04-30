@@ -17,8 +17,8 @@ function App() {
         <>
             <ScrollToTop/>
             <Header/>
-            <WhatDoWeOffer/>
             <AvailableHotels/>
+            <WhatDoWeOffer/>
             <HomesGuestsLoves/>
             <TheBestDestinations/>
             <Footer/>
