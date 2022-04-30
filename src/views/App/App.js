@@ -8,6 +8,7 @@ import useAuth from "../../../src/hooks/use-auth"
 import React from "react";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import WhatDoWeOffer from "../WhatDoWeOffer/WhatDoWeOffer";
+import TheBestDestinations from "../TheBestDestinations/TheBestDestinations";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <WhatDoWeOffer/>
             <AvailableHotels/>
             <HomesGuestsLoves/>
+            <TheBestDestinations/>
             <Footer/>
         </>
     )
