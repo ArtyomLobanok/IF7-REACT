@@ -1,4 +1,4 @@
-export const dataRegions = [
+export const firstPieceOfDataRegions = [
     {
         id: '25ccbedb-e6ee-4336-be56-3fc5e1125cae',
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332313/Regions/Maldives_q8xfdz.png',
@@ -19,6 +19,8 @@ export const dataRegions = [
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332313/Regions/Island_w3xvqo.png',
         subtitle: 'Island',
     },
+];
+export const secondPieceOfDataRegions = [
     {
         id: '05a263d7-15ba-484d-8590-f87c84d6ff9d',
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332313/Regions/Japan_hnhc6w.png',
@@ -39,9 +41,8 @@ export const dataRegions = [
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332313/Regions/Russia_krbz0s.png',
         subtitle: 'Russia',
     },
-];
-
-export const dataCities = [
+]
+export const firstPieceOfDataCities = [
     {
         id: '92dfa32e-8eaf-40ee-8bcb-140c492f2bd4',
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332260/Cities/BerlinGermany_wbbfft.png',
@@ -62,6 +63,8 @@ export const dataCities = [
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332260/Cities/LondonUnitedKingdom_em4kgi.png',
         subtitle: 'London, United Kingdom',
     },
+];
+export const secondPieceOfDataCities = [
     {
         id: '6e62ecdd-ca7b-4765-a005-52d12af3b0b6',
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332260/Cities/BarcelonaSpain_skxkap.png',
@@ -82,9 +85,8 @@ export const dataCities = [
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332260/Cities/AmsterdamNetherlands_pbduwt.png',
         subtitle: 'Amsterdam, Netherlands',
     },
-];
-
-export const dataPlacesOfInterest = [
+]
+export const firstPieceOfDataPlacesOfInterest = [
     {
         id: '535d5d99-1a94-4e6f-b180-7805150c4e27',
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332295/PlacesOfInterest/EdinburghCastle_frzqwb.png',
@@ -105,6 +107,8 @@ export const dataPlacesOfInterest = [
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332295/PlacesOfInterest/Colosseum_xphcgb.png',
         subtitle: 'Colosseum, Roma, Italy',
     },
+];
+export const secondPieceOfDataPlacesOfInterest = [
     {
         id: '640bd9b7-fc8c-425f-b05a-dac1a17722e2',
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332295/PlacesOfInterest/Matterhorn_cuebsz.png',
@@ -125,8 +129,7 @@ export const dataPlacesOfInterest = [
         imageUrl: 'https://res.cloudinary.com/hejlenoctb91/image/upload/v1651332295/PlacesOfInterest/Cabo_jcogkw.png',
         subtitle: 'Cabo da roca, Sintra, Portugal',
     },
-];
-
+]
 
 
 

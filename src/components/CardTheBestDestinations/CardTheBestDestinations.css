@@ -4,6 +4,16 @@
     width: 24%;
     margin-right: 16px;
     margin-bottom: 48px;
+    animation: fade 2s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.01;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .destinationsItem:nth-child(4),
@@ -41,7 +51,7 @@
     display: block;
     width: 100%;
     height: auto;
-    transition: opacity 0.1s linear;
+    transition: opacity 0.3s linear;
     object-fit: contain;
 }
 
@@ -66,11 +76,12 @@
     color: #3077C6;
     font-weight: 400;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .destinations__button button:hover {
     color: #F5BD41;
     border: 0.0625rem solid #3077C6;
     background-color: #3077C6;
-    transition: opacity 0.1s linear;
+    transition: opacity 0.6s linear;
 }

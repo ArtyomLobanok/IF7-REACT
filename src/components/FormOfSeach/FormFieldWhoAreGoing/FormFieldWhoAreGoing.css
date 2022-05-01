@@ -27,6 +27,16 @@
     padding: 22px 22px 0;
     border-radius: 8px;
     width: 259px;
+    animation: fade 1s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .labelChildren {

@@ -42,7 +42,7 @@ const HeaderMenu = ({propsStyleHeader, propsStyleLogo, propsStyleAccount}) => {
                                 </a>
                                 {
                                 isDropdown && (
-                                <button className="header__singOutBtn" onClick={() => dispatch(removeUser({}))}>
+                                <button className='header__singOutBtn' onClick={() => dispatch(removeUser({}))}>
                                     <svg fill={"#333333"} className="header__singOutAcc">
                                         <use href="#singOut"/>
                                     </svg>
