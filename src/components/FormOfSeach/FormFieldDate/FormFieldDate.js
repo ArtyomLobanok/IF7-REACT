@@ -21,7 +21,7 @@ const MyDataPicker = () => {
         setIsActive(true);
     };
 
-    const disableField = (e) => {
+    const disableField = () => {
         setIsActive(false);
     };
 

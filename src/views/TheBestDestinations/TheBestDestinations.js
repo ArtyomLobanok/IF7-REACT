@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import { useSelector} from "react-redux";
 import "./TheBestDestinations.css"
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
 import CardTheBestDestinations from '../../components/CardTheBestDestinations/CardTheBestDestinations'
@@ -17,18 +18,29 @@ const TheBestDestinationsState = () => {
     const handleClickOpen = () => {
         setIsOpen(!isOpen)
     }
-
+    const searchText = useSelector(state => state.formReducer.search)
+    console.log(searchText)
+    useEffect(
+        () => {
+            if (searchText.length !== 0 && (window.scrollY > 400)) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            }
+        }, [searchText]
+    );
     return {
         button,
         setButton,
         isOpen,
         setIsOpen,
-        handleClickOpen
+        handleClickOpen,
     }
 }
 
 const TheBestDestinations = () => {
-    const {button,setButton, isOpen, handleClickOpen} = TheBestDestinationsState()
+    const {button, setButton, isOpen, handleClickOpen} = TheBestDestinationsState()
     return (
         <section className='section__noneColor'>
             <div className='container'>
