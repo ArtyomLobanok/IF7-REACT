@@ -11,14 +11,24 @@ import {
     secondPieceOfDataPlacesOfInterest,
 } from "../../components/TheBestDestinationsData/TheBestDestinationsData"
 
-
-const TheBestDestinations = () => {
+const TheBestDestinationsState = () => {
     const [button, setButton] = useState('Regions');
     const [isOpen, setIsOpen] = useState(false);
     const handleClickOpen = () => {
         setIsOpen(!isOpen)
-        console.log('here>>')
     }
+
+    return {
+        button,
+        setButton,
+        isOpen,
+        setIsOpen,
+        handleClickOpen
+    }
+}
+
+const TheBestDestinations = () => {
+    const {button,setButton, isOpen, handleClickOpen} = TheBestDestinationsState()
     return (
         <section className='section__noneColor'>
             <div className='container'>
@@ -39,7 +49,6 @@ const TheBestDestinations = () => {
                         Places of interest
                     </button>
                 </div>
-
                 <div className='destinationsDataCollapse'>
                     {
                         button === 'Regions' && firstPieceOfDataRegions.map

@@ -29,7 +29,7 @@ function Form() {
                 });
             }
         },[hotelArray]
-    )
+    );
     return (<>
             <div className="intro__content">
                 <form className="intro__form" id="mainForm">

@@ -1,4 +1,5 @@
 import './CardTheBestDestinations.css';
+import React from "react";
 
 const destinationsCard = props => {
     const {imageUrl, subtitle} = props.card;
@@ -9,7 +10,7 @@ const destinationsCard = props => {
                 <img src={imageUrl} alt="Pictures"/>
             </div>
             <div className="destinations__button">
-                <button href="#" target="_blank">Book now</button>
+                <button>Book now</button>
             </div>
             </div>
             <p>{subtitle}</p>
