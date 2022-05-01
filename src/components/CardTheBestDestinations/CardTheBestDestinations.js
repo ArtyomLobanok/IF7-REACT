@@ -8,7 +8,6 @@ const DestinationsCard = (props) => {
     const dispatch = useDispatch()
 
     const handleClick = (e) =>{
-        console.log('here', e.target.value)
         dispatch(inputText(e.target.value))
     }
     return (

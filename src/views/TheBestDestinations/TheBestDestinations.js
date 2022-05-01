@@ -18,18 +18,6 @@ const TheBestDestinationsState = () => {
     const handleClickOpen = () => {
         setIsOpen(!isOpen)
     }
-    const searchText = useSelector(state => state.formReducer.search)
-    console.log(searchText)
-    useEffect(
-        () => {
-            if (searchText.length !== 0 && (window.scrollY > 400)) {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                });
-            }
-        }, [searchText]
-    );
     return {
         button,
         setButton,

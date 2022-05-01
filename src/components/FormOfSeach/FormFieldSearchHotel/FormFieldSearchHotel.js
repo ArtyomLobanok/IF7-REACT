@@ -32,12 +32,13 @@ const FirstForm = () => {
     const searchText = useSelector(state => state.formReducer.search);
     useEffect(
         () => {
-            const autoFocus = () => {
-                if (values.length !== 0) {
-                    setIsActive(true)
-                }
+            if (searchText.length !== 0 && (window.scrollY > 400)) {
+                setIsActive(true)
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
             };
-            autoFocus()
             setValues(searchText)
         }, [searchText]);
 
