@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react";
-import { useSelector} from "react-redux";
+import React, {useState} from "react";
 import "./TheBestDestinations.css"
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
 import CardTheBestDestinations from '../../components/CardTheBestDestinations/CardTheBestDestinations'
@@ -13,22 +12,50 @@ import {
 } from "../../components/TheBestDestinationsData/TheBestDestinationsData"
 
 const TheBestDestinationsState = () => {
-    const [button, setButton] = useState('Regions');
+    const [tab, setTab] = useState('Regions');
     const [isOpen, setIsOpen] = useState(false);
-    const handleClickOpen = () => {
+    const handleClickCollapse = () => {
         setIsOpen(!isOpen)
     }
+    const handleChangeFirstTab = () => {
+        if (isOpen === true) {
+            setIsOpen(false)
+        }
+        setTab(`Regions`)
+    }
+    const handleChangeSecondTab = () => {
+        if (isOpen === true) {
+            setIsOpen(false)
+        }
+        setTab(`Cities`)
+    }
+
+    const handleChangeThirdTab = () => {
+        if (isOpen === true) {
+            setIsOpen(false)
+        }
+        setTab(`Places`)
+    }
     return {
-        button,
-        setButton,
+        tab,
+        setTab,
         isOpen,
         setIsOpen,
-        handleClickOpen,
+        handleClickCollapse,
+        handleChangeFirstTab,
+        handleChangeSecondTab,
+        handleChangeThirdTab,
     }
 }
 
 const TheBestDestinations = () => {
-    const {button, setButton, isOpen, handleClickOpen} = TheBestDestinationsState()
+    const {
+        tab, setTab, isOpen,
+        handleClickCollapse,
+        handleChangeFirstTab,
+        handleChangeSecondTab,
+        handleChangeThirdTab,
+    } = TheBestDestinationsState()
     return (
         <section className='section__noneColor'>
             <div className='container'>
@@ -36,22 +63,22 @@ const TheBestDestinations = () => {
                     <TextOfHeaders text='The best destinations'/>
                 </div>
                 <div className="destinations__tabs">
-                    <button onClick={() => setButton(`Regions`)}
-                            className={button !== 'Regions' ? 'tabs__category' : "tabs__categoryActive"}>
+                    <button onClick={handleChangeFirstTab}
+                            className={tab !== 'Regions' ? 'tabs__category' : "tabs__categoryActive"}>
                         Regions
                     </button>
-                    <button onClick={() => setButton('Cities')}
-                            className={button !== 'Cities' ? 'tabs__category' : "tabs__categoryActive"}>
+                    <button onClick={handleChangeSecondTab}
+                            className={tab !== 'Cities' ? 'tabs__category' : "tabs__categoryActive"}>
                         Cities
                     </button>
-                    <button onClick={() => setButton('Places')}
-                            className={button !== 'Places' ? 'tabs__category' : "tabs__categoryActive"}>
+                    <button onClick={handleChangeThirdTab}
+                            className={tab !== 'Places' ? 'tabs__category' : "tabs__categoryActive"}>
                         Places of interest
                     </button>
                 </div>
                 <div className='destinationsDataCollapse'>
                     {
-                        button === 'Regions' && firstPieceOfDataRegions.map
+                        tab === 'Regions' && firstPieceOfDataRegions.map
                         (
                             destinationsCard =>
                                 (
@@ -60,7 +87,7 @@ const TheBestDestinations = () => {
                         )
                     }
                     {
-                        button === 'Cities' && firstPieceOfDataCities.map
+                        tab === 'Cities' && firstPieceOfDataCities.map
                         (
                             destinationsCard =>
                                 (
@@ -69,7 +96,7 @@ const TheBestDestinations = () => {
                         )
                     }
                     {
-                        button === 'Places' && firstPieceOfDataPlacesOfInterest.map
+                        tab === 'Places' && firstPieceOfDataPlacesOfInterest.map
                         (
                             destinationsCard =>
                                 (
@@ -82,7 +109,7 @@ const TheBestDestinations = () => {
                     isOpen && (
                         <div className='destinationsDataCollapse'>
                             {
-                                button === 'Regions' && secondPieceOfDataRegions.map
+                                tab === 'Regions' && secondPieceOfDataRegions.map
                                 (
                                     destinationsCard =>
                                         (
@@ -91,7 +118,7 @@ const TheBestDestinations = () => {
                                 )
                             }
                             {
-                                button === 'Cities' && secondPieceOfDataCities.map
+                                tab === 'Cities' && secondPieceOfDataCities.map
                                 (
                                     destinationsCard =>
                                         (
@@ -101,7 +128,7 @@ const TheBestDestinations = () => {
                             }
 
                             {
-                                button === 'Places' && secondPieceOfDataPlacesOfInterest.map
+                                tab === 'Places' && secondPieceOfDataPlacesOfInterest.map
                                 (
                                     destinationsCard =>
                                         (
@@ -112,7 +139,7 @@ const TheBestDestinations = () => {
                         </div>
                     )
                 }
-                <button onClick={handleClickOpen}
+                <button onClick={handleClickCollapse}
                         className={isOpen === false ? "destinationsArrowBottom" : 'destinationsArrowTop'}/>
             </div>
         </section>
