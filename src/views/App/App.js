@@ -9,6 +9,8 @@ import React from "react";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import WhatDoWeOffer from "../WhatDoWeOffer/WhatDoWeOffer";
 import TheBestDestinations from "../TheBestDestinations/TheBestDestinations";
+import Promotion from "../Promotion/Promotion";
+import GuestsReviews from "../GuestsReviews/GuestsReviews";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
             <WhatDoWeOffer/>
             <HomesGuestsLoves/>
             <TheBestDestinations/>
+            <Promotion/>
+            <GuestsReviews/>
             <Footer/>
         </>
     )

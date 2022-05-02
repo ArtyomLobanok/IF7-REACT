@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./TheBestDestinations.css"
 import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
-import CardTheBestDestinations from '../../components/CardTheBestDestinations/CardTheBestDestinations'
+import CardTheBestDestinations from '../../components/TheBestDestinationsCard/CardTheBestDestinations'
 import {
     firstPieceOfDataRegions,
     secondPieceOfDataRegions,
@@ -38,9 +38,7 @@ const TheBestDestinationsState = () => {
     }
     return {
         tab,
-        setTab,
         isOpen,
-        setIsOpen,
         handleClickCollapse,
         handleChangeFirstTab,
         handleChangeSecondTab,
@@ -50,7 +48,7 @@ const TheBestDestinationsState = () => {
 
 const TheBestDestinations = () => {
     const {
-        tab, setTab, isOpen,
+        tab, isOpen,
         handleClickCollapse,
         handleChangeFirstTab,
         handleChangeSecondTab,

@@ -1,0 +1,94 @@
+.promotion {
+    background: #EAF0F9;
+}
+
+.promotionWrapper {
+    display: flex;
+}
+
+.promotionBtnWrapper {
+    display: flex;
+    justify-content: right;
+    margin: 24px 24px 0 0;
+}
+
+.promotionClose {
+    overflow: hidden;
+    position: relative;
+    border: none;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: transparent;
+    color: #BFBFBF;
+    font: inherit;
+    text-indent: 100%;
+    cursor: pointer;
+}
+
+.promotionClose:focus {
+    outline: solid 0 transparent;
+    box-shadow: 0 0 0 2px #BFBFBF
+}
+
+.promotionClose:hover {
+    background: rgba(29, 161, 142, .1)
+}
+
+.promotionClose:before,
+.promotionClose:after {
+    position: absolute;
+    top: 15%;
+    left: calc(50% - .0625em);
+    width: .125em;
+    height: 70%;
+    border-radius: .125em;
+    transform: rotate(45deg);
+    background: currentcolor;
+    content: ''
+}
+
+.promotionClose:after {
+    transform: rotate(-45deg);
+}
+
+.promotionIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 50%;
+    margin: 0 24px 57px;
+}
+.promotionIcon svg {
+    top: 6px;
+    position: relative;
+    width: 58px;
+    height: 57px;
+    margin: 14px;
+    fill: #3077C6;
+}
+
+.promotionContent p{
+    font-size: 24px;
+    font-weight: 500;
+    color: #383838;
+    margin-bottom: 21px;
+}
+
+.promotionContent button{
+    color: #3077C6;
+    font-size: 18px;
+    padding: 12px 32px;
+    border-radius: 8px;
+    border: 1px solid #3077C6;
+    background: #ffffff;
+    text-decoration: none;
+}
+.promotionContent button:hover {
+    color: #F5BD41;
+    background-color: #3077C6;
+    -webkit-transition: opacity 0.1s linear;
+    transition: opacity 0.1s linear;
+}
