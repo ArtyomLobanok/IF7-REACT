@@ -4,8 +4,12 @@ const Dropdown = () => {
     const handleClickDropdown = () => {
         setDropdown(!isDropdown)
     }
+    const handleClickAway = () => {
+        setDropdown(false)
+    }
     return (
         {
+            handleClickAway,
             isDropdown,
             handleClickDropdown,
         }

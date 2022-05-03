@@ -41,7 +41,7 @@
     font-size: 20px;
     color: #333333;
     cursor: pointer;
-    transform: translateY(3em);
+    transform: translateY(2em);
     animation: fade 1s;
 }
 
@@ -50,19 +50,15 @@
         opacity: 1;
     }
     100% {
-        opacity: 0;
+        opacity: 0.5;
     }
 }
 
 .navigation {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     font-size: 1.5rem;
 }
 .navigation .nav__links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: 1.5rem;
 }
@@ -73,15 +69,8 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     position: relative;
     margin-right: 1.5rem;
@@ -145,40 +134,7 @@
     max-width: 2.5rem;
     max-height: 2.5rem;
 }
-.navigation .nav__toggle {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: none;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    border: 0;
-    background: transparent;
-}
-.navigation .nav__toggle:hover {
-    cursor: pointer;
-}
-.navigation .nav__toggle:hover span:nth-child(1) {
-    -webkit-transform: translate(0.25rem, -0.0625rem) rotate(45deg);
-    transform: translate(0.25rem, -0.0625rem) rotate(45deg);
-    -webkit-transform-origin: left top;
-    transform-origin: left top;
-}
-.navigation .nav__toggle:hover span:nth-child(2) {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-}
-.navigation .nav__toggle span:nth-child(3) {
-    -webkit-transform: translate(-0.1875rem, -1rem) rotate(-45deg);
-    transform: translate(-0.1875rem, -1rem) rotate(-45deg);
-    -webkit-transform-origin: right bottom;
-    transform-origin: right bottom;
-}
 
+.navigation .nav__icons .logoutWrapper a{
+    margin-right: 0;
+}
