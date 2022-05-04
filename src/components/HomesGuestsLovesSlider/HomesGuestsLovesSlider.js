@@ -5,6 +5,7 @@ import useFeatch from "../../hooks/useFetch"
 import nextArrow from '../../assets/Img/nextArrow.png'
 import prevArrow from '../../assets/Img/prevArrow.png'
 
+
 const SampleNextArrow = (props) => {
     const {className, onClick} = props;
     return (
@@ -29,7 +30,7 @@ const SamplePrevArrow = (props) => {
     );
 }
 
-const DrawHotel = () => {
+const HomesGuestsLovesSlider = () => {
     const { array } = useFeatch();
     const settings = {
         dots: false,
@@ -77,4 +78,4 @@ const DrawHotel = () => {
     );
 }
 
-export default DrawHotel;
+export default HomesGuestsLovesSlider;

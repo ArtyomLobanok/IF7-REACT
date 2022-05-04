@@ -7,14 +7,6 @@
     padding: 0 -16px;
 }
 
-.destinations__tabs {
-    display: flex;
-    max-width: 622px;
-    border-radius: 0.5rem;
-    background-color: #F3F3F4;
-    margin-bottom: 65px;
-}
-
 .tabs__category {
     display: block;
     padding: 17px 53px;

@@ -1,18 +1,15 @@
 import React from 'react';
-import './HomesGuestsLoves.css';
-import DrawHotel from "../../components/HomesGuestsLovesSlider/HomesGuestsLovesSlider";
-import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
+import HomesGuestsLovesSlider from "../../components/HomesGuestsLovesSlider/HomesGuestsLovesSlider";
+import {Section, Container, HeaderSection} from "../../components/Styled-components/Global"
 
 function HomesGuestsLoves() {
     return (
-        <section className='section__overviews'>
-            <div className="container">
-                <div className='section__header'>
-                    <TextOfHeaders text='Homes guests loves'/>
-                </div>
-                <DrawHotel/>
-            </div>
-        </section>
+        <Section addColor>
+            <Container>
+                <HeaderSection>Homes guests loves</HeaderSection>
+                <HomesGuestsLovesSlider/>
+            </Container>
+        </Section>
     );
 }
 

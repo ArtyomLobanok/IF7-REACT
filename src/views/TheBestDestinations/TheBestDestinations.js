@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "./TheBestDestinations.css"
-import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
 import CardTheBestDestinations from '../../components/TheBestDestinationsCard/CardTheBestDestinations'
 import {
     firstPieceOfDataRegions,
@@ -10,6 +9,8 @@ import {
     firstPieceOfDataPlacesOfInterest,
     secondPieceOfDataPlacesOfInterest,
 } from "../../components/TheBestDestinationsData/TheBestDestinationsData"
+import {Section, Container, HeaderSection} from "../../components/Styled-components/Global"
+import {DestinationsTabs} from "../../components/Styled-components/TheBestDestinations"
 
 const TheBestDestinationsState = () => {
     const [tab, setTab] = useState('Regions');
@@ -55,12 +56,11 @@ const TheBestDestinations = () => {
         handleChangeThirdTab,
     } = TheBestDestinationsState()
     return (
-        <section className='section__noneColor'>
-            <div className='container'>
-                <div className='section__header'>
-                    <TextOfHeaders text='The best destinations'/>
-                </div>
-                <div className="destinations__tabs">
+        <Section>
+            <Container>
+                <HeaderSection>The best destinations</HeaderSection>
+
+                <DestinationsTabs>
                     <button onClick={handleChangeFirstTab}
                             className={tab !== 'Regions' ? 'tabs__category' : "tabs__categoryActive"}>
                         Regions
@@ -73,7 +73,8 @@ const TheBestDestinations = () => {
                             className={tab !== 'Places' ? 'tabs__category' : "tabs__categoryActive"}>
                         Places of interest
                     </button>
-                </div>
+                </DestinationsTabs>
+
                 <div className='destinationsDataCollapse'>
                     {
                         tab === 'Regions' && firstPieceOfDataRegions.map
@@ -139,8 +140,8 @@ const TheBestDestinations = () => {
                 }
                 <button onClick={handleClickCollapse}
                         className={isOpen === false ? "destinationsArrowBottom" : 'destinationsArrowTop'}/>
-            </div>
-        </section>
+            </Container>
+        </Section>
     )
 }
 export default TheBestDestinations;

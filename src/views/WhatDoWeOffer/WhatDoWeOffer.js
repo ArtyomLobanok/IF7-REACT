@@ -12,7 +12,7 @@ const OfferItem = styled.svg`
 
 const WhatDoWeOffer = () => {
     return (
-        <Section addColor>
+        <Section>
             <Container>
                 <HeaderSection>What do we offer</HeaderSection>
                 <Flex width='100%'>
