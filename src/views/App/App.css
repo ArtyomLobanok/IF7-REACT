@@ -2,7 +2,6 @@
 @import "slick-carousel/slick/slick-theme.css";
 @import url("/src/assets/fonts/Fonts.css");
 
-
 *, *::before, *::after {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -52,42 +51,4 @@ body {
     --image-height: 100%;
     --image-width: 100%;
     --columns__count: 12;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 79rem;
-    padding: 0 1rem;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.section__header {
-    width: 100%;
-    margin: 0 auto 104px;
-    text-align: center;
-}
-
-.section__overviews {
-    padding: 120px 0;
-    display: flex;
-    flex-direction: column;
-    background: #EAF0F9;
-    animation: fade 2s;
-}
-
-@keyframes fade {
-    0% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-.section__noneColor {
-    padding: 120px 0;
 }

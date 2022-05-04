@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import {Navigate} from "react-router-dom";
 import './App.css';
 import Header from '../HeaderApp/Header';
 import HomesGuestsLoves from "../HomesGuestsLoves/HomesGuestsLoves";
@@ -13,24 +13,25 @@ import Promotion from "../Promotion/Promotion";
 import GuestsReviews from "../GuestsReviews/GuestsReviews";
 
 
+
 function App() {
     const {isAuth} = useAuth();
     return isAuth ? (
-        <>
-            <ScrollToTop/>
-            <Header/>
-            <AvailableHotels/>
-            <WhatDoWeOffer/>
-            <HomesGuestsLoves/>
-            <TheBestDestinations/>
-            <Promotion/>
-            <GuestsReviews/>
-            <Footer/>
-        </>
-    )
+            <>
+                <ScrollToTop/>
+                <Header/>
+                <AvailableHotels/>
+                <WhatDoWeOffer/>
+                <HomesGuestsLoves/>
+                <TheBestDestinations/>
+                <Promotion/>
+                <GuestsReviews/>
+                <Footer/>
+            </>
+        )
         : (
             <Navigate replace to="/login"/>
-    )
+        )
 }
 
 export default App;

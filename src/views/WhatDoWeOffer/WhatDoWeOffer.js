@@ -1,42 +1,48 @@
-import "./WhatDoWeOffer.css"
 import React from "react";
-import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
+import {Section, Container, HeaderSection, Flex, Title} from "../../components/Styled-components/Global"
+import styled from "styled-components";
+
+const OfferItem = styled.svg`
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    fill: #3077C6;
+    margin-bottom: 48px
+`
 
 const WhatDoWeOffer = () => {
     return (
-        <section className='section__noneColor'>
-            <div className='container'>
-                <div className='section__header'>
-                    <TextOfHeaders text='What do we offer'/>
-                </div>
-                <div className='WhatDoWeOfferWrapper'>
-                    <div>
-                        <svg>
+        <Section addColor>
+            <Container>
+                <HeaderSection>What do we offer</HeaderSection>
+                <Flex width='100%'>
+                    <Flex align='center' width='25%' direction='column'>
+                        <OfferItem>
                             <use href="#support"/>
-                        </svg>
-                        <p>Support 24/7</p>
-                    </div>
-                    <div>
-                        <svg>
+                        </OfferItem>
+                        <Title>Support 24/7</Title>
+                    </Flex>
+                    <Flex align='center' width='25%' direction='column'>
+                        <OfferItem>
                             <use href="#Communicate"/>
-                        </svg>
-                        <p>Communicate directly</p>
-                    </div>
-                    <div>
-                        <svg>
+                        </OfferItem>
+                        <Title>Communicate directly</Title>
+                    </Flex>
+                    <Flex align='center' width='25%' direction='column'>
+                        <OfferItem>
                             <use href="#Book"/>
-                        </svg>
-                        <p>Book online</p>
-                    </div>
-                    <div>
-                        <svg>
+                        </OfferItem>
+                        <Title>Book online</Title>
+                    </Flex>
+                    <Flex align='center' width='25%' direction='column'>
+                        <OfferItem>
                             <use href="#Reviews"/>
-                        </svg>
-                        <p>Real guest reviews</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        </OfferItem>
+                        <Title>Real guest reviews</Title>
+                    </Flex>
+                </Flex>
+            </Container>
+        </Section>
     )
 }
 
