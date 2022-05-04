@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./TheBestDestinations.css"
+
 import CardTheBestDestinations from '../../components/TheBestDestinationsCard/CardTheBestDestinations'
 import {
     firstPieceOfDataRegions,
@@ -9,8 +9,17 @@ import {
     firstPieceOfDataPlacesOfInterest,
     secondPieceOfDataPlacesOfInterest,
 } from "../../components/TheBestDestinationsData/TheBestDestinationsData"
-import {Section, Container, HeaderSection} from "../../components/Styled-components/Global"
-import {DestinationsTabs} from "../../components/Styled-components/TheBestDestinations"
+import {
+    Section,
+    Container,
+    HeaderSection,
+    TabsBtnAndSearchBtn
+} from "../../components/Styled-components/Global"
+import {
+    DestinationsArrowCollapse,
+    DestinationsCardsCollapse,
+    DestinationsTabs,
+} from "../../components/Styled-components/TheBestDestinations"
 
 const TheBestDestinationsState = () => {
     const [tab, setTab] = useState('Regions');
@@ -61,21 +70,18 @@ const TheBestDestinations = () => {
                 <HeaderSection>The best destinations</HeaderSection>
 
                 <DestinationsTabs>
-                    <button onClick={handleChangeFirstTab}
-                            className={tab !== 'Regions' ? 'tabs__category' : "tabs__categoryActive"}>
+                    <TabsBtnAndSearchBtn activate={tab === 'Regions'} width='30%' onClick={handleChangeFirstTab}>
                         Regions
-                    </button>
-                    <button onClick={handleChangeSecondTab}
-                            className={tab !== 'Cities' ? 'tabs__category' : "tabs__categoryActive"}>
+                    </TabsBtnAndSearchBtn>
+                    <TabsBtnAndSearchBtn activate={tab === 'Cities'} width='30%' onClick={handleChangeSecondTab}>
                         Cities
-                    </button>
-                    <button onClick={handleChangeThirdTab}
-                            className={tab !== 'Places' ? 'tabs__category' : "tabs__categoryActive"}>
+                    </TabsBtnAndSearchBtn>
+                    <TabsBtnAndSearchBtn activate={tab === 'Places'} width='40%' onClick={handleChangeThirdTab}>
                         Places of interest
-                    </button>
+                    </TabsBtnAndSearchBtn>
                 </DestinationsTabs>
 
-                <div className='destinationsDataCollapse'>
+                <DestinationsCardsCollapse>
                     {
                         tab === 'Regions' && firstPieceOfDataRegions.map
                         (
@@ -103,10 +109,10 @@ const TheBestDestinations = () => {
                                 )
                         )
                     }
-                </div>
+                </DestinationsCardsCollapse>
                 {
                     isOpen && (
-                        <div className='destinationsDataCollapse'>
+                        <DestinationsCardsCollapse>
                             {
                                 tab === 'Regions' && secondPieceOfDataRegions.map
                                 (
@@ -135,11 +141,10 @@ const TheBestDestinations = () => {
                                         )
                                 )
                             }
-                        </div>
+                        </DestinationsCardsCollapse>
                     )
                 }
-                <button onClick={handleClickCollapse}
-                        className={isOpen === false ? "destinationsArrowBottom" : 'destinationsArrowTop'}/>
+                <DestinationsArrowCollapse activate={isOpen === false} onClick={handleClickCollapse}/>
             </Container>
         </Section>
     )

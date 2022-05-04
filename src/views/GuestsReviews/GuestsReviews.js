@@ -1,11 +1,11 @@
-import "./GuestsReviews.css"
-import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
 import React from "react";
 import Slider from "react-slick";
 import GuestsReviewsData from "../../components/GuestsReviewsData/GuestsReviewsData"
 import nextArrow from "../../assets/Img/nextArrow.png";
 import prevArrow from "../../assets/Img/prevArrow.png";
 import GuestsReviewsCard from "../../components/GuestsReviewsCard/GuestsReviewsCard";
+import {Container, HeaderSection, Section} from "../../components/Styled-components/Global";
+import {GuestReviewsWrapperSlider} from "../../components/Styled-components/GuestsReviews"
 
 const GuestsReviews = () => {
     const SampleNextArrow = (props) => {
@@ -68,20 +68,18 @@ const GuestsReviews = () => {
     }
     return (
         <>
-            <section className='section__noneColor'>
-                <div className="container">
-                    <div className='section__header'>
-                        <TextOfHeaders text='Guests reviews'/>
-                    </div>
-                    <div className="wrapperSliderReviews" style={{margin:'-8px'}} >
+            <Section>
+                <Container>
+                    <HeaderSection>Guests reviews</HeaderSection>
+                    <GuestReviewsWrapperSlider >
                         <Slider {...settings} >
                             {GuestsReviewsData.map(reviewCard => (
                                 <GuestsReviewsCard key={reviewCard.id} card={reviewCard}/>
                             ))}
                         </Slider>
-                    </div>
-                </div>
-            </section>
+                    </GuestReviewsWrapperSlider>
+                </Container>
+            </Section>
         </>
     )
 }
