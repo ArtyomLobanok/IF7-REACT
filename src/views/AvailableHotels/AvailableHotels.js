@@ -9,7 +9,7 @@ function AvailableHotels() {
         <>
             {
                 hotelCards.length > 0 &&
-                <Section addColor>
+                <Section addColor='#EAF0F9'>
                     <Container>
                         <HeaderSection>Available hotels</HeaderSection>
                         <AvailableHotelsSlider/>

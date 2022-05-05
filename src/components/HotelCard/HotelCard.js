@@ -9,7 +9,7 @@ const hotelCard = props => {
                 <Flex margin='0 0 24px 0'>
                     <CardImg src={imageUrl} alt="Pictures"/>
                 </Flex>
-                <Title blue bottom>{name}</Title>
+                <Title blue margin='0 0 24px 0'>{name}</Title>
                 <SubTitle>{city}, {country}</SubTitle>
             </Flex>
         </StyledLink>

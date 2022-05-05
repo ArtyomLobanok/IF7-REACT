@@ -4,7 +4,7 @@ import {Section, Container, HeaderSection} from "../../components/Styled-compone
 
 function HomesGuestsLoves() {
     return (
-        <Section addColor>
+        <Section addColor='#EAF0F9'>
             <Container>
                 <HeaderSection>Homes guests loves</HeaderSection>
                 <HomesGuestsLovesSlider/>

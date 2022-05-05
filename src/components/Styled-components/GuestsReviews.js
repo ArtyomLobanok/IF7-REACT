@@ -37,17 +37,20 @@ export const GuestsReviewsCardHeader = styled.div`
   font-size: 18px;
   font-weight: 400;
   color: #FFFFFF;
-  :hover :last-child{
+
+  &:hover :last-child {
     opacity: 1;
     transition: opacity 0.3s linear;
   }
-  :first-child {
+
+  &:first-child {
     img {
       display: block;
       width: 100%;
     }
   }
-  :nth-child(2) {
+
+  p {
     width: 100%;
     padding: 1rem 0 1.125rem 1.5rem;
     position: absolute;
@@ -58,7 +61,42 @@ export const GuestsReviewsCardHeader = styled.div`
     opacity: 0;
     background-color: rgba(56, 56, 56, 0.7);
   }
+
   span {
     font-weight: 500;
   }
 `
+export const ReviewCounterWrapper = styled.div`
+  position: relative;
+
+  button {
+    padding: 4px 10px;
+    margin-bottom: 0.5rem;
+    border: 0.0625rem solid #10367C;
+    border-radius: 0.5rem;
+    background-color: #10367C;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      color: #F5BD41;
+      transition: opacity 0.1s linear;
+    }
+  }
+
+  p {
+    position: absolute;
+    left: -38px;
+    font-size: 14px;
+    color: #BFBFBF;
+  }
+`
+export const FlagReviewUser = styled.img`
+  max-width: 18px;
+  margin-right: 8px;
+`
+
+

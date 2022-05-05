@@ -36,7 +36,7 @@ export const Flex = (props) => {
 export const Section = styled.section`
   padding: 120px 0;
   display: flex;
-  background: ${props => props.addColor ? "#EAF0F9" : "#FFFFFF"};
+  background: ${props => props.addColor || "#FFFFFF"};
   animation: ${fadeEffect} 2s linear;
 `
 
@@ -53,7 +53,7 @@ export const Title = styled.p`
   font-size: ${props => props.little ? "18px" : "24px"};
   font-weight: ${props => props.bold ? "500" : "400"};
   color: ${props => props.blue ? "#3077C6" : "#383838"};
-  margin-bottom: ${props => props.bottom ? "24px" : "0"};
+  margin: ${props => props.margin || '0'};
 `
 
 export const SubTitle = styled.p`
@@ -113,6 +113,7 @@ export const Button = styled.button`
   font-weight: 400;
   cursor: pointer;
   text-align: center;
+
   &:hover {
     color: #F5BD41;
     background: #3077C6;
@@ -120,4 +121,10 @@ export const Button = styled.button`
   }
 }
 `
-
+export const AvatarUser = styled.svg`
+  display: block;
+  width: ${props => props.width || 'initial'};
+  height: ${props => props.height || 'initial'};
+  fill: ${props => props.fill || 'transparent'};
+  margin: ${props => props.margin || '0'};
+`

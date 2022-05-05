@@ -1,17 +1,39 @@
 import React from "react";
 import "./Footer.css"
-import FooterList from "../../components/FooterListColumb/FooterListColumb";
-
+import {Copyright, FooterList} from '../../components/Styled-components/Footer'
+import {Section, Container, Flex} from "../../components/Styled-components/Global";
 
 const Footer = () => {
     return (
         <>
-        <div className="footerSection">
-            <div className="container">
-                <FooterList/>
-                <div className="copyright">© 2020 Triphouse, Inc. All rights reserved</div>
-            </div>
-        </div>
+            <Section addColor="#10367C">
+                <Container>
+                    <Flex>
+                        <FooterList>
+                            <li>About</li>
+                            <li>How Triphouse works</li>
+                            <li>Careers</li>
+                            <li>Privacy</li>
+                            <li>Terms</li>
+                        </FooterList>
+                        <FooterList>
+                            <li>Property types</li>
+                            <li>Guest houses</li>
+                            <li>Hotels</li>
+                            <li>Apartments</li>
+                            <li>Villas</li>
+                            <li>Holiday homes</li>
+                            <li>Hostels</li>
+                        </FooterList>
+                        <FooterList>
+                            <li>Support</li>
+                            <li>Contact Customer Service</li>
+                            <li>FAQ</li>
+                        </FooterList>
+                    </Flex>
+                    <Copyright>© 2020 Triphouse, Inc. All rights reserved</Copyright>
+                </Container>
+            </Section>
         </>
     )
 };
