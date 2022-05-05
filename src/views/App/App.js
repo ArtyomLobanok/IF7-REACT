@@ -11,12 +11,14 @@ import WhatDoWeOffer from "../WhatDoWeOffer/WhatDoWeOffer";
 import TheBestDestinations from "../TheBestDestinations/TheBestDestinations";
 import Promotion from "../Promotion/Promotion";
 import GuestsReviews from "../GuestsReviews/GuestsReviews";
-
+import Svg from "../../assets/svg/Svg";
 function App() {
     const {isAuth} = useAuth();
     return isAuth ? (
             <>
+
                 <ScrollToTop/>
+                <Svg/>
                 <Header/>
                 <AvailableHotels/>
                 <WhatDoWeOffer/>

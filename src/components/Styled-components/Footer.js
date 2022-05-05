@@ -12,6 +12,7 @@ export const FooterList = styled.ul`
 
   li {
     margin-bottom: 24px;
+    cursor: pointer;
 
     &:first-child {
       font-weight: 500;
@@ -19,6 +20,10 @@ export const FooterList = styled.ul`
 
     &:last-child {
       margin-bottom: 0;
+    }
+    &:hover {
+      color: ${props => props.color || "#F5BD41"};
+      transition: 0.5s;
     }
   }
 

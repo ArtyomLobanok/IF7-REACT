@@ -135,7 +135,7 @@ export const Button = styled.button`
   }
 }
 `
-export const AvatarUser = styled.svg`
+export const StyledSvg = styled.svg`
   display: block;
   width: ${props => props.width || 'initial'};
   height: ${props => props.height || 'initial'};

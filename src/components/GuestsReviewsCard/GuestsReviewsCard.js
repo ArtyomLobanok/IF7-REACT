@@ -5,7 +5,7 @@ import {
     GuestsReviewsCardWrapper,
     ReviewCounterWrapper
 } from "../Styled-components/GuestsReviews";
-import {Flex, SubTitle, Title, AvatarUser} from "../Styled-components/Global";
+import {Flex, SubTitle, Title, StyledSvg} from "../Styled-components/Global";
 
 const GuestsReviewsCard = (props) => {
     const {imageUrl, title, city, country, cost, rating, reviews, user, userFrom, flag, post} = props.card;
@@ -30,9 +30,9 @@ const GuestsReviewsCard = (props) => {
                 </ReviewCounterWrapper>
             </Flex>
             <Flex margin="0 0 0 24px">
-                <AvatarUser width="3.3125rem" height="3.3125rem" fill="#BFBFBF" margin="0 16px 0 0">
+                <StyledSvg width="3.3125rem" height="3.3125rem" fill="#BFBFBF" margin="0 16px 0 0">
                     <use href="#account"></use>
-                </AvatarUser>
+                </StyledSvg>
                 <Flex justify="center" direction="column">
                     <Title little margin="0 0 8px 0">{user}</Title>
                     <Flex>
