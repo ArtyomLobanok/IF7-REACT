@@ -1,18 +1,19 @@
 import "./GuestsReviewsCard.css"
 import React from "react";
+import {GuestsReviewsCardHeader, GuestsReviewsCardWrapper} from "../Styled-components/GuestsReviews";
 
 const GuestsReviewsCard = (props) => {
     const {imageUrl, title, city, country, cost, rating, reviews, user, userFrom, flag, post} = props.card;
     return (
-        <div className="reviewItem">
-            <div className="reviewHeader">
-                <div className="reviewImgWrapper">
+        <GuestsReviewsCardWrapper>
+            <GuestsReviewsCardHeader>
+                <div>
                     <img src={imageUrl} alt={title}/>
                 </div>
-                <div className="reviewPriceWrapper">
-                    <p>{cost}</p>
+                <div>
+                    From{` `}<span>{cost}</span>
                 </div>
-            </div>
+            </GuestsReviewsCardHeader>
             <div className="reviewsContent">
                 <div className="reviewLocationWrapper">
                     <p>{title}</p>
@@ -37,7 +38,7 @@ const GuestsReviewsCard = (props) => {
                 </div>
             </div>
             <p className="review__text">{post}</p>
-        </div>
+        </GuestsReviewsCardWrapper>
     )
 }
 export default GuestsReviewsCard;

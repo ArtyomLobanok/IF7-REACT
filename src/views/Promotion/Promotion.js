@@ -3,11 +3,11 @@ import {useState} from "react";
 import {Button, Container, StyledLink, Flex} from "../../components/Styled-components/Global";
 import {
     PromotionCloseBtn,
-    PromotionCloseBtnWrapper,
     PromotionWrapperAnnouncement,
     PromotionWrapperContent,
     PromotionWrapperIcon
 } from "../../components/Styled-components/Promotion";
+
 
 const ClosePromotion = () => {
     const [isClose, setIsClose] = useState(true)
