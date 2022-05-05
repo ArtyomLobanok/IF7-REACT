@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FooterList = styled.ul`
   width: 33.333333%;
   margin-bottom: 64px;
+  font-size: 20px;
   color: ${props => props.color || "#FFFFFF"};
 
   &:last-child {
@@ -17,7 +18,7 @@ export const FooterList = styled.ul`
     }
 
     &:last-child {
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
   }
 

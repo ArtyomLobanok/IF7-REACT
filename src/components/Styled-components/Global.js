@@ -31,7 +31,7 @@ const fadeEffect = keyframes`
   to {
     opacity: 1;
   }
-`;
+`
 
 const StyledFlex = styled.div`
   position: ${props => props.position || 'initial'};

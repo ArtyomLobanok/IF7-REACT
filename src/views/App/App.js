@@ -12,8 +12,6 @@ import TheBestDestinations from "../TheBestDestinations/TheBestDestinations";
 import Promotion from "../Promotion/Promotion";
 import GuestsReviews from "../GuestsReviews/GuestsReviews";
 
-
-
 function App() {
     const {isAuth} = useAuth();
     return isAuth ? (
