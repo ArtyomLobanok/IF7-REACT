@@ -1,10 +1,10 @@
 import {useSelector} from "react-redux";
-import '../HomesGuestsLovesSlider/HomesGuestsLovesSlider.css'
 import nextArrow from "../../assets/Img/nextArrow.png";
 import prevArrow from "../../assets/Img/prevArrow.png";
 import Slider from "react-slick";
 import HotelCard from "../HotelCard/HotelCard";
 import React from "react";
+import {SliderWrapper} from "../Styled-components/Global";
 
 const AvailableHotelsSlider = () => {
     const hotelCards = useSelector(state => state.hotelsLoadReducer.hotelData)
@@ -68,13 +68,13 @@ const AvailableHotelsSlider = () => {
     }
     return (
 
-                <div>
+                <SliderWrapper>
                     <Slider {...settings}>
                         {hotelCards.map(hotelCard => (
                             <HotelCard key={hotelCard.id} card={hotelCard}/>
                         ))}
                     </Slider>
-                </div>
+                </SliderWrapper>
 
     )
 }

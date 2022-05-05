@@ -1,5 +1,4 @@
 import React from "react";
-import "./Footer.css"
 import {Copyright, FooterList} from '../../components/Styled-components/Footer'
 import {Section, Container, Flex} from "../../components/Styled-components/Global";
 

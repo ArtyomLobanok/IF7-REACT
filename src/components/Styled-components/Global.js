@@ -10,6 +10,20 @@ export const Container = styled.div`
   margin: 0 auto;
   overflow: hidden;
 `
+export const SliderWrapper = styled.div`
+  .slick-next {
+    transform: translate3d(-40px, -80px, 0);
+  }
+
+  .slick-prev:before, .slick-next:before  {
+    content: '' !important;
+  }
+
+  .slick-prev {
+    z-index: 1000;
+    transform: translate3d(7px, -80px, 0);
+  }
+`
 const fadeEffect = keyframes`
   from {
     opacity: 0.5;

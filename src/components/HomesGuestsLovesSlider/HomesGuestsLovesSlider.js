@@ -1,9 +1,9 @@
 import Slider from "react-slick";
-import './HomesGuestsLovesSlider.css'
 import HotelCard from "../HotelCard/HotelCard";
 import useFeatch from "../../hooks/useFetch"
 import nextArrow from '../../assets/Img/nextArrow.png'
 import prevArrow from '../../assets/Img/prevArrow.png'
+import {SliderWrapper} from "../Styled-components/Global";
 
 
 const SampleNextArrow = (props) => {
@@ -68,13 +68,13 @@ const HomesGuestsLovesSlider = () => {
         ]
     }
     return (
-        <div>
+        <SliderWrapper>
             <Slider {...settings}>
                 {array.map(hotelCard => (
                     <HotelCard key={hotelCard.id} card={hotelCard}/>
                 ))}
             </Slider>
-        </div>
+        </SliderWrapper>
     );
 }
 
