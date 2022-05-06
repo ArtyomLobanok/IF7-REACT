@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import "./Form..css"
+import {FormLogin} from "../Styled-components/Login&Registration";
 
 const Form = ({title, handleClick}) => {
     const [email, setEmail] = useState('');
@@ -8,7 +8,7 @@ const Form = ({title, handleClick}) => {
         event.preventDefault();
     }
     return (
-        <form onSubmit={handleSubmit} className="signIn">
+        <FormLogin onSubmit={handleSubmit}>
             <label>
                 Email address
                 <input
@@ -30,7 +30,7 @@ const Form = ({title, handleClick}) => {
             >
                 {title}
             </button>
-        </form>
+        </FormLogin>
     )
 }
 

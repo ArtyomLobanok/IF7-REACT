@@ -139,4 +139,5 @@ export const StyledSvg = styled.svg`
   height: ${props => props.height || 'initial'};
   fill: ${props => props.fill || 'transparent'};
   margin: ${props => props.margin || '0'};
+  cursor: ${props => props.cursor || 'initial'};
 `

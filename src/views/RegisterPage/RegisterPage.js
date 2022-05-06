@@ -1,24 +1,25 @@
 import React from "react";
-import "../LoginPage/LoginPage.css"
 import {Link} from "react-router-dom";
 import {SignUp} from "../../components/FormSingUp/SignUp";
 import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
+import {Container} from "../../components/Styled-components/Global"
+import {HeaderWrapper, LoginFrom} from "../../components/Styled-components/Login&Registration";
 
 const LoginPage = () => {
     return (
-        <section className="SignInSection">
-            <div className="container">
+        <HeaderWrapper>
+            <Container>
                 <HeaderMenu propsStyleAccount={{fill: "#F5BD41"}}/>
-                <div className="singInWindow">
-                    <h3 className="singInTitle">Register</h3>
+                <LoginFrom>
+                    <h2>Register</h2>
                     <SignUp/>
-                    <p className="additionallyOffer">
+                    <p>
                         Already have an account?
-                        <Link to="/login">Sign in</Link>
+                        <Link to="/login"> Sign in</Link>
                     </p>
-                </div>
-            </div>
-        </section>
+                </LoginFrom>
+            </Container>
+        </HeaderWrapper>
     )
 }
 export default LoginPage;

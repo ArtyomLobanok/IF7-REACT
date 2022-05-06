@@ -6,6 +6,8 @@ import Dropdown from "./Dropdown/Dropdown";
 import {ClickAwayListener} from "@mui/material";
 import {ButtonLogOut, Header, HeaderNavLink} from "../Styled-components/Header"
 import {Flex, StyledLink, StyledSvg} from "../Styled-components/Global";
+import Svg from "../../assets/svg/Svg";
+
 
 const HeaderMenu = () => {
     const dispatch = useDispatch();
@@ -13,6 +15,7 @@ const HeaderMenu = () => {
     const {isDropdown, handleClickDropdown, handleClickAway} = Dropdown();
     return (
         <Header>
+            <Svg/>
             <Flex align='center'>
                 <div>
                     <StyledLink to={`/`}>
@@ -31,7 +34,7 @@ const HeaderMenu = () => {
                     </HeaderNavLink>
                     <ClickAwayListener onClickAway={handleClickAway}>
                         <div>
-                            <StyledSvg width='40px' height='40px'
+                            <StyledSvg cursor='pointer' width='40px' height='40px'
                                        fill={isDropdown === true ? '#F5BD41' : '#FFFFFF'}
                                        onClick={isAuth && handleClickDropdown}>
                                 <use href="#account"/>
