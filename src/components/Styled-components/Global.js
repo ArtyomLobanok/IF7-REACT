@@ -87,31 +87,29 @@ export const StyledLink = styled(Link)`
 `;
 
 export const TabsBtnAndSearchBtn = styled.button`
-  background: ${props => props.activate ? "#3077C6" : "#F3F3F4"};
-  color: ${props => props.activate ? "#FFFFFF" : "#383838"};
-  font-weight: ${props => props.bold ? "500" : "400"};
-  padding: ${props => props.main ? '20px 57px' : '17px 0'};
+  background: ${props => props.active ? "#3077C6" : "#F3F3F4"};
+  color: ${props => props.active ? "#FFFFFF" : "#383838"};
+  font-weight: ${props => props.main ? "500" : "400"};
+  padding: ${props => props.main ? '18px 59px' : '17px 0'};
   width: ${props => props.width || 'initial'};
-  cursor: ${props => props.activate ? "initial" : "pointer"};
+ 
   display: block;
-  outline: none;
+  outline: 1px;
   border: none;
   border-radius: 0.5rem;
   font-size: 24px;
+  cursor: pointer;
 
   &:hover {
-    color: ${props => props.activate ? "#FFFFFF" : "#F5BD41"};
-    background: #3077C6;
+    outline: none;
+    color: ${props => props.color || "#F5BD41"};
+    background: ${props => props.active || "#3077C6"};
     transition: 0.5s;
-  }
-
-  &:active {
-    background: #3077C6;
-    cursor: initial;
   }
 `
 
 export const Button = styled.button`
+  background: ${props => props.background || "#FFFFFF"};
   border-color: ${props => props.active ? "#3077C6" : "#F3F3F4"};
   color: ${props => props.active ? "#3077C6" : "#FFFFFF"};
   padding: ${props => props.padding || '0'};
@@ -129,8 +127,8 @@ export const Button = styled.button`
   text-align: center;
 
   &:hover {
-    color: #F5BD41;
-    background: #3077C6;
+    color: ${props => props.color || "#F5BD41"};
+    background: ${props => props.background || "#3077C6"};
     transition: 0.5s;
   }
 }

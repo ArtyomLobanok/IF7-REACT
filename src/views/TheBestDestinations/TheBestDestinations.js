@@ -70,13 +70,13 @@ const TheBestDestinations = () => {
                 <HeaderSection>The best destinations</HeaderSection>
 
                 <DestinationsTabs>
-                    <TabsBtnAndSearchBtn activate={tab === 'Regions'} width='30%' onClick={handleChangeFirstTab}>
+                    <TabsBtnAndSearchBtn active={tab === 'Regions'} width='30%' onClick={handleChangeFirstTab}>
                         Regions
                     </TabsBtnAndSearchBtn>
-                    <TabsBtnAndSearchBtn activate={tab === 'Cities'} width='30%' onClick={handleChangeSecondTab}>
+                    <TabsBtnAndSearchBtn active={tab === 'Cities'} width='30%' onClick={handleChangeSecondTab}>
                         Cities
                     </TabsBtnAndSearchBtn>
-                    <TabsBtnAndSearchBtn activate={tab === 'Places'} width='40%' onClick={handleChangeThirdTab}>
+                    <TabsBtnAndSearchBtn active={tab === 'Places'} width='40%' onClick={handleChangeThirdTab}>
                         Places of interest
                     </TabsBtnAndSearchBtn>
                 </DestinationsTabs>

@@ -1,9 +1,12 @@
 import {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './FormFieldDate.css'
 import {useDispatch, useSelector} from "react-redux";
 import {datePickerStart, datePickerEnd} from "../../../redux/actions";
+import {
+    StyledDateLabelWrapper,
+    StyledDatePickerWrapper,
+} from "../../Styled-components/HeaderForm"
 
 const MyDataPicker = () => {
     const [isActive, setIsActive] = useState(false);
@@ -35,29 +38,28 @@ const MyDataPicker = () => {
     }
 
     return (
-        <div className="second__input">
-            <div className="label__wrapper">
-                <label className={isActive ? "active" : ""}>Check-in — Check-out</label>
-            </div>
-            <DatePicker
-                onFocus={handleFocus}
-                onBlur={disableFocus}
-                onChangeRaw={onChangeRaw}
-                name="datepicker"
-                Label="Timeless"
-                className="form__item"
-                selected={form.dateFrom}
-                minDate={new Date()}
-                onChange={onChange}
-                unf
-                startDate={form.dateFrom}
-                endDate={form.dateTo}
-                selectsRange
-                monthsShown={2}
-                dateFormat='E, MMM d'
-                autoComplete='off'
-            />
-        </div>
+        <StyledDatePickerWrapper maxWidth='259px'>
+            <StyledDateLabelWrapper active={isActive}>
+                <label>Check-in — Check-out</label>
+            </StyledDateLabelWrapper>
+                <DatePicker
+                    onFocus={handleFocus}
+                    onBlur={disableFocus}
+                    onChangeRaw={onChangeRaw}
+                    name="datepicker"
+                    Label="Timeless"
+                    selected={form.dateFrom}
+                    minDate={new Date()}
+                    onChange={onChange}
+                    unf
+                    startDate={form.dateFrom}
+                    endDate={form.dateTo}
+                    selectsRange
+                    monthsShown={2}
+                    dateFormat='E, MMM d'
+                    autoComplete='off'
+                />
+        </StyledDatePickerWrapper>
     );
 };
 

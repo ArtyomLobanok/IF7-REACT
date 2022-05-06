@@ -1,10 +1,11 @@
 import React, {useEffect} from "react";
-import './Form.css'
 import FirstForm from './FormFieldSearchHotel/FormFieldSearchHotel'
 import MyDataPicker from "./FormFieldDate/FormFieldDate";
 import FormFieldThird from "./FormFieldWhoAreGoing/FormFieldWhoAreGoing";
 import {useDispatch, useSelector} from "react-redux";
 import {hotelsLoad} from "../../redux/actions";
+import {FormHeaderWrapper, StyledForm} from "../Styled-components/HeaderForm";
+import {TabsBtnAndSearchBtn} from "../Styled-components/Global";
 
 function Form() {
     const dispatch = useDispatch()
@@ -21,25 +22,26 @@ function Form() {
 
     const hotelArray = useSelector(state => state.hotelsLoadReducer.hotelData)
     useEffect(
-        ()=> {
-            if (hotelArray.length !== 0){
+        () => {
+            if (hotelArray.length !== 0) {
                 window.scrollTo({
                     top: 900,
                     behavior: "smooth"
                 });
             }
-        },[hotelArray]
+        }, [hotelArray]
     );
-    return (<>
-            <div className="intro__content">
-                <form className="intro__form" id="mainForm">
-                    <FirstForm/>
-                    <MyDataPicker/>
-                    <FormFieldThird/>
-                    <button onClick={handleChange} type='submit' className="form__button search">Search</button>
-                </form>
-            </div>
-        </>
+    return (
+        <FormHeaderWrapper>
+            <StyledForm id="mainForm">
+                <FirstForm/>
+                <MyDataPicker/>
+                <FormFieldThird/>
+                <TabsBtnAndSearchBtn active main
+                    onClick={handleChange} type='submit'>Search</TabsBtnAndSearchBtn>
+            </StyledForm>
+        </FormHeaderWrapper>
     );
 }
+
 export default Form;

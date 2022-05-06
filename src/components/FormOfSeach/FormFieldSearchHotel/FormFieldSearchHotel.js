@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from "react";
-import './FormFieldSearchHotel.css'
 import {useDispatch, useSelector} from "react-redux";
 import {inputText} from "../../../redux/actions";
+import {
+    StyledInputFist,
+    StyledInputFistWrapper, StyledInputWrapper,
+    StyledLabelFist
+} from "../../Styled-components/HeaderForm";
 
 const FirstForm = () => {
     const [values, setValues] = useState('');
@@ -43,18 +47,17 @@ const FirstForm = () => {
         }, [searchText]);
 
     return (
-        <div className="first__input">
-            <label className={isActive ? "active" : ""}>
+        <StyledInputWrapper position='relative' maxWidth='467px'>
+            <StyledLabelFist active={isActive}>
                 Your destination or hotel
                 name
-            </label>
-            <input
+            </StyledLabelFist>
+            <StyledInputFist
                 onFocus={handleFocus}
                 onBlur={disableFocus}
                 name='search'
                 type='text'
                 id='searchName'
-                className='form__input'
                 value={values}
                 onChange={(e) => {
                     setValues(e.target.value)
@@ -62,7 +65,7 @@ const FirstForm = () => {
                 }}
                 autoComplete='off'
             />
-        </div>
+        </StyledInputWrapper>
     )
 }
 

@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
-import './childrenSelect.css'
+
 import { setChildAge } from "../../../../redux/actions"
+import {StyledSelects} from "../../../Styled-components/HeaderForm";
 
 const SelectOptions = () => {
     const options = Array.from(Array(18).keys()).map((text, index) => {
@@ -20,9 +21,9 @@ const Select = ({value, index}) => {
     const dispatch = useDispatch()
     const { options } = SelectOptions();
     return (
-            <select value={value} onChange={onChange}>
+            <StyledSelects value={value} onChange={onChange}>
                 {options}
-            </select>
+            </StyledSelects>
     )
 }
 

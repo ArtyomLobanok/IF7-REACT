@@ -1,28 +1,25 @@
 import React from "react";
-import './counterOrders.css'
+import {ButtonCounter, ModalFormCounterWrapper, ModalMenuShowCounter} from "../../../Styled-components/HeaderForm";
+import {Flex} from "../../../Styled-components/Global";
 
 
 const Counter = ({label, count, onIncrement, onDecrement, minValue, maxValue}) => {
     return (
         <>
-            <div className="counterWrapper">
-                <div className='counterLabel'>{`${label}`}</div>
-                <div className='counterChanger'>
-                    <button className={
-                        count === minValue ? 'btn' : 'active btn'
-                    } onClick={
-                        onDecrement
-                    }>-
-                    </button>
+            <ModalFormCounterWrapper>
+                <div>{`${label}`}</div>
+                <Flex align="center" justify="end">
+                    <ButtonCounter active={count !== minValue} onClick={onDecrement}>
+                        -
+                    </ButtonCounter>
                     <div>
-                        <input disabled value={`${count}`}/>
+                        <ModalMenuShowCounter disabled value={`${count}`}/>
                     </div>
-                    <button className={
-                        count === maxValue ? 'btn' : 'active btn'
-                    } onClick={onIncrement}>+
-                    </button>
-                </div>
-            </div>
+                    <ButtonCounter active={count !== maxValue} onClick={onIncrement}>
+                        +
+                    </ButtonCounter>
+                </Flex>
+            </ModalFormCounterWrapper>
         </>
     )
 }

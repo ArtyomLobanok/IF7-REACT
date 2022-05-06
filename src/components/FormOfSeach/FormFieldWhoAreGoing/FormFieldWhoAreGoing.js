@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import "./FormFieldWhoAreGoing.css"
 import Counter from "./countsOrder/counterOrders"
 import OrderData from "./dataOrder/dataOrder"
 import Select from "./childrenSelects/childrenSelect";
 import uniqid from 'uniqid';
 import {useSelector} from "react-redux";
 import {ClickAwayListener} from "@mui/material";
+import {ModalForm, SelectWrapper, DataFormWrapper, ModalFormQuestion} from "../../Styled-components/HeaderForm";
 
 const ModalMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,13 +27,12 @@ const ModalMenu = () => {
 const FormFieldThird = () => {
     const selectArray = useSelector(state => state.formReducer.children)
     const {data} = OrderData()
-    const {isOpen, handleClick,handleClickAway} = ModalMenu()
+    const {isOpen, handleClick, handleClickAway} = ModalMenu()
     return (
         <>
             <ClickAwayListener onClickAway={handleClickAway}>
-                <div className="wrapper">
-                    <div className='fieldView' onClick={
-                        handleClick}>
+                <DataFormWrapper>
+                    <SelectWrapper onClick={handleClick}>
                         {
                             `${data.adults.count} Adults
                         —
@@ -41,35 +40,35 @@ const FormFieldThird = () => {
                         —
                         ${data.rooms.count} Room`
                         }
-                    </div>
+                    </SelectWrapper>
 
                     {
                         isOpen && (
-                            <div className="fieldModalForm">
+                            <ModalForm>
                                 <div>
                                     {
                                         Object.keys(data).map(key => <Counter key={uniqid('counter-')} {...data[key]} />)
                                     }
                                 </div>
-                                <div className="fieldToggleQuestion">
+                                <ModalFormQuestion>
                                     {
                                         data.children.count > 0 &&
-                                        <span className="fieldToggleQuestion">
-                                        What is the age of the child you’re<br/> travelling with?
-                                    </span>
+                                        <span>
+                                            What is the age of the child you’re<br/> travelling with?
+                                        </span>
                                     }
-                                </div>
-                                <div className='selectors'>
+                                </ModalFormQuestion>
+                                <div>
                                     {
                                         selectArray.map((item, index) => (
                                             <Select index={index} value={item} key={uniqid('select-')}/>))
                                     }
                                 </div>
-                            </div>
+                            </ModalForm>
                         )
                     }
 
-                </div>
+                </DataFormWrapper>
             </ClickAwayListener>
         </>
     );
