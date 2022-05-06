@@ -9,4 +9,4 @@ export const DATE_START = 'DATE_START';
 export const DATE_END = 'DATE_END';
 export const HOTEL_DATA_LOAD = 'HOTEL_DATA_LOAD';
 export const SET_CHILD_AGE = 'SET_CHILD_AGE';
-
+export const SWITCH_THEMES = 'SWITCH_THEMES'

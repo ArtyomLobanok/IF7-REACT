@@ -50,7 +50,7 @@ export const Flex = (props) => {
 export const Section = styled.section`
   padding: 120px 0;
   display: flex;
-  background: ${props => props.addColor || "#FFFFFF"};
+  background: ${props => props.theme.GeneralWhite};
   animation: ${fadeEffect} 2s linear;
 `
 

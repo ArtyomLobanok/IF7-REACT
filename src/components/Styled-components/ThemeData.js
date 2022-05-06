@@ -1,4 +1,5 @@
-const ThemeDay = {
+export const lightTheme = {
+    mode: "light",
     GeneralBlue: "#10367C",
     AccentBlue: "#EAF0F9",
     AccentYellow: "#F5BD41",
@@ -11,19 +12,16 @@ const ThemeDay = {
     backgroundBtn: "#FFFFFF"
 
 }
-const ThemeNight = {
+export const darkTheme = {
+    mode: "dark",
     GeneralBlue: "#121212",
     AccentBlue: "#1D1E1F",
     AccentYellow: "#4D4D4D",
     StrokecolorMain: "#4D4D4D",
     TextcolorMain: "#383838",
-    GeneralWhite: "#4D4D4D",
+    GeneralWhite: "#000000",
     SecondaryText: "#4D4D4D",
     BgColorMain: "#4D4D4D",
     backgroundBtn: "#000000"
 
-}
-export const Themes = {
-    day: ThemeDay,
-    Night: ThemeNight,
 }

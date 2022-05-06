@@ -1,5 +1,5 @@
 import React from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {removeUser} from '../../redux/slices/userSlice'
 import useAuth from "../../hooks/use-auth";
 import Dropdown from "./Dropdown/Dropdown";
@@ -7,9 +7,11 @@ import {ClickAwayListener} from "@mui/material";
 import {ButtonLogOut, Header, HeaderNavLink} from "../Styled-components/Header"
 import {Flex, StyledLink, StyledSvg} from "../Styled-components/Global";
 import Svg from "../../assets/svg/Svg";
-
+import {switchTheme} from "../../redux/actions"
+import {lightTheme, darkTheme} from "../Styled-components/ThemeData";
 
 const HeaderMenu = () => {
+    const theme = useSelector((state) => state.themeReducer.theme)
     const dispatch = useDispatch();
     const {isAuth} = useAuth();
     const {isDropdown, handleClickDropdown, handleClickAway} = Dropdown();
@@ -27,10 +29,18 @@ const HeaderMenu = () => {
                 <Flex justify='flex-end' align="center">
                     <HeaderNavLink href="/#">Stays</HeaderNavLink>
                     <HeaderNavLink href="/#">Attractions</HeaderNavLink>
-                    <HeaderNavLink href="/#">
-                        <StyledSvg width='30px' height='30px' fill='#FFFFFF'>
-                            <use href="#styleTimeSwitch"/>
-                        </StyledSvg>
+                    <HeaderNavLink>
+                        {theme.mode === 'light' ? (
+                            <StyledSvg width='30px' height='30px' fill='#FFFFFF'
+                                       onClick={() => dispatch(switchTheme(darkTheme))}>
+                                <use href="#styleTimeSwitch"/>
+                            </StyledSvg>
+                        ) : (
+                            <StyledSvg width='30px' height='30px' fill='#F5BD41'
+                                       onClick={() => dispatch(switchTheme(lightTheme))}>
+                                <use href="#styleTimeSwitch"/>
+                            </StyledSvg>
+                        )}
                     </HeaderNavLink>
                     <ClickAwayListener onClickAway={handleClickAway}>
                         <div>

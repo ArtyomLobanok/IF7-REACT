@@ -6,18 +6,19 @@ import RegisterPage from "./RegisterPage";
 import React from "react";
 import MainPage from "./MainPage";
 import {ThemeProvider} from "styled-components";
+import {useSelector} from "react-redux";
 
 const App = () => {
-//theme={themes[theme]}
+    const theme = useSelector((state) => state.themeReducer.theme)
     return (
-        // <ThemeProvider >
+        <ThemeProvider theme={theme} >
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="hotel/:id" element={<HotelPage/>}/>
                 <Route path="login" element={<LoginPage/>}/>
                 <Route path="register" element={<RegisterPage/>}/>
             </Routes>
-        // </ThemeProvider>
+        </ThemeProvider>
     )
 }
 
