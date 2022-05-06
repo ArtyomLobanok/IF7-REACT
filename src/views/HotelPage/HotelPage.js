@@ -1,7 +1,7 @@
 import "./HotelPage.css"
 import HeaderMenu from "../../components/HeaderMenu/HeaderMenu"
-import Footer from "../FooterApp/Footer";
-import TextOfHeaders from "../../components/TextOfHeaders/TextOfHeaders";
+import Footer from "../App/Footer";
+
 import HotelPageFetch from "../../components/HotelPageFetch/HotelPageFetch"
 import React from "react";
 
@@ -24,7 +24,7 @@ const HotelPage = () => {
             <section className="hotelPage">
                 <div className="container">
                     <div className="section__header">
-                        <TextOfHeaders text={data.name}/>
+                        <div text={data.name}/>
                     </div>
                     <div className="hotelPage__wrapper">
                         <div className='hotelPage__img'>

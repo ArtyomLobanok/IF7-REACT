@@ -1,37 +1,24 @@
-import {Navigate} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import './App.css';
-import Header from '../HeaderApp/Header';
-import HomesGuestsLoves from "../HomesGuestsLoves/HomesGuestsLoves";
-import AvailableHotels from "../AvailableHotels/AvailableHotels";
-import Footer from "../FooterApp/Footer";
-import useAuth from "../../../src/hooks/use-auth"
+import HotelPage from "../HotelPage/HotelPage";
+import LoginPage from "./LoginPage";
+import RegisterPage from "./RegisterPage";
 import React from "react";
-import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
-import WhatDoWeOffer from "../WhatDoWeOffer/WhatDoWeOffer";
-import TheBestDestinations from "../TheBestDestinations/TheBestDestinations";
-import Promotion from "../Promotion/Promotion";
-import GuestsReviews from "../GuestsReviews/GuestsReviews";
-import Svg from "../../assets/svg/Svg";
-function App() {
-    const {isAuth} = useAuth();
-    return isAuth ? (
-            <>
+import MainPage from "./MainPage";
+import {ThemeProvider} from "styled-components";
 
-                <ScrollToTop/>
-                <Svg/>
-                <Header/>
-                <AvailableHotels/>
-                <WhatDoWeOffer/>
-                <HomesGuestsLoves/>
-                <TheBestDestinations/>
-                <Promotion/>
-                <GuestsReviews/>
-                <Footer/>
-            </>
-        )
-        : (
-            <Navigate replace to="/login"/>
-        )
+const App = () => {
+//theme={themes[theme]}
+    return (
+        // <ThemeProvider >
+            <Routes>
+                <Route path="/" element={<MainPage/>}/>
+                <Route path="hotel/:id" element={<HotelPage/>}/>
+                <Route path="login" element={<LoginPage/>}/>
+                <Route path="register" element={<RegisterPage/>}/>
+            </Routes>
+        // </ThemeProvider>
+    )
 }
 
 export default App;
