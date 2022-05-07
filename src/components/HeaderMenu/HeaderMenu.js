@@ -28,14 +28,14 @@ const HeaderMenu = () => {
             <Flex align='center'>
                 <div>
                     <StyledLink to={`/`}>
-                        <LogotypeIcon width='205px' height='40px' fill='#3077C6'>
+                        <LogotypeIcon cursor="pointer" width='205px' height='40px' fill='#3077C6'>
                             <use href="#logotype"></use>
                         </LogotypeIcon>
                     </StyledLink>
                 </div>
                 <Flex justify='flex-end' align="center">
-                    <HeaderNavLink href="/#">Stays</HeaderNavLink>
-                    <HeaderNavLink href="/#">Attractions</HeaderNavLink>
+                    <HeaderNavLink href="/#" onClick={(e)=>e.preventDefault()}>Stays</HeaderNavLink>
+                    <HeaderNavLink href="/#" onClick={(e)=>e.preventDefault()}>Attractions</HeaderNavLink>
                     <HeaderNavLink>
                         {theme.mode === 'light' ? (
                             <SwitcherIcon cursor='pointer' width='30px' height='30px'
