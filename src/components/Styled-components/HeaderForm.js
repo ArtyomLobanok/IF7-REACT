@@ -110,7 +110,7 @@ export const StyledDateLabelWrapper = styled.div`
     position: absolute;
     font-size: 18px;
     top: 21px;
-    left: 40px;
+    left: 24px;
     transition: .5s;
     border: none;
     pointer-events: none;
