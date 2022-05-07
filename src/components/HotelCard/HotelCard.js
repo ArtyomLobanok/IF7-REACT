@@ -1,5 +1,11 @@
 import React from "react";
-import {Flex, Title, SubTitle, CardImg, StyledLink} from "../../components/Styled-components/Global"
+import {
+    Flex,
+    SubTitle,
+    CardImg,
+    StyledLink,
+    AnyTitle,
+} from "../../components/Styled-components/Global"
 
 const hotelCard = props => {
     const {id, imageUrl, name, city, country} = props.card;
@@ -9,7 +15,7 @@ const hotelCard = props => {
                 <Flex margin='0 0 24px 0'>
                     <CardImg src={imageUrl} alt="Pictures"/>
                 </Flex>
-                <Title blue margin='0 0 24px 0'>{name}</Title>
+                <AnyTitle blue margin='0 0 24px 0'>{name}</AnyTitle>
                 <SubTitle>{city}, {country}</SubTitle>
             </Flex>
         </StyledLink>

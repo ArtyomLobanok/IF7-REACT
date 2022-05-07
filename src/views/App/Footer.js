@@ -1,11 +1,11 @@
 import React from "react";
 import {Copyright, FooterList} from '../../components/Styled-components/Footer'
-import {Section, Container, Flex} from "../../components/Styled-components/Global";
+import {Container, Flex, SectionFooter} from "../../components/Styled-components/Global";
 
 const Footer = () => {
     return (
         <>
-            <Section addColor="#10367C">
+            <SectionFooter>
                 <Container>
                     <Flex>
                         <FooterList>
@@ -32,7 +32,7 @@ const Footer = () => {
                     </Flex>
                     <Copyright>© 2020 Triphouse, Inc. All rights reserved</Copyright>
                 </Container>
-            </Section>
+            </SectionFooter>
         </>
     )
 };

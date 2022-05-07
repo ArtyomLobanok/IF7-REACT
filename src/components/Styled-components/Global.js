@@ -15,7 +15,7 @@ export const SliderWrapper = styled.div`
     transform: translate3d(-40px, -80px, 0);
   }
 
-  .slick-prev:before, .slick-next:before  {
+  .slick-prev:before, .slick-next:before {
     content: '' !important;
   }
 
@@ -48,32 +48,51 @@ export const Flex = (props) => {
 }
 
 export const Section = styled.section`
+  background: ${props => props.theme.BACKGROUND_COLOR_SECTION};
   padding: 120px 0;
   display: flex;
-  background: ${props => props.theme.GeneralWhite};
   animation: ${fadeEffect} 2s linear;
+`
+export const SectionAnother = styled(Section)`
+  background: ${props => props.theme.BACKGROUND_COLOR_SECTION_ANY};
+`
+
+export const SectionFooter = styled(Section)`
+  background: ${props => props.theme.BACKGROUND_COLOR_FOOTER_SECTION};
 `
 
 export const HeaderSection = styled.h1`
+  color: ${props => props.theme.TITLE_SECTION_COLOR};
   width: 100%;
   margin: 0 auto 104px;
   font-size: 40px;
   font-weight: 500;
   text-align: center;
-  color: #383838;
 `
 
 export const Title = styled.p`
+  color: ${props => props.theme.TITLE_COLOR};
   font-size: ${props => props.little ? "18px" : "24px"};
   font-weight: ${props => props.bold ? "500" : "400"};
-  color: ${props => props.blue ? "#3077C6" : "#383838"};
   margin: ${props => props.margin || '0'};
+  text-decoration: none;
+`
+export const AnyTitle = styled(Title)`
+  color: ${props => props.theme.ANY_TITLE_COLOR};
+`
+
+export const Text = styled(Title)`
+  color: ${props => props.theme.TEXT_COLOR};
 `
 
 export const SubTitle = styled.p`
+  color: ${props => props.theme.SUB_TITLE_COLOR};
   font-size: ${props => props.little ? "18px" : "24px"};
   font-weight: ${props => props.bold ? "500" : "400"};
-  color: ${props => props.blue ? "#3077C6" : "#BFBFBF"};
+  text-decoration: none;
+`
+export const AnySubTitle = styled(SubTitle)`
+  color: ${props => props.theme.ANY_SUB_TITLE_COLOR};
 `
 
 export const CardImg = styled.img`
@@ -92,7 +111,7 @@ export const TabsBtnAndSearchBtn = styled.button`
   font-weight: ${props => props.main ? "500" : "400"};
   padding: ${props => props.main ? '18px 59px' : '17px 0'};
   width: ${props => props.width || 'initial'};
- 
+
   display: block;
   outline: 1px;
   border: none;
@@ -137,7 +156,17 @@ export const StyledSvg = styled.svg`
   display: block;
   width: ${props => props.width || 'initial'};
   height: ${props => props.height || 'initial'};
-  fill: ${props => props.fill || 'transparent'};
+
   margin: ${props => props.margin || '0'};
   cursor: ${props => props.cursor || 'initial'};
+`
+
+export const IconSvg = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_SVG_ICON};
+`
+export const MainIconSvg = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_ANY_SVG_ICON};
+`
+export const AvatarSvg = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_GREY_SVG_ICON};
 `

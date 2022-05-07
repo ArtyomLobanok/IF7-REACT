@@ -27,9 +27,9 @@ export const ScrollBtn = styled.div`
   }
 
   :first-child {
-    background-color: ${props => props.background || "#3077C6"};
-    color: ${props => props.color || "#FFFFFF"};
-    border-color: ${props => props.color || "#FFFFFF"};
+    background-color: ${props => props.theme.BTN_TOP_TOGGLE_S_COLOR};
+    color: ${props => props.theme.BTN_TOP_TOGGLE_F_COLOR};
+    border-color: ${props => props.theme.BTN_TOP_TOGGLE_F_COLOR};
     display: block;
     position: fixed;
     bottom: 40px;
@@ -43,9 +43,9 @@ export const ScrollBtn = styled.div`
     transition: all .5s ease-in-out;
 
     &:hover {
-      background-color: ${props => props.background || "#FFFFFF"};
-      color: ${props => props.color || "#3077C6"};
-      border-color: ${props => props.color || "#3077C6"};
+      background-color: ${props => props.theme.BTN_TOP_TOGGLE_F_COLOR};
+      color: ${props => props.theme.BTN_TOP_TOGGLE_S_COLOR};
+      border-color: ${props => props.theme.BTN_TOP_TOGGLE_S_COLOR};
       animation: none;
     }
   }

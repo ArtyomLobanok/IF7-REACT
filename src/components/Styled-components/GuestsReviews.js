@@ -32,11 +32,12 @@ export const GuestsReviewsCardWrapper = styled.div`
   min-height: 760px;
 `
 export const GuestsReviewsCardHeader = styled.div`
+  color: ${props => props.theme.PRICE_COLOR};
   display: block;
   position: relative;
   font-size: 18px;
   font-weight: 400;
-  color: #FFFFFF;
+
 
   &:hover :last-child {
     opacity: 1;
@@ -70,28 +71,27 @@ export const ReviewCounterWrapper = styled.div`
   position: relative;
 
   button {
+    color: ${props => props.theme.BTN_RATING_TEXT_COLOR};
+    background-color: ${props => props.theme.BTN_RATING_BACKGROUND_COLOR};
     padding: 4px 10px;
     margin-bottom: 0.5rem;
     border: 0.0625rem solid #10367C;
     border-radius: 0.5rem;
-    background-color: #10367C;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
-    color: #FFFFFF;
     font-weight: 600;
     cursor: pointer;
 
     &:hover {
-      color: #F5BD41;
+      color: ${props => props.theme.HOVER_AND_FOCUS_COLOR};
       transition: opacity 0.1s linear;
     }
   }
-
   p {
+    color: ${props => props.theme.REVIEWS_TEXT_COLOR};
     position: absolute;
     left: -38px;
     font-size: 14px;
-    color: #BFBFBF;
   }
 `
 export const FlagReviewUser = styled.img`

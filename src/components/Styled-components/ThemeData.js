@@ -1,27 +1,58 @@
 export const lightTheme = {
     mode: "light",
-    GeneralBlue: "#10367C",
-    AccentBlue: "#EAF0F9",
-    AccentYellow: "#F5BD41",
-    StrokecolorMain: "#F3F3F4",
-    TextcolorMain: "#383838",
-    GeneralWhite: "#FFFFFF",
-    SecondaryText: "#BFBFBF",
-    BgColorMain: "#EAF0F9",
+    BACKGROUND_SHADOW_BOX: 'initial',
+    BACKGROUND_COLOR_SECTION: "#FFFFFF",
+    BACKGROUND_COLOR_SECTION_ANY: "#EAF0F9",
+    BACKGROUND_COLOR_FOOTER_SECTION: "#10367C",
+    COLOR_SVG_ICON: "#FFFFFF",
+    COLOR_ANY_SVG_ICON: "#3077C6",
+    COLOR_GREY_SVG_ICON: "#BFBFBF",
+    HOVER_AND_FOCUS_COLOR: "#F5BD41",
+    HEADER_TITLE_COLOR: "",
+    TITLE_SECTION_COLOR: "#383838",
+    TITLE_COLOR: "#383838",
+    ANY_TITLE_COLOR: "#3077C6",
+    SUB_TITLE_COLOR: "#BFBFBF",
+    ANY_SUB_TITLE_COLOR: "#3077C6",
+    TEXT_COLOR: "#383838",
+    BTN_BACKGROUND_COLOR: "#3077C6",
+    ANY_BACKGROUND_BTN_COLOR: "#FFFFFF",
+    BTN_BACKGROUND_HOVER_COLOR:"#3077C6",
+    BTN_IS_NOT_ACTIVE_BACKGROUND_COLOR:"#F3F3F4",
+    BTN_IS_NOT_ACTIVE_TEXT_COLOR:"#383838",
+    BTN_ACTIVE_BACKGROUND_COLOR:"#FFFFFF",
+    BTN_ACTIVE_TEXT_COLOR:"#3077C6",
+    BTN_IS_NOT_ACTIVE_TEXT_COLOR_COUNTER:"#CECECE",
+    BTN_ACTIVE_BORDER_COLOR:'#3077C6',
+    BTN_BORDER_COLOR:'#FFFFFF',
+    BTN_IS_NOT_ACTIVE_BORDER_COLOR:'#CECECE',
+    BTN_RATING_BACKGROUND_COLOR: "#10367C",
+    BTN_RATING_TEXT_COLOR:"#FFFFFF",
 
-    backgroundBtn: "#FFFFFF"
+    BTN_TOP_TOGGLE_F_COLOR: "#FFFFFF",
+    BTN_TOP_TOGGLE_S_COLOR:'#3077C6',
+
+
+
+    REVIEWS_TEXT_COLOR:"#BFBFBF",
+
+    FOOTER_LINK_COLOR:'#FFFFFF',
+    FOOTER_COPYRIGHT_COLOR:'#FFFFFF',
+    PRICE_COLOR:'#FFFFFF',
+
+
 
 }
 export const darkTheme = {
     mode: "dark",
-    GeneralBlue: "#121212",
-    AccentBlue: "#1D1E1F",
-    AccentYellow: "#4D4D4D",
-    StrokecolorMain: "#4D4D4D",
-    TextcolorMain: "#383838",
-    GeneralWhite: "#000000",
-    SecondaryText: "#4D4D4D",
-    BgColorMain: "#4D4D4D",
-    backgroundBtn: "#000000"
+    BACKGROUND_SHADOW_BOX: 'rgba(18, 18, 18, 0.25)',
+    BackgroundSection: "#4D4D4D",
+    BackgroundAnySection: "#1D1E1F",
+    colorSvgIcon: "#4D4D4D",
+    colorLogotype: "#4D4D4D",
+    BackgroundFooter: "#121212",
+    HOVER_COLOR: "#F5BD41",
+
+
 
 }

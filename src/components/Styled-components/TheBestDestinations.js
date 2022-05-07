@@ -3,17 +3,17 @@ import arrowDown from "../../assets/Img/arrowBottom.png"
 import arrowTop from "../../assets/Img/arrowTop.png"
 
 export const DestinationsTabs = styled.div`
+  background-color: ${props => props.theme.BTN_IS_NOT_ACTIVE_BACKGROUND_COLOR};
   display: flex;
   max-width: 622px;
   border-radius: 0.5rem;
-  background-color: #F3F3F4;
   margin-bottom: 65px;
 `
 export const DestinationsCardsCollapse = styled.div`
+  color: ${props => props.theme.ANY_TITLE_COLOR};
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  color: #3077C6;
   font-size: 24px;
   padding: 0 -16px;
 `
@@ -48,14 +48,17 @@ export const DestinationsItem = styled.div`
   width: 24%;
   margin: 0 16px 48px 0;
   animation: ${fadeEffect} 2s linear;
+
   &:nth-child(4),
   &:nth-child(8) {
     margin: 0 0 48px 0;
   }
-  &:hover{
+
+  &:hover {
     div {
       opacity: 1;
     }
+
     img {
       opacity: 0.7;
     }
@@ -66,6 +69,7 @@ export const DestinationsImgWrapper = styled.div`
   background: rgba(56, 56, 56, 0.4);
   box-shadow: inset 0 0.25rem 4.375rem rgba(56, 56, 56, 0.5);
   margin-bottom: 1.5rem;
+
   img {
     display: block;
     width: 100%;
@@ -86,5 +90,5 @@ export const DestinationsBtnWrapper = styled.div`
   text-align: center;
   opacity: 0;
   transform: translate3d(0, -50%, 0);
-  transition: opacity 0.1s linear;  
+  transition: opacity 0.1s linear;
 `

@@ -5,7 +5,17 @@ import {
     GuestsReviewsCardWrapper,
     ReviewCounterWrapper
 } from "../Styled-components/GuestsReviews";
-import {Flex, SubTitle, Title, StyledSvg} from "../Styled-components/Global";
+import {
+    Flex,
+    SubTitle,
+    Title,
+    StyledSvg,
+    AnyTitle,
+    AnySubTitle,
+    Text,
+    IconSvg,
+    AvatarSvg
+} from "../Styled-components/Global";
 
 const GuestsReviewsCard = (props) => {
     const {imageUrl, title, city, country, cost, rating, reviews, user, userFrom, flag, post} = props.card;
@@ -21,8 +31,8 @@ const GuestsReviewsCard = (props) => {
             </GuestsReviewsCardHeader>
             <Flex width='initial' margin='24px'>
                 <Flex direction='column' margin='0 88px 0 0'>
-                    <Title little margin='0 0 16px 0' blue>{title}</Title>
-                    <SubTitle little blue>{city},{country}</SubTitle>
+                    <AnyTitle little bold margin='0 0 16px 0' blue>{title}</AnyTitle>
+                    <AnySubTitle little>{city},{country}</AnySubTitle>
                 </Flex>
                 <ReviewCounterWrapper>
                     <button>{rating}</button>
@@ -30,9 +40,9 @@ const GuestsReviewsCard = (props) => {
                 </ReviewCounterWrapper>
             </Flex>
             <Flex margin="0 0 0 24px">
-                <StyledSvg width="3.3125rem" height="3.3125rem" fill="#BFBFBF" margin="0 16px 0 0">
+                <AvatarSvg width="3.3125rem" height="3.3125rem" margin="0 16px 0 0">
                     <use href="#account"></use>
-                </StyledSvg>
+                </AvatarSvg>
                 <Flex justify="center" direction="column">
                     <Title little margin="0 0 8px 0">{user}</Title>
                     <Flex>
@@ -41,7 +51,7 @@ const GuestsReviewsCard = (props) => {
                     </Flex>
                 </Flex>
             </Flex>
-            <Title little margin = "24px">{post}</Title>
+            <Text little margin = "24px">{post}</Text>
         </GuestsReviewsCardWrapper>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import AvailableHotelsSlider from "../../components/AvailableHotelsSlider/AvailableHotelsSlider"
-import {Section, Container, HeaderSection} from "../../components/Styled-components/Global"
+import { Container, HeaderSection, SectionAnother} from "../../components/Styled-components/Global"
 import {useSelector} from "react-redux";
 
 function AvailableHotels() {
@@ -9,12 +9,12 @@ function AvailableHotels() {
         <>
             {
                 hotelCards.length > 0 &&
-                <Section addColor='#EAF0F9'>
+                <SectionAnother>
                     <Container>
                         <HeaderSection>Available hotels</HeaderSection>
                         <AvailableHotelsSlider/>
                     </Container>
-                </Section>
+                </SectionAnother>
             }
         </>
     );
