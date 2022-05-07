@@ -1,6 +1,13 @@
 import styled, {keyframes} from "styled-components";
 import {Link} from "react-router-dom";
-
+const fadeEffect = keyframes`
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,15 +30,9 @@ export const SliderWrapper = styled.div`
     z-index: 1000;
     transform: translate3d(7px, -80px, 0);
   }
+  animation: ${fadeEffect} 2s linear;
 `
-const fadeEffect = keyframes`
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
-`
+
 
 const StyledFlex = styled.div`
   position: ${props => props.position || 'initial'};
@@ -51,7 +52,6 @@ export const Section = styled.section`
   background: ${props => props.theme.BACKGROUND_COLOR_SECTION};
   padding: 120px 0;
   display: flex;
-  animation: ${fadeEffect} 2s linear;
 `
 export const SectionAnother = styled(Section)`
   background: ${props => props.theme.BACKGROUND_COLOR_SECTION_DARKER};
@@ -59,6 +59,10 @@ export const SectionAnother = styled(Section)`
 
 export const SectionFooter = styled(Section)`
   background: ${props => props.theme.BACKGROUND_COLOR_FOOTER_SECTION};
+`
+
+export const SectionPromotion = styled.section`
+  background: ${props => props.theme.BACKGROUND_COLOR_SECTION};
 `
 
 export const HeaderSection = styled.h1`
@@ -93,12 +97,6 @@ export const SubTittleCards = styled(SubTitle)`
 export const Text = styled(Title)`
   color: ${props => props.theme.COLOR_ANY_TEXT};
 `
-export const PriceText = styled(Title)`
-  color: ${props => props.theme.COLOR_PRICE_TEXT};
-`
-export const TextReviews = styled(Title)`
-  color: ${props => props.theme.COLOR_TEXT_REVIEWS};
-`
 
 export const CardImg = styled.img`
   display: block;
@@ -110,39 +108,21 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-export const TabsBtnAndSearchBtn = styled.button`
-  background: ${props => props.active ? "#3077C6" : "#F3F3F4"};
-  color: ${props => props.active ? "#FFFFFF" : "#383838"};
-  font-weight: ${props => props.main ? "500" : "400"};
-  padding: ${props => props.main ? '18px 59px' : '17px 0'};
-  width: ${props => props.width || 'initial'};
+export const StyledLinkLogin = styled(StyledLink)`
+  color: ${props => props.theme.COLOR_LOGIN_LINK};
+`;
 
-  display: block;
-  outline: 1px;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 24px;
-  cursor: pointer;
 
-  &:hover {
-    outline: none;
-    color: ${props => props.color || "#F5BD41"};
-    background: ${props => props.active || "#3077C6"};
-    transition: 0.5s;
-  }
-`
-
-export const Button = styled.button`
-  background: ${props => props.background || "#FFFFFF"};
-  border-color: ${props => props.active ? "#3077C6" : "#F3F3F4"};
-  color: ${props => props.active ? "#3077C6" : "#FFFFFF"};
+export const ButtonBookNowAndSingUP = styled.button`
+  background: ${props => props.theme.BTN_BOOK_NOW_BACKGROUND_COLOR};
+  border-color: ${props => props.theme.BTN_BOOK_NOW_BORDER_COLOR};
+  color: ${props => props.theme.BTN_BOOK_NOW_TEXT_COLOR};
   padding: ${props => props.padding || '0'};
   width: ${props => props.width || 'initial'};
   height: ${props => props.height || 'initial'};
   border-width: 1px;
   border-style: solid;
   display: block;
-  background: #FFFFFF;
   border-radius: 0.5rem;
   outline: none;
   font-size: 18px;
@@ -151,12 +131,15 @@ export const Button = styled.button`
   text-align: center;
 
   &:hover {
-    color: ${props => props.color || "#F5BD41"};
-    background: ${props => props.background || "#3077C6"};
-    transition: 0.5s;
+    background: ${props => props.theme.BTN_BOOK_NOW_HOVER_BACKGROUND_COLOR};
+    border-color: ${props => props.theme.BTN_BOOK_NOW_HOVER_BORDER_COLOR};
+    color: ${props => props.theme.BTN_BOOK_NOW_HOVER_TEXT_COLOR};    
+    transition: 0.5s ease;
   }
 }
 `
+
+
 export const StyledSvg = styled.svg`
   display: block;
   width: ${props => props.width || 'initial'};
@@ -171,6 +154,12 @@ export const LogotypeIcon = styled(StyledSvg)`
 `
 export const SwitcherIcon = styled(StyledSvg)`
   fill: ${props => props.theme.COLOR_NAV_ICON};
+`
+export const SwitcherIconActive = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_ICON_ACTIVE};
+`
+export const PromotionIcon = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_PROMOTION_ICON};
 `
 
 export const AccountIcon = styled(StyledSvg)`

@@ -10,8 +10,18 @@ export const HeaderWrapper = styled.div`
   background-size: cover;
 `
 
+export const HeaderWrapperShadow = styled.div`
+  background: ${props => props.theme.BACKGROUND_SHADOW_BOX};
+  position: absolute;
+  height: 100vh;
+  min-height: 56.25rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+`
 export const LoginFrom = styled.div`
-  background: ${props => props.background || "#FFFFFF"};
+  background: ${props => props.theme.BACKGROUND_COLOR_MODAL};
   margin: 171px auto 0;
   max-width: 400px;
   width: 100%;
@@ -32,7 +42,6 @@ export const LoginFrom = styled.div`
     margin-bottom: 20px;
 
     a {
-      color: ${props => props.color || "#3077C6"}
       margin-left: 4px;
       font-size: 18px;
       text-decoration: none;
@@ -56,6 +65,8 @@ export const FormLogin = styled.form`
   }
 
   input {
+    background: ${props => props.theme.BACKGROUND_COLOR_INPUT};
+    color: ${props => props.theme.COLOR_INPUT_FORM_TEXT};
     font-size: 12px;
     padding: 8px;
     margin-top: 8px;
@@ -76,10 +87,10 @@ export const FormLogin = styled.form`
   }
 
   button {
+    background: ${props => props.theme.BTN_SEARCH_BACKGROUND_COLOR};
+    color: ${props => props.theme.BTN_SEARCH_TEXT_COLOR};
     width: 320px;
     height: 48px;
-    background: #3077C6;
-    color: #FFFFFF;
     border: none;
     border-radius: 8px;
     font-size: 24px;
@@ -89,8 +100,9 @@ export const FormLogin = styled.form`
 
     &:hover,
     &:focus {
-      color: #F5BD41;
-      transition: 0.2s;
+      background: ${props => props.theme.BTN_SEARCH_BACKGROUND_HOVER_COLOR};
+      color: ${props => props.theme.BTN_SEARCH_TEXT_HOVER_COLOR};
+      transition: 0.5s ease;
     }
   }
 

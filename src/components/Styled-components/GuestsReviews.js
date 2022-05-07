@@ -24,15 +24,15 @@ export const GuestReviewsWrapperSlider = styled.div`
   }
 `
 export const GuestsReviewsCardWrapper = styled.div`
+  background: ${props => props.theme.BACKGROUND_COLOR_SECTION_DARKER};
   display: flex;
   flex-direction: column;
   margin: 0 8px;
-  background: #EAF0F9;
   height: 100%;
   min-height: 760px;
 `
 export const GuestsReviewsCardHeader = styled.div`
-  color: ${props => props.theme.PRICE_COLOR};
+  color: ${props => props.theme.COLOR_PRICE_TEXT};
   display: block;
   position: relative;
   font-size: 18px;
@@ -83,12 +83,12 @@ export const ReviewCounterWrapper = styled.div`
     cursor: pointer;
 
     &:hover {
-      color: ${props => props.theme.HOVER_AND_FOCUS_COLOR};
+      color: ${props => props.theme.COLOR_HOVER_AND_FOCUS};
       transition: opacity 0.1s linear;
     }
   }
   p {
-    color: ${props => props.theme.REVIEWS_TEXT_COLOR};
+    color: ${props => props.theme.COLOR_TEXT_REVIEWS};
     position: absolute;
     left: -38px;
     font-size: 14px;

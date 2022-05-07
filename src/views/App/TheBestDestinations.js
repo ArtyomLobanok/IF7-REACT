@@ -13,12 +13,11 @@ import {
     Section,
     Container,
     HeaderSection,
-    TabsBtnAndSearchBtn
 } from "../../components/Styled-components/Global"
 import {
     DestinationsArrowCollapse,
     DestinationsCardsCollapse,
-    DestinationsTabs,
+    DestinationsTabs, TabsBtn, TabsBtnActive,
 } from "../../components/Styled-components/TheBestDestinations"
 
 const TheBestDestinationsState = () => {
@@ -70,15 +69,36 @@ const TheBestDestinations = () => {
                 <HeaderSection>The best destinations</HeaderSection>
 
                 <DestinationsTabs>
-                    <TabsBtnAndSearchBtn active={tab === 'Regions'} width='30%' onClick={handleChangeFirstTab}>
-                        Regions
-                    </TabsBtnAndSearchBtn>
-                    <TabsBtnAndSearchBtn active={tab === 'Cities'} width='30%' onClick={handleChangeSecondTab}>
-                        Cities
-                    </TabsBtnAndSearchBtn>
-                    <TabsBtnAndSearchBtn active={tab === 'Places'} width='40%' onClick={handleChangeThirdTab}>
-                        Places of interest
-                    </TabsBtnAndSearchBtn>
+                    {tab === 'Regions' ? (
+                        <TabsBtnActive  width='30%' onClick={handleChangeFirstTab}>
+                            Regions
+                        </TabsBtnActive>
+                    ):(
+                        <TabsBtn  width='30%' onClick={handleChangeFirstTab}>
+                            Regions
+                        </TabsBtn>
+                    )}
+
+                    {tab === 'Cities' ? (
+                        <TabsBtnActive  width='30%' onClick={handleChangeSecondTab}>
+                            Cities
+                        </TabsBtnActive>
+                    ):(
+                        <TabsBtn  width='30%' onClick={handleChangeSecondTab}>
+                            Cities
+                        </TabsBtn>
+                    )}
+
+                    {tab === 'Places' ? (
+                        <TabsBtnActive  width='40%' onClick={handleChangeThirdTab}>
+                            Places of interest
+                        </TabsBtnActive>
+                    ):(
+                        <TabsBtn  width='40%' onClick={handleChangeThirdTab}>
+                            Places of interest
+                        </TabsBtn>
+                    )}
+
                 </DestinationsTabs>
 
                 <DestinationsCardsCollapse>

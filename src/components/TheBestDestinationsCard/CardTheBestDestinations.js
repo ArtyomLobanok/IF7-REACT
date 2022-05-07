@@ -7,7 +7,7 @@ import {
     DestinationsImgWrapper,
     DestinationsItem
 } from "../Styled-components/TheBestDestinations";
-import {Button} from "../Styled-components/Global";
+import {ButtonBookNowAndSingUP} from "../Styled-components/Global";
 
 const DestinationsCard = (props) => {
     const {imageUrl, subtitle} = props.card;
@@ -24,7 +24,8 @@ const DestinationsCard = (props) => {
                         <img src={imageUrl} alt="Pictures"/>
                     </DestinationsImgWrapper>
                     <DestinationsBtnWrapper>
-                        <Button padding='13px 24px' active value={subtitle} onClick={handleClick}>Book now</Button>
+                        <ButtonBookNowAndSingUP padding='13px 24px' value={subtitle} onClick={handleClick}>Book
+                            now</ButtonBookNowAndSingUP>
                     </DestinationsBtnWrapper>
                 </DestinationsContentWrapper>
                 <p>{subtitle}</p>

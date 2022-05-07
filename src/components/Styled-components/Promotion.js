@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const PromotionWrapperContent = styled.section`
-  background: #EAF0F9;
+  background: ${props => props.theme.BACKGROUND_COLOR_SECTION_DARKER};
 `
 export const PromotionCloseBtn = styled.button`
+  color: ${props => props.theme.BTN_CLOSE_COLOR};
   margin:24px 24px 0 0;
   overflow: hidden;
   position: relative;
@@ -13,7 +14,7 @@ export const PromotionCloseBtn = styled.button`
   height: 36px;
   border-radius: 50%;
   background: transparent;
-  color: #BFBFBF;
+
   font: inherit;
   text-indent: 100%;
   cursor: pointer;
@@ -42,17 +43,17 @@ export const PromotionCloseBtn = styled.button`
 `
 export const PromotionWrapperAnnouncement = styled.div`
   p {
+    color: ${props => props.theme.COLOR_ANY_TEXT};
     font-size: 24px;
     font-weight: 500;
-    color: #383838;
     margin-bottom: 21px;
   }
 `
 export const PromotionWrapperIcon = styled.div`
+  background: ${props => props.theme.BACKGROUND_COLOR_PROMOTION_ICON};
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
   border-radius: 50%;
   margin: 0 24px 57px;
   svg {
@@ -61,6 +62,5 @@ export const PromotionWrapperIcon = styled.div`
     width: 58px;
     height: 57px;
     margin: 14px;
-    fill: #3077C6;
   }
 `

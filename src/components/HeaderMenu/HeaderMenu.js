@@ -11,7 +11,7 @@ import {
     LogotypeIcon,
     LogOutIcon,
     StyledLink,
-    SwitcherIcon
+    SwitcherIcon, SwitcherIconActive
 } from "../Styled-components/Global";
 import Svg from "../../assets/svg/Svg";
 import {switchTheme} from "../../redux/actions"
@@ -43,10 +43,10 @@ const HeaderMenu = () => {
                                 <use href="#styleTimeSwitch"/>
                             </SwitcherIcon>
                         ) : (
-                            <SwitcherIcon cursor='pointer' width='30px' height='30px'
+                            <SwitcherIconActive cursor='pointer' width='30px' height='30px'
                                           onClick={() => dispatch(switchTheme(lightTheme))}>
                                 <use href="#styleTimeSwitch"/>
-                            </SwitcherIcon>
+                            </SwitcherIconActive>
                         )}
                     </HeaderNavLink>
                     <ClickAwayListener onClickAway={handleClickAway}>

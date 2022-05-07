@@ -3,14 +3,14 @@ import arrowDown from "../../assets/Img/arrowBottom.png"
 import arrowTop from "../../assets/Img/arrowTop.png"
 
 export const DestinationsTabs = styled.div`
-  background-color: ${props => props.theme.BTN_IS_NOT_ACTIVE_BACKGROUND_COLOR};
+  background-color: ${props => props.theme.BTN_DESTINATIONS_IS_NOT_ACTIVE_BACKGROUND_COLOR};
   display: flex;
   max-width: 622px;
   border-radius: 0.5rem;
   margin-bottom: 65px;
 `
 export const DestinationsCardsCollapse = styled.div`
-  color: ${props => props.theme.ANY_TITLE_COLOR};
+  color: ${props => props.theme.COLOR_TITLE_CARDS};
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
@@ -92,3 +92,35 @@ export const DestinationsBtnWrapper = styled.div`
   transform: translate3d(0, -50%, 0);
   transition: opacity 0.1s linear;
 `
+export const TabsBtn = styled.button`
+  background: ${props => props.theme.BTN_DESTINATIONS_IS_NOT_ACTIVE_BACKGROUND_COLOR};
+  color: ${props => props.theme.BTN_DESTINATIONS_IS_NOT_ACTIVE_TEXT_COLOR};
+  width: ${props => props.width || 'initial'};
+
+  padding: 17px 0;
+  display: block;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 400;
+  font-size: 24px;
+
+  &:hover {
+    background: ${props => props.theme.BTN_DESTINATIONS_IS_NOT_HOVER_BACKGROUND_COLOR};
+    color: ${props => props.theme.BTN_DESTINATIONS_IS_NOT_HOVER_TEXT_COLOR};
+    transition: 0.5s ease;
+    outline: none;
+    cursor: pointer;
+  }
+`
+export const TabsBtnActive = styled(TabsBtn)`
+  background: ${props => props.theme.BTN_DESTINATIONS_ACTIVE_BACKGROUND_COLOR};
+  color: ${props => props.theme.BTN_DESTINATIONS_ACTIVE_TEXT_COLOR};
+
+  &:hover {
+    background: ${props => props.theme.BTN_DESTINATIONS_ACTIVE_BACKGROUND_COLOR};
+    color: ${props => props.theme.BTN_DESTINATIONS_ACTIVE_TEXT_COLOR};
+    cursor: initial;
+  }
+`
+
+
