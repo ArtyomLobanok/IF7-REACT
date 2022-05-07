@@ -9,7 +9,7 @@ const fadeEffect = keyframes`
   }
 `
 export const FormHeaderWrapper = styled.div`
-  background: ${props => props.background || "#FFFFFF"};
+  background: ${props => props.theme.BACKGROUND_COLOR_FORM_WRAPPER};
   display: flex;
   max-width: 77rem;
   margin: 0 auto 9.5rem;
@@ -17,7 +17,7 @@ export const FormHeaderWrapper = styled.div`
 `
 
 export const StyledForm = styled.form`
-  background: ${props => props.background || "#FFFFFF"};
+  background: ${props => props.theme.BACKGROUND_COLOR_FORM_WRAPPER};
   display: flex;
   align-items: center;
   max-width: 77rem;
@@ -26,14 +26,14 @@ export const StyledForm = styled.form`
 `
 
 export const StyledInputWrapper = styled.div`
-  background: ${props => props.background || "#FFFFFF"};
+  background: ${props => props.theme.BACKGROUND_COLOR_FORM_WRAPPER};
   max-width: ${(props) => props.maxWidth};
   position: ${props => props.position || "#initial"};;
   width: 100%;
 `
 
 export const StyledDatePickerWrapper = styled.div`
-  background: ${props => props.background || "#FFFFFF"};
+  background-color: ${props => props.theme.BACKGROUND_COLOR_FORM_WRAPPER};
   max-width: ${(props) => props.maxWidth};
   position: ${props => props.position || "#initial"};
   width: 100%;
@@ -41,10 +41,9 @@ export const StyledDatePickerWrapper = styled.div`
   div {
     div {
       left: -1px;
-
       input {
-        background: ${props => props.background || "#FFFFFF"};
-        color: ${props => props.color || "#383838"};
+        background-color: ${props => props.theme.BACKGROUND_COLOR_FORM_WRAPPER};
+        color: ${props => props.theme.COLOR_INPUT_FORM_TEXT};
         padding: 20px 22px;
         border: none;
         border-radius: 0.5rem;
@@ -56,7 +55,7 @@ export const StyledDatePickerWrapper = styled.div`
 
         &:hover,
         &:focus {
-          border-color: ${props => props.color || "#F5BD41"};
+          border-color: ${props => props.theme.COLOR_BORDER_FOCUS_INPUT};
           border-width: 3px;
           border-style: solid;
           margin: -3px 0;
@@ -67,8 +66,8 @@ export const StyledDatePickerWrapper = styled.div`
 `
 
 export const StyledInputFist = styled.input`
-  background: ${props => props.background || "#FFFFFF"};
-  color: ${props => props.color || "#383838"};
+  background: ${props => props.theme.BACKGROUND_COLOR_FORM_WRAPPER};
+  color: ${props => props.theme.COLOR_INPUT_FORM_TEXT};
   position: relative;
   left: -1px;
   padding: 20px 22px;
@@ -82,7 +81,7 @@ export const StyledInputFist = styled.input`
 
   &:hover,
   &:focus {
-    border-color: ${props => props.color || "#F5BD41"};
+    border-color: ${props => props.theme.COLOR_BORDER_FOCUS_INPUT};
     border-width: 3px;
     border-style: solid;
     margin: -3px 0;
@@ -126,9 +125,32 @@ export const DataFormWrapper = styled.div`
   max-width: 314px;
 `
 
+export const SearchBtn = styled.button`
+  background: ${props => props.theme.BTN_SEARCH_BACKGROUND_COLOR};
+  color: ${props => props.theme.BTN_SEARCH_TEXT_COLOR};
+  width: ${props => props.width || 'initial'};
+  
+ 
+  font-weight: 500;
+  padding: 18px 59px;
+  display: block;
+  outline: 1px;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 24px;
+  cursor: pointer;
+
+  &:hover {
+    background: ${props => props.theme.BTN_SEARCH_BACKGROUND_HOVER_COLOR};
+    color: ${props => props.theme.BTN_SEARCH_TEXT_HOVER_COLOR};
+    outline: none;
+    transition: 0.5s ease;
+  }
+`
+
 export const SelectWrapper = styled.div`
-  background: ${props => props.background || "#FFFFFF"};
-  color: ${props => props.color || "#383838"};
+  background: ${props => props.theme.BACKGROUND_COLOR_INPUT};
+  color: ${props => props.theme.COLOR_INPUT_FORM_TEXT};
 
 
   display: flex;
@@ -148,7 +170,7 @@ export const SelectWrapper = styled.div`
 
   &:hover,
   &:focus {
-    border-color: ${props => props.color || "#F5BD41"};
+    border-color: ${props => props.theme.COLOR_NAV_ICON_ACTIVE_AND_FOCUS};
     border-width: 3px;
     border-style: solid;
     margin: -3px 0;
@@ -156,7 +178,7 @@ export const SelectWrapper = styled.div`
 `
 
 export const ModalForm = styled.div`
-  background: ${props => props.background || "#FFFFFF"};
+  background: ${props => props.theme.BACKGROUND_COLOR_FORM_WRAPPER};
   position: absolute;
   transform: translate3d(60px, 15px, 0);
   padding: 22px 22px 0;
@@ -176,17 +198,17 @@ export const ModalForm = styled.div`
   }
 
   &::-webkit-scrollbar-thumb {
-    background: ${props => props.background || "#3077C6"};
+    background: ${props => props.theme.BACKGROUND_COLOR_SCROLL};
     border-radius: 8px;
   }
 `
 export const ModalFormQuestion = styled.div`
-  color: ${props => props.color || "#333333"};
+  color: ${props => props.theme.COLOR_MODAL_TEXT};
   margin: 28px 0 12px;
   font-size: 12px;
 `
 export const ModalFormCounterWrapper = styled.div`
-  color: ${props => props.color || "#333333"};
+  color: ${props => props.theme.COLOR_MODAL_TEXT};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -194,32 +216,33 @@ export const ModalFormCounterWrapper = styled.div`
   font-size: 16px;
 `
 export const ButtonCounter = styled.button`
-  background: ${props => props.background || "#FFFFFF"};
-  border-color: ${props => props.active ? "#3077C6" : "#CECECE"};
-  color: ${props => props.active ? "#3077C6" : "#CECECE"};
+  background: ${props => props.theme.BTN_COUNTER_BACKGROUND_COLOR};
+  border-color: ${props => props.theme.BTN_COUNTER_IS_NOT_ACTIVE_BORDER_COLOR};
+  color: ${props => props.theme.BTN_COUNTER_IS_NOT_ACTIVE_TEXT_COLOR};
   display: block;
   width: 30px;
   height: 30px;
   border-width: 1px;
   border-style: solid;
-
-  background: #FFFFFF;
   outline: none;
   font-size: 18px;
   font-weight: 400;
-  cursor: pointer;
   text-align: center;
-
-  &:hover {
-    color: ${props => props.color || "#F5BD41"};
-    background: ${props => props.active ? "#3077C6" : "#FFFFFF"};
-    transition: 0.5s;
-  }
 }
+`
+export const ButtonCounterActive = styled(ButtonCounter)`
+  border-color: ${props => props.theme.BTN_COUNTER_ACTIVE_BORDER_COLOR};
+  color: ${props => props.theme.BTN_COUNTER_ACTIVE_TEXT_COLOR};
+  cursor: pointer;
+  &:hover {
+    background: ${props => props.theme.BTN_COUNTER_ACTIVE_HOVER_BACKGROUND_COLOR};
+    border-color: ${props => props.theme.BTN_COUNTER_ACTIVE_HOVER_BORDER_COLOR};
+    color: ${props => props.theme.BTN_COUNTER_ACTIVE_HOVER_TEXT_COLOR};
+  }
 `
 
 export const ModalMenuShowCounter = styled.input`
-  background: ${props => props.background || "#FFFFFF"};
+  background: ${props => props.theme.BACKGROUND_COLOR_INPUT};
   border: none;
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
@@ -230,7 +253,7 @@ export const ModalMenuShowCounter = styled.input`
 `
 
 export const StyledSelects = styled.select`
-  border-color: ${props => props.color || "#3077C6"};
+  border-color:${props => props.theme.COLOR_BORDER_SELECT};
 
   border-width: 1px;
   border-style: solid;
@@ -248,7 +271,7 @@ export const StyledSelects = styled.select`
   }
 
   &:focus {
-    border-color: ${props => props.color || "#3077C6"};
+    border-color:${props => props.theme.COLOR_BORDER_SELECT};
     outline: none;
     box-shadow: none;
     border-width: 1px;
@@ -256,10 +279,12 @@ export const StyledSelects = styled.select`
   }
 
   &:hover {
-    color: ${props => props.color || "#383838"};
-    background: ${props => props.background || "#F3F3F4"};
+    color: ${props => props.theme.COLOR_TEXT_HOVER_SELECT};
+    background: ${props => props.theme.BACKGROUND_HOVER_COLOR_SELECT};
     transition: 0.5s;
   }
 `
+
+
 
 

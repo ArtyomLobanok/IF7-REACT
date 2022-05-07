@@ -9,12 +9,10 @@ import {
     Flex,
     SubTitle,
     Title,
-    StyledSvg,
-    AnyTitle,
-    AnySubTitle,
+    TittleCards,
+    SubTittleCards,
     Text,
-    IconSvg,
-    AvatarSvg
+    AvatarIcon
 } from "../Styled-components/Global";
 
 const GuestsReviewsCard = (props) => {
@@ -31,8 +29,8 @@ const GuestsReviewsCard = (props) => {
             </GuestsReviewsCardHeader>
             <Flex width='initial' margin='24px'>
                 <Flex direction='column' margin='0 88px 0 0'>
-                    <AnyTitle little bold margin='0 0 16px 0' blue>{title}</AnyTitle>
-                    <AnySubTitle little>{city},{country}</AnySubTitle>
+                    <TittleCards little bold margin='0 0 16px 0' blue>{title}</TittleCards>
+                    <SubTittleCards little>{city},{country}</SubTittleCards>
                 </Flex>
                 <ReviewCounterWrapper>
                     <button>{rating}</button>
@@ -40,18 +38,18 @@ const GuestsReviewsCard = (props) => {
                 </ReviewCounterWrapper>
             </Flex>
             <Flex margin="0 0 0 24px">
-                <AvatarSvg width="3.3125rem" height="3.3125rem" margin="0 16px 0 0">
+                <AvatarIcon width="3.3125rem" height="3.3125rem" margin="0 16px 0 0">
                     <use href="#account"></use>
-                </AvatarSvg>
+                </AvatarIcon>
                 <Flex justify="center" direction="column">
                     <Title little margin="0 0 8px 0">{user}</Title>
                     <Flex>
                         <FlagReviewUser src={flag} alt='flag'/>
-                        <SubTitle little >{userFrom} </SubTitle>
+                        <SubTitle little>{userFrom} </SubTitle>
                     </Flex>
                 </Flex>
             </Flex>
-            <Text little margin = "24px">{post}</Text>
+            <Text little margin="24px">{post}</Text>
         </GuestsReviewsCardWrapper>
     )
 }

@@ -9,7 +9,7 @@ export const Header = styled.header`
   z-index: 1000;
 `
 export const HeaderNavLink = styled.a`
-  color: ${props => props.color || "#FFFFFF"};
+  color: ${props => props.theme.COLOR_NAV_TEXT};
   margin-right: 24px;
   font-size: 24px;
   text-decoration: none;
@@ -28,8 +28,8 @@ export const HeaderNavLink = styled.a`
   }
 
   &:after {
-    background-color: ${props => props.background || "#F5BD41"};
-    border-color: ${props => props.border || "#F5BD41"};
+    background-color: ${props => props.theme.COLOR_NAV_ICON_ACTIVE_AND_FOCUS};
+    border-color: ${props => props.theme.COLOR_NAV_ICON_ACTIVE_AND_FOCUS};
     content: "";
     display: block;
     width: 85%;
@@ -59,8 +59,8 @@ const fadeEffect = keyframes`
 `
 
 export const ButtonLogOut = styled.button`
-  color: ${props => props.color || "#333333"};
-  background: ${props => props.background || "#FFFFFF"};
+  color: ${props => props.theme.BTN_LOGOUT_TEXT_COLOR};
+  background: ${props => props.theme.BTN_LOGOUT_BACKGROUND_COLOR};
   padding: ${props => props.padding || '0'};
   width: ${props => props.width || 'initial'};
   height: ${props => props.height || 'initial'};
@@ -80,8 +80,8 @@ export const ButtonLogOut = styled.button`
   animation: ${fadeEffect} 0.5s linear;
 
   &:hover {
-    color: ${props => props.color || "#F5BD41"};
-    background: ${props => props.color || "#3077C6"};
+    color: ${props => props.theme.BTN_LOGOUT_TEXT_HOVER_COLOR};
+    background: ${props => props.theme.BTN_LOGOUT_BACKGROUND_HOVER_COLOR};
     transition: 0.5s;
   }
 }
@@ -90,7 +90,7 @@ export const HeaderContentWrapper = styled.div`
   margin: 196px 0 120px;
 `
 export const HeaderContentTitle = styled.h1`
-  color: ${props => props.color || "#FFFFFF"};
+  color: ${props => props.theme.COLOR_MAIN_TITLE};
   margin-bottom: 145px;
   font-size: 50px;
   font-weight: 500;

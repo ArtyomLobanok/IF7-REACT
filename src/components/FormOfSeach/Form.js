@@ -4,8 +4,7 @@ import MyDataPicker from "./FormFieldDate/FormFieldDate";
 import FormFieldThird from "./FormFieldWhoAreGoing/FormFieldWhoAreGoing";
 import {useDispatch, useSelector} from "react-redux";
 import {hotelsLoad} from "../../redux/actions";
-import {FormHeaderWrapper, StyledForm} from "../Styled-components/HeaderForm";
-import {TabsBtnAndSearchBtn} from "../Styled-components/Global";
+import {FormHeaderWrapper, SearchBtn, StyledForm} from "../Styled-components/HeaderForm";
 
 function Form() {
     const dispatch = useDispatch()
@@ -37,8 +36,8 @@ function Form() {
                 <FirstForm/>
                 <MyDataPicker/>
                 <FormFieldThird/>
-                <TabsBtnAndSearchBtn active main
-                    onClick={handleChange} type='submit'>Search</TabsBtnAndSearchBtn>
+                <SearchBtn
+                    onClick={handleChange} type='submit'>Search</SearchBtn>
             </StyledForm>
         </FormHeaderWrapper>
     );

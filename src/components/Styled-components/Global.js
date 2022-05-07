@@ -54,7 +54,7 @@ export const Section = styled.section`
   animation: ${fadeEffect} 2s linear;
 `
 export const SectionAnother = styled(Section)`
-  background: ${props => props.theme.BACKGROUND_COLOR_SECTION_ANY};
+  background: ${props => props.theme.BACKGROUND_COLOR_SECTION_DARKER};
 `
 
 export const SectionFooter = styled(Section)`
@@ -62,7 +62,7 @@ export const SectionFooter = styled(Section)`
 `
 
 export const HeaderSection = styled.h1`
-  color: ${props => props.theme.TITLE_SECTION_COLOR};
+  color: ${props => props.theme.COLOR_SECTION_TITLE};
   width: 100%;
   margin: 0 auto 104px;
   font-size: 40px;
@@ -71,28 +71,33 @@ export const HeaderSection = styled.h1`
 `
 
 export const Title = styled.p`
-  color: ${props => props.theme.TITLE_COLOR};
+  color: ${props => props.theme.COLOR_TITLE};
   font-size: ${props => props.little ? "18px" : "24px"};
   font-weight: ${props => props.bold ? "500" : "400"};
   margin: ${props => props.margin || '0'};
   text-decoration: none;
 `
-export const AnyTitle = styled(Title)`
-  color: ${props => props.theme.ANY_TITLE_COLOR};
+export const TittleCards = styled(Title)`
+  color: ${props => props.theme.COLOR_TITLE_CARDS};
 `
-
-export const Text = styled(Title)`
-  color: ${props => props.theme.TEXT_COLOR};
-`
-
 export const SubTitle = styled.p`
-  color: ${props => props.theme.SUB_TITLE_COLOR};
+  color: ${props => props.theme.COLOR_SUB_TITLE};
   font-size: ${props => props.little ? "18px" : "24px"};
   font-weight: ${props => props.bold ? "500" : "400"};
   text-decoration: none;
 `
-export const AnySubTitle = styled(SubTitle)`
-  color: ${props => props.theme.ANY_SUB_TITLE_COLOR};
+export const SubTittleCards = styled(SubTitle)`
+  color: ${props => props.theme.COLOR_SUB_TITLE_CARDS};
+`
+
+export const Text = styled(Title)`
+  color: ${props => props.theme.COLOR_ANY_TEXT};
+`
+export const PriceText = styled(Title)`
+  color: ${props => props.theme.COLOR_PRICE_TEXT};
+`
+export const TextReviews = styled(Title)`
+  color: ${props => props.theme.COLOR_TEXT_REVIEWS};
 `
 
 export const CardImg = styled.img`
@@ -161,12 +166,26 @@ export const StyledSvg = styled.svg`
   cursor: ${props => props.cursor || 'initial'};
 `
 
-export const IconSvg = styled(StyledSvg)`
-  fill: ${props => props.theme.COLOR_SVG_ICON};
+export const LogotypeIcon = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_NAV_LOGOTYPE_MAIN};
 `
-export const MainIconSvg = styled(StyledSvg)`
-  fill: ${props => props.theme.COLOR_ANY_SVG_ICON};
+export const SwitcherIcon = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_NAV_ICON};
 `
-export const AvatarSvg = styled(StyledSvg)`
-  fill: ${props => props.theme.COLOR_GREY_SVG_ICON};
+
+export const AccountIcon = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_NAV_ICON};
 `
+export const AccountIconActive = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_ICON_ACTIVE};
+`
+export const LogOutIcon = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_NAV_ICON};
+`
+export const OfferIcon = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_OFFER_ICON};
+`
+export const AvatarIcon  = styled(StyledSvg)`
+  fill: ${props => props.theme.COLOR_AVATAR_ICON};
+`
+

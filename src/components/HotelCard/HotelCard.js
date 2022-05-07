@@ -4,7 +4,7 @@ import {
     SubTitle,
     CardImg,
     StyledLink,
-    AnyTitle,
+    TittleCards,
 } from "../../components/Styled-components/Global"
 
 const hotelCard = props => {
@@ -15,7 +15,7 @@ const hotelCard = props => {
                 <Flex margin='0 0 24px 0'>
                     <CardImg src={imageUrl} alt="Pictures"/>
                 </Flex>
-                <AnyTitle blue margin='0 0 24px 0'>{name}</AnyTitle>
+                <TittleCards blue margin='0 0 24px 0'>{name}</TittleCards>
                 <SubTitle>{city}, {country}</SubTitle>
             </Flex>
         </StyledLink>

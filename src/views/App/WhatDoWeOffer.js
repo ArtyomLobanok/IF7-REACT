@@ -1,14 +1,6 @@
 import React from "react";
-import {Section, Container, HeaderSection, Flex, Title} from "../../components/Styled-components/Global"
-import styled from "styled-components";
+import {Section, Container, HeaderSection, Flex, Title, OfferIcon} from "../../components/Styled-components/Global"
 
-const OfferItem = styled.svg`
-    margin-top: 16px;
-    width: 100px;
-    height: 100px;
-    fill: #3077C6;
-    margin-bottom: 48px
-`
 
 const WhatDoWeOffer = () => {
     return (
@@ -17,27 +9,27 @@ const WhatDoWeOffer = () => {
                 <HeaderSection>What do we offer</HeaderSection>
                 <Flex width='100%'>
                     <Flex align='center' width='25%' direction='column'>
-                        <OfferItem>
+                        <OfferIcon width = "100px" height = "100px" margin = "16px 0 48px">
                             <use href="#support"/>
-                        </OfferItem>
+                        </OfferIcon>
                         <Title>Support 24/7</Title>
                     </Flex>
                     <Flex align='center' width='25%' direction='column'>
-                        <OfferItem>
+                        <OfferIcon width = "100px" height = "100px" margin = "16px 0 48px">
                             <use href="#Communicate"/>
-                        </OfferItem>
+                        </OfferIcon>
                         <Title>Communicate directly</Title>
                     </Flex>
                     <Flex align='center' width='25%' direction='column'>
-                        <OfferItem>
+                        <OfferIcon width = "100px" height = "100px" margin = "16px 0 48px">
                             <use href="#Book"/>
-                        </OfferItem>
+                        </OfferIcon>
                         <Title>Book online</Title>
                     </Flex>
                     <Flex align='center' width='25%' direction='column'>
-                        <OfferItem>
+                        <OfferIcon width = "100px" height = "100px" margin = "16px 0 48px">
                             <use href="#Reviews"/>
-                        </OfferItem>
+                        </OfferIcon>
                         <Title>Real guest reviews</Title>
                     </Flex>
                 </Flex>

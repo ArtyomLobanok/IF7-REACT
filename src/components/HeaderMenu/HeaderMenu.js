@@ -5,7 +5,14 @@ import useAuth from "../../hooks/use-auth";
 import Dropdown from "./Dropdown/Dropdown";
 import {ClickAwayListener} from "@mui/material";
 import {ButtonLogOut, Header, HeaderNavLink} from "../Styled-components/Header"
-import {Flex, StyledLink, StyledSvg} from "../Styled-components/Global";
+import {
+    AccountIcon, AccountIconActive,
+    Flex,
+    LogotypeIcon,
+    LogOutIcon,
+    StyledLink,
+    SwitcherIcon
+} from "../Styled-components/Global";
 import Svg from "../../assets/svg/Svg";
 import {switchTheme} from "../../redux/actions"
 import {lightTheme, darkTheme} from "../Styled-components/ThemeData";
@@ -21,9 +28,9 @@ const HeaderMenu = () => {
             <Flex align='center'>
                 <div>
                     <StyledLink to={`/`}>
-                        <StyledSvg width='205px' height='40px' fill='#3077C6'>
+                        <LogotypeIcon width='205px' height='40px' fill='#3077C6'>
                             <use href="#logotype"></use>
-                        </StyledSvg>
+                        </LogotypeIcon>
                     </StyledLink>
                 </div>
                 <Flex justify='flex-end' align="center">
@@ -31,33 +38,39 @@ const HeaderMenu = () => {
                     <HeaderNavLink href="/#">Attractions</HeaderNavLink>
                     <HeaderNavLink>
                         {theme.mode === 'light' ? (
-                            <StyledSvg width='30px' height='30px' fill='#FFFFFF'
-                                       onClick={() => dispatch(switchTheme(darkTheme))}>
+                            <SwitcherIcon cursor='pointer' width='30px' height='30px'
+                                          onClick={() => dispatch(switchTheme(darkTheme))}>
                                 <use href="#styleTimeSwitch"/>
-                            </StyledSvg>
+                            </SwitcherIcon>
                         ) : (
-                            <StyledSvg width='30px' height='30px' fill='#F5BD41'
-                                       onClick={() => dispatch(switchTheme(lightTheme))}>
+                            <SwitcherIcon cursor='pointer' width='30px' height='30px'
+                                          onClick={() => dispatch(switchTheme(lightTheme))}>
                                 <use href="#styleTimeSwitch"/>
-                            </StyledSvg>
+                            </SwitcherIcon>
                         )}
                     </HeaderNavLink>
                     <ClickAwayListener onClickAway={handleClickAway}>
                         <div>
-                            <StyledSvg cursor='pointer' width='40px' height='40px'
-                                       fill={isDropdown === true ? '#F5BD41' : '#FFFFFF'}
-                                       onClick={isAuth && handleClickDropdown}>
-                                <use href="#account"/>
-                            </StyledSvg>
-
+                            {isDropdown === true ? (
+                                <AccountIconActive cursor='pointer' width='40px' height='40px'
+                                             onClick={isAuth && handleClickDropdown}>
+                                    <use href="#account"/>
+                                </AccountIconActive>
+                            ) : (
+                                <AccountIcon cursor='pointer' width='40px' height='40px'
+                                             onClick={isAuth && handleClickDropdown}>
+                                    <use href="#account"/>
+                                </AccountIcon>
+                            )
+                            }
                             {
                                 isDropdown && (
                                     <ButtonLogOut onClick={() => dispatch(removeUser({}))}
                                                   width="192px" height="50px" padding="14px 0 13px 16px"
                                     >
-                                        <StyledSvg width='30px' height='30px' fill='#333333' margin="12px 0 0 0">
+                                        <LogOutIcon width='30px' height='30px' margin="12px 0 0 0">
                                             <use href="#singOut"/>
-                                        </StyledSvg>
+                                        </LogOutIcon>
                                         Sign out
                                     </ButtonLogOut>
                                 )
