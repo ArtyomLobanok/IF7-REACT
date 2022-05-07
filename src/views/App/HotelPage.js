@@ -1,4 +1,3 @@
-
 import HeaderMenu from "../../components/HeaderMenu/HeaderMenu"
 import Footer from "./Footer";
 
@@ -20,7 +19,6 @@ const HotelPage = () => {
     const {data, handleClickLink} = HotelPageFetch()
     return (
         <>
-
             <HeaderHotelCardPage>
                 <Container>
                     <HeaderMenu/>
@@ -38,9 +36,11 @@ const HotelPage = () => {
                                 We are glad to welcome you!
                                 <br/>
                                 This hotel is located in the country {" "}
-                                 <a href="/Users/HeJlenocTb/Desktop/react7/public#" onClick={handleClickLink}>{data.country}</a> in the
+                                <a href="/Users/HeJlenocTb/Desktop/react7/public#"
+                                   onClick={handleClickLink}>{data.country}</a> in the
                                 city
-                                called <a href="/Users/HeJlenocTb/Desktop/react7/public#" onClick={handleClickLink}>{data.city}</a>.
+                                called <a href="/Users/HeJlenocTb/Desktop/react7/public#"
+                                          onClick={handleClickLink}>{data.city}</a>.
                                 <br/>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolore eaque inventore
                                 iure

@@ -6,20 +6,22 @@ import {HeaderWrapper, LoginFrom, HeaderWrapperShadow} from "../../components/St
 
 const LoginPage = () => {
     return (
-        <HeaderWrapper>
-            <HeaderWrapperShadow>
-                <Container>
-                    <HeaderMenu/>
-                    <LoginFrom>
-                        <h2>Login</h2>
-                        <Login/>
-                        <p>
-                            Or <StyledLinkLogin to="/register">Register</StyledLinkLogin>
-                        </p>
-                    </LoginFrom>
-                </Container>
-            </HeaderWrapperShadow>
-        </HeaderWrapper>
+        <>
+            <HeaderWrapper>
+                <HeaderWrapperShadow>
+                    <Container>
+                        <HeaderMenu/>
+                        <LoginFrom>
+                            <h2>Login</h2>
+                            <Login/>
+                            <p>
+                                Or <StyledLinkLogin to="/register">Register</StyledLinkLogin>
+                            </p>
+                        </LoginFrom>
+                    </Container>
+                </HeaderWrapperShadow>
+            </HeaderWrapper>
+        </>
     )
 }
 export default LoginPage;

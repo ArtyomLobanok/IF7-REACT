@@ -156,7 +156,7 @@ export const SelectWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 22px;
+  padding: 20px 5px;
 
   border: none;
   border-radius: 0.5rem;

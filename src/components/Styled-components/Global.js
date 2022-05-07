@@ -1,5 +1,6 @@
 import styled, {keyframes} from "styled-components";
 import {Link} from "react-router-dom";
+
 const fadeEffect = keyframes`
   from {
     opacity: 0.5;
