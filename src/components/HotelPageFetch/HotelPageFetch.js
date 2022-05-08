@@ -1,7 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState,} from "react";
 
-
 const HotelPageFetch = () => {
     const {id} = useParams()
     const url = `https://fe-student-api.herokuapp.com/api/hotels/${id}`;

@@ -1,14 +1,11 @@
 import {useSelector} from "react-redux";
-import nextArrow from "../../assets/Img/nextArrow.png";
-import prevArrow from "../../assets/Img/prevArrow.png";
 import Slider from "react-slick";
 import HotelCard from "../HotelCard/HotelCard";
-import React from "react";
-import {SliderWrapper} from "../Styled-components/Global";
+import {SliderArrow, SliderButtonNext, SliderButtonPrev, SliderWrapper} from "../Styled-components/Global";
 
 const AvailableHotelsSlider = () => {
     const hotelCards = useSelector(state => state.hotelsLoadReducer.hotelData)
-    console.log( hotelCards)
+    console.log(hotelCards)
     const SampleNextArrow = (props) => {
         const {className, onClick} = props;
         return (
@@ -16,7 +13,11 @@ const AvailableHotelsSlider = () => {
                 className={className}
                 onClick={onClick}
             >
-                <img src={nextArrow} alt="nextArrow"/>
+                <SliderButtonNext>
+                    <SliderArrow margin='0 0 0 10px' width='9px' height='21px'>
+                        <use href="#Arrow"></use>
+                    </SliderArrow>
+                </SliderButtonNext>
             </div>
         );
     }
@@ -28,7 +29,11 @@ const AvailableHotelsSlider = () => {
                 className={className}
                 onClick={onClick}
             >
-                <img src={prevArrow} alt="prevArrow"/>
+                <SliderButtonPrev>
+                    <SliderArrow margin='0 0 0 8px' width='9px' height='21px'>
+                        <use href="#Arrow"></use>
+                    </SliderArrow>
+                </SliderButtonPrev>
             </div>
         );
     }
@@ -69,13 +74,13 @@ const AvailableHotelsSlider = () => {
     }
     return (
 
-                <SliderWrapper>
-                    <Slider {...settings}>
-                        {hotelCards.map(hotelCard => (
-                            <HotelCard key={hotelCard.id} card={hotelCard}/>
-                        ))}
-                    </Slider>
-                </SliderWrapper>
+        <SliderWrapper>
+            <Slider {...settings}>
+                {hotelCards.map(hotelCard => (
+                    <HotelCard key={hotelCard.id} card={hotelCard}/>
+                ))}
+            </Slider>
+        </SliderWrapper>
 
     )
 }

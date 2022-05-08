@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {inputText} from "../../../redux/actions";
 import {
     StyledInputFist,
-    StyledInputFistWrapper, StyledInputWrapper,
+    StyledInputWrapper,
     StyledLabelFist
 } from "../../Styled-components/HeaderForm";
 

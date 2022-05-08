@@ -12,10 +12,10 @@ import {
 import {
     Section,
     Container,
-    HeaderSection,
+    HeaderSection, SliderArrow,
 } from "../../components/Styled-components/Global"
 import {
-    DestinationsArrowCollapse,
+    DestinationsArrowCollapseDown, DestinationsArrowCollapseUp,
     DestinationsCardsCollapse,
     DestinationsTabs, TabsBtn, TabsBtnActive,
 } from "../../components/Styled-components/TheBestDestinations"
@@ -70,31 +70,31 @@ const TheBestDestinations = () => {
 
                 <DestinationsTabs>
                     {tab === 'Regions' ? (
-                        <TabsBtnActive  width='30%' onClick={handleChangeFirstTab}>
+                        <TabsBtnActive width='30%' onClick={handleChangeFirstTab}>
                             Regions
                         </TabsBtnActive>
-                    ):(
-                        <TabsBtn  width='30%' onClick={handleChangeFirstTab}>
+                    ) : (
+                        <TabsBtn width='30%' onClick={handleChangeFirstTab}>
                             Regions
                         </TabsBtn>
                     )}
 
                     {tab === 'Cities' ? (
-                        <TabsBtnActive  width='30%' onClick={handleChangeSecondTab}>
+                        <TabsBtnActive width='30%' onClick={handleChangeSecondTab}>
                             Cities
                         </TabsBtnActive>
-                    ):(
-                        <TabsBtn  width='30%' onClick={handleChangeSecondTab}>
+                    ) : (
+                        <TabsBtn width='30%' onClick={handleChangeSecondTab}>
                             Cities
                         </TabsBtn>
                     )}
 
                     {tab === 'Places' ? (
-                        <TabsBtnActive  width='40%' onClick={handleChangeThirdTab}>
+                        <TabsBtnActive width='40%' onClick={handleChangeThirdTab}>
                             Places of interest
                         </TabsBtnActive>
-                    ):(
-                        <TabsBtn  width='40%' onClick={handleChangeThirdTab}>
+                    ) : (
+                        <TabsBtn width='40%' onClick={handleChangeThirdTab}>
                             Places of interest
                         </TabsBtn>
                     )}
@@ -164,7 +164,19 @@ const TheBestDestinations = () => {
                         </DestinationsCardsCollapse>
                     )
                 }
-                <DestinationsArrowCollapse activate={isOpen === false} onClick={handleClickCollapse}/>
+                {isOpen === false ? (
+                    <DestinationsArrowCollapseDown onClick={handleClickCollapse}>
+                        <SliderArrow margin='0 0 0 10px' width='9px' height='21px'>
+                            <use href="#Arrow"></use>
+                        </SliderArrow>
+                    </DestinationsArrowCollapseDown>
+                ) : (
+                    <DestinationsArrowCollapseUp onClick={handleClickCollapse}>
+                        <SliderArrow margin='0 0 0 10px' width='9px' height='21px'>
+                            <use href="#Arrow"></use>
+                        </SliderArrow>
+                    </DestinationsArrowCollapseUp>
+                )}
             </Container>
         </Section>
     )

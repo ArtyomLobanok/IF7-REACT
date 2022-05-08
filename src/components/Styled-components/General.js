@@ -1,7 +1,6 @@
 import {createGlobalStyle} from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-  @import url("/src/assets/fonts/Fonts.css");
   *, *::before, *::after {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;

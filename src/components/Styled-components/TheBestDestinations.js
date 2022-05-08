@@ -1,6 +1,4 @@
 import styled, {keyframes} from "styled-components";
-import arrowDown from "../../assets/Img/arrowBottom.png"
-import arrowTop from "../../assets/Img/arrowTop.png"
 
 export const DestinationsTabs = styled.div`
   background-color: ${props => props.theme.BTN_DESTINATIONS_IS_NOT_ACTIVE_BACKGROUND_COLOR};
@@ -17,19 +15,33 @@ export const DestinationsCardsCollapse = styled.div`
   font-size: 24px;
   padding: 0 -16px;
 `
-export const DestinationsArrowCollapse = styled.div`
-  border: none;
-  outline: none;
-  border-radius: 50%;
-  background-image: ${props => props.activate ? `url(${arrowDown})` : `url(${arrowTop})`};
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
+export const DestinationsArrowCollapseDown = styled.button`
+  background: ${props => props.theme.BTN_SLIDER_BACKGROUND_COLOR};
+  display: block;
   margin: 5px auto;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+  border: none;
+  transform: translate3d(0px,-30px,0);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  outline: none;
+  cursor: pointer;
+
+  svg {
+    transform: rotate(90deg)
+  }
+
+  &:hover {
+    background: ${props => props.theme.BTN_SLIDER_BACKGROUND_HOVER_COLOR};
+  }
 `
+export const DestinationsArrowCollapseUp = styled(DestinationsArrowCollapseDown)`
+  svg {
+    transform: rotate(270deg)
+  }
+`
+
 export const DestinationsContentWrapper = styled.div`
   position: relative;
 `

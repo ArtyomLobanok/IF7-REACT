@@ -1,9 +1,7 @@
 import Slider from "react-slick";
 import HotelCard from "../HotelCard/HotelCard";
 import useFeatch from "../../hooks/useFetch"
-import nextArrow from '../../assets/Img/nextArrow.png'
-import prevArrow from '../../assets/Img/prevArrow.png'
-import {SliderWrapper} from "../Styled-components/Global";
+import {SliderArrow, SliderButtonNext, SliderButtonPrev, SliderWrapper} from "../Styled-components/Global";
 
 const SampleNextArrow = (props) => {
     const {className, onClick} = props;
@@ -12,7 +10,13 @@ const SampleNextArrow = (props) => {
             className={className}
             onClick={onClick}
         >
-            <img src={nextArrow} alt="nextArrow"/>
+            <div>
+                <SliderButtonNext>
+                    <SliderArrow margin='0 0 0 10px' width='9px' height='21px'>
+                        <use href="#Arrow"></use>
+                    </SliderArrow>
+                </SliderButtonNext>
+            </div>
         </div>
     );
 }
@@ -24,13 +28,19 @@ const SamplePrevArrow = (props) => {
             className={className}
             onClick={onClick}
         >
-            <img src={prevArrow} alt="prevArrow"/>
+            <div>
+                <SliderButtonPrev>
+                    <SliderArrow margin='0 0 0 8px' width='9px' height='21px'>
+                        <use href="#Arrow"></use>
+                    </SliderArrow>
+                </SliderButtonPrev>
+            </div>
         </div>
     );
 }
 
 const HomesGuestsLovesSlider = () => {
-    const { array } = useFeatch();
+    const {array} = useFeatch();
     const settings = {
         dots: false,
         infinite: false,

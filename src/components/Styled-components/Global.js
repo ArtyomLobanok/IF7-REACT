@@ -19,21 +19,64 @@ export const Container = styled.div`
   overflow: hidden;
 `
 export const SliderWrapper = styled.div`
-  .slick-next {
-    transform: translate3d(-40px, -80px, 0);
+  div {
+    div {
+      &:first-child {
+        z-index: 1000;
+      }
+
+      &:first-child:before {
+        content: "";
+      }
+
+      &:last-child {
+        z-index: 1000;
+
+        &:last-child:before {
+          content: "";
+        }
+      }
+    }
   }
 
-  .slick-prev:before, .slick-next:before {
-    content: '' !important;
-  }
-
-  .slick-prev {
-    z-index: 1000;
-    transform: translate3d(7px, -80px, 0);
-  }
   animation: ${fadeEffect} 2s linear;
 `
+export const SliderButtonNext = styled.button`
+  background: ${props => props.theme.BTN_SLIDER_BACKGROUND_COLOR};
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  transform: translate3d(-40px, -80px, 0);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  outline: none;
+  cursor: pointer;
 
+  &:hover {
+    background: ${props => props.theme.BTN_SLIDER_BACKGROUND_HOVER_COLOR};
+  }
+`
+export const SliderButtonPrev = styled.button`
+  background: ${props => props.theme.BTN_SLIDER_BACKGROUND_COLOR};
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  transform: translate3d(9px, -80px, 0);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  outline: none;
+  cursor: pointer;
+
+  svg {
+    transform: rotate(180deg)
+  }
+
+  &:hover {
+    background: ${props => props.theme.BTN_SLIDER_BACKGROUND_HOVER_COLOR};
+  }
+`
 
 const StyledFlex = styled.div`
   position: ${props => props.position || 'initial'};
@@ -113,7 +156,6 @@ export const StyledLinkLogin = styled(StyledLink)`
   color: ${props => props.theme.COLOR_LOGIN_LINK};
 `;
 
-
 export const ButtonBookNowAndSingUP = styled.button`
   background: ${props => props.theme.BTN_BOOK_NOW_BACKGROUND_COLOR};
   border-color: ${props => props.theme.BTN_BOOK_NOW_BORDER_COLOR};
@@ -134,7 +176,7 @@ export const ButtonBookNowAndSingUP = styled.button`
   &:hover {
     background: ${props => props.theme.BTN_BOOK_NOW_HOVER_BACKGROUND_COLOR};
     border-color: ${props => props.theme.BTN_BOOK_NOW_HOVER_BORDER_COLOR};
-    color: ${props => props.theme.BTN_BOOK_NOW_HOVER_TEXT_COLOR};    
+    color: ${props => props.theme.BTN_BOOK_NOW_HOVER_TEXT_COLOR};
     transition: 0.5s ease;
   }
 }
@@ -149,7 +191,9 @@ export const StyledSvg = styled.svg`
   margin: ${props => props.margin || '0'};
   cursor: ${props => props.cursor || 'initial'};
 `
-
+export const SliderArrow = styled(StyledSvg)`
+  fill: ${props => props.theme.BTN_SLIDER_ARROW_COLOR};
+`
 export const LogotypeIcon = styled(StyledSvg)`
   fill: ${props => props.theme.COLOR_NAV_LOGOTYPE_MAIN};
 `
@@ -175,7 +219,8 @@ export const LogOutIcon = styled(StyledSvg)`
 export const OfferIcon = styled(StyledSvg)`
   fill: ${props => props.theme.COLOR_OFFER_ICON};
 `
-export const AvatarIcon  = styled(StyledSvg)`
+export const AvatarIcon = styled(StyledSvg)`
   fill: ${props => props.theme.COLOR_AVATAR_ICON};
 `
+
 

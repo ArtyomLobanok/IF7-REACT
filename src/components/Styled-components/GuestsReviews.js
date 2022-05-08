@@ -3,24 +3,60 @@ import styled from "styled-components";
 export const GuestReviewsWrapperSlider = styled.div`
   margin: -8px;
 
-  .slick-next {
-    z-index: 1000;
-    transform: translate3d(-44px, -190px, 0);
+  div {
+    div {
+      &:first-child {
+        z-index: 1000;
+      }
+
+      &:first-child:before {
+        content: "";
+      }
+
+      &:last-child {
+        z-index: 1000;
+
+        &:last-child:before {
+          content: "";
+        }
+      }
+    }
+  }
+`
+export const GuestsReviewsSliderButtonNext = styled.button`
+  background: ${props => props.theme.BTN_SLIDER_BACKGROUND_COLOR};
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  transform: translate3d(-41px, -190px, 0);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background: ${props => props.theme.BTN_SLIDER_BACKGROUND_HOVER_COLOR};
+  }
+`
+export const GuestsReviewsSliderButtonPrev = styled.button`
+  background: ${props => props.theme.BTN_SLIDER_BACKGROUND_COLOR};
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  transform: translate3d(21px, -190px, 0);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  outline: none;
+  cursor: pointer;
+
+  svg {
+    transform: rotate(180deg)
   }
 
-  .slick-next img {
-    z-index: 1000;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    content: '' !important;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-
-  .slick-prev {
-    z-index: 1000;
-    transform: translate3d(15px, -190px, 0);
+  &:hover {
+    background: ${props => props.theme.BTN_SLIDER_BACKGROUND_HOVER_COLOR};
   }
 `
 export const GuestsReviewsCardWrapper = styled.div`
@@ -87,6 +123,7 @@ export const ReviewCounterWrapper = styled.div`
       transition: opacity 0.1s linear;
     }
   }
+
   p {
     color: ${props => props.theme.COLOR_TEXT_REVIEWS};
     position: absolute;

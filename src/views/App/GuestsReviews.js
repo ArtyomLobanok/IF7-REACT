@@ -1,11 +1,12 @@
 import React from "react";
 import Slider from "react-slick";
 import GuestsReviewsData from "../../components/GuestsReviewsData/GuestsReviewsData"
-import nextArrow from "../../assets/Img/nextArrow.png";
-import prevArrow from "../../assets/Img/prevArrow.png";
 import GuestsReviewsCard from "../../components/GuestsReviewsCard/GuestsReviewsCard";
-import {Container, HeaderSection, Section} from "../../components/Styled-components/Global";
-import {GuestReviewsWrapperSlider} from "../../components/Styled-components/GuestsReviews"
+import {Container, HeaderSection, LogotypeIcon, Section, SliderArrow} from "../../components/Styled-components/Global";
+import {
+    GuestReviewsWrapperSlider,
+    GuestsReviewsSliderButtonNext, GuestsReviewsSliderButtonPrev
+} from "../../components/Styled-components/GuestsReviews"
 
 const GuestsReviews = () => {
     const SampleNextArrow = (props) => {
@@ -15,7 +16,13 @@ const GuestsReviews = () => {
                 className={className}
                 onClick={onClick}
             >
-                <img src={nextArrow} alt="nextArrow"/>
+                <div>
+                    <GuestsReviewsSliderButtonNext>
+                        <SliderArrow margin='0 0 0 10px' width='9px' height='21px'>
+                            <use href="#Arrow"></use>
+                        </SliderArrow>
+                    </GuestsReviewsSliderButtonNext>
+                </div>
             </div>
         );
     }
@@ -27,7 +34,13 @@ const GuestsReviews = () => {
                 className={className}
                 onClick={onClick}
             >
-                <img src={prevArrow} alt="prevArrow"/>
+                <div>
+                    <GuestsReviewsSliderButtonPrev>
+                        <SliderArrow margin='0 0 0 8px' width='9px' height='21px'>
+                            <use href="#Arrow"></use>
+                        </SliderArrow>
+                    </GuestsReviewsSliderButtonPrev>
+                </div>
             </div>
         );
     }
@@ -71,7 +84,7 @@ const GuestsReviews = () => {
             <Section>
                 <Container>
                     <HeaderSection>Guests reviews</HeaderSection>
-                    <GuestReviewsWrapperSlider >
+                    <GuestReviewsWrapperSlider>
                         <Slider {...settings} >
                             {GuestsReviewsData.map(reviewCard => (
                                 <GuestsReviewsCard key={reviewCard.id} card={reviewCard}/>

@@ -5,7 +5,7 @@ import {
     CardImg,
     StyledLink,
     TittleCards,
-} from "../../components/Styled-components/Global"
+} from "../Styled-components/Global"
 
 
 const hotelCard = props => {
