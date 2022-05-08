@@ -15,6 +15,7 @@ import {
     HotelCardPageTextWrapper
 } from "../../components/Styled-components/HotelPage";
 
+
 const HotelPage = () => {
     const {data, handleClickLink} = HotelPageFetch()
     return (

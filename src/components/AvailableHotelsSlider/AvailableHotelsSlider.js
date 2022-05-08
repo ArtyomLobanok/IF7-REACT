@@ -8,6 +8,7 @@ import {SliderWrapper} from "../Styled-components/Global";
 
 const AvailableHotelsSlider = () => {
     const hotelCards = useSelector(state => state.hotelsLoadReducer.hotelData)
+    console.log( hotelCards)
     const SampleNextArrow = (props) => {
         const {className, onClick} = props;
         return (

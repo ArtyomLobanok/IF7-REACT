@@ -5,7 +5,6 @@ import nextArrow from '../../assets/Img/nextArrow.png'
 import prevArrow from '../../assets/Img/prevArrow.png'
 import {SliderWrapper} from "../Styled-components/Global";
 
-
 const SampleNextArrow = (props) => {
     const {className, onClick} = props;
     return (

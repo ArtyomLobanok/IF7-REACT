@@ -7,6 +7,7 @@ import {
     TittleCards,
 } from "../../components/Styled-components/Global"
 
+
 const hotelCard = props => {
     const {id, imageUrl, name, city, country} = props.card;
     return (
