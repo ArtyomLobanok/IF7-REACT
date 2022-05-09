@@ -7,6 +7,15 @@ const Form = ({title, handleClick}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
     }
+    const handleChangeEmail = (e) => {
+        setEmail(e.target.value)
+    };
+    const handleChangePassword = (e) => {
+        setPass(e.target.value)
+    };
+    const handleLogin = () => {
+        handleClick(email, pass)
+    };
     return (
         <FormLogin onSubmit={handleSubmit}>
             <label>
@@ -14,7 +23,7 @@ const Form = ({title, handleClick}) => {
                 <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleChangeEmail}
                 />
             </label>
             <label>
@@ -22,11 +31,11 @@ const Form = ({title, handleClick}) => {
                 <input
                     type="password"
                     value={pass}
-                    onChange={(e) => setPass(e.target.value)}
+                    onChange={handleChangePassword}
                 />
             </label>
             <button
-                onClick={() => handleClick(email, pass)}
+                onClick={handleLogin}
             >
                 {title}
             </button>

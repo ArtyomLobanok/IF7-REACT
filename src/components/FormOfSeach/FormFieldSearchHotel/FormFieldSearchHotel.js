@@ -43,8 +43,7 @@ const FirstForm = () => {
     return (
         <StyledInputWrapper position='relative' maxWidth='467px'>
             <StyledLabelFirst active={isActive}>
-                Your destination or hotel
-                name
+                Your destination or hotel name
             </StyledLabelFirst>
             <StyledInputFirst
                 onFocus={handleFocus}

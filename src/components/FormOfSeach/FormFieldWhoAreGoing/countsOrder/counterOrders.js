@@ -11,7 +11,7 @@ const Counter = ({label, count, onIncrement, onDecrement, minValue, maxValue}) =
     return (
         <>
             <ModalFormCounterWrapper>
-                <div>{`${label}`}</div>
+                <div>{label}</div>
                 <Flex align="center" justify="end">
                     {count !== minValue ? (
                         <ButtonCounterActive onClick={onDecrement}>

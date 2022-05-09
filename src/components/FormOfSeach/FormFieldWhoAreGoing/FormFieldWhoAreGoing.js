@@ -5,7 +5,12 @@ import Select from "./childrenSelects/childrenSelect";
 import uniqid from 'uniqid';
 import {useSelector} from "react-redux";
 import {ClickAwayListener} from "@mui/material";
-import {ModalForm, SelectWrapper, DataFormWrapper, ModalFormQuestion} from "../../Styled-components/HeaderForm";
+import {
+    SelectWrapper,
+    DataFormWrapper,
+    ModalFormQuestion,
+    ModalForm
+} from "../../Styled-components/HeaderForm";
 
 const useModalMenu = () => {
     const [isOpen, setIsOpen] = useState(false);

@@ -1,10 +1,10 @@
 import Slider from "react-slick";
 import HotelCard from "../HotelCard/HotelCard";
-import useFeatch from "../../hooks/useFetch"
+import useFetch from "../../hooks/useFetch"
 import {SliderArrow, SliderButtonNext, SliderButtonPrev, SliderWrapper} from "../Styled-components/Global";
 
 const HomesGuestsLovesSlider = () => {
-    const {array} = useFeatch();
+    const {array} = useFetch();
     const SampleNextArrow = ({className, onClick}) => {
         return (
             <div
