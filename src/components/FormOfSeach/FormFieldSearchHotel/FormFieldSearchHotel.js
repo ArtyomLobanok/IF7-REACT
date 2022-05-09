@@ -2,9 +2,9 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {inputText} from "../../../redux/actions";
 import {
-    StyledInputFist,
+    StyledInputFirst,
     StyledInputWrapper,
-    StyledLabelFist
+    StyledLabelFirst,
 } from "../../Styled-components/HeaderForm";
 
 const FirstForm = () => {
@@ -29,7 +29,6 @@ const FirstForm = () => {
         dispatch(inputText(value))
     }
     const inputValue = useSelector(state => state.formReducer.search);
-    console.log(inputValue)
     useEffect(
         () => {
             if (inputValue.length !== 0 && (window.scrollY > 2400)) {
@@ -43,11 +42,11 @@ const FirstForm = () => {
 
     return (
         <StyledInputWrapper position='relative' maxWidth='467px'>
-            <StyledLabelFist active={isActive}>
+            <StyledLabelFirst active={isActive}>
                 Your destination or hotel
                 name
-            </StyledLabelFist>
-            <StyledInputFist
+            </StyledLabelFirst>
+            <StyledInputFirst
                 onFocus={handleFocus}
                 onBlur={disableFocus}
                 name='search'

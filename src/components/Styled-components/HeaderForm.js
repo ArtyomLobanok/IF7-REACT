@@ -65,7 +65,7 @@ export const StyledDatePickerWrapper = styled.div`
   }
 `
 
-export const StyledInputFist = styled.input`
+export const StyledInputFirst = styled.input`
   background: ${props => props.theme.BACKGROUND_COLOR_FORM_WRAPPER};
   color: ${props => props.theme.COLOR_INPUT_FORM_TEXT};
   position: relative;
@@ -87,7 +87,7 @@ export const StyledInputFist = styled.input`
     margin: -3px 0;
   }
 `
-export const StyledLabelFist = styled.label`
+export const StyledLabelFirst = styled.label`
   color: ${props => props.active ? "#FFFFFF" : "#383838"};
   transform: translateY(${props => props.active ? '-56px' : '0'});
   position: absolute;
