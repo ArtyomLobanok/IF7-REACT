@@ -37,7 +37,7 @@ function Form() {
                 <MyDataPicker/>
                 <FormFieldThird/>
                 <SearchBtn
-                    onClick={handleChange} type='submit'>Search</SearchBtn>
+                    onClick={handleChange}>Search</SearchBtn>
             </StyledForm>
         </FormHeaderWrapper>
     );
