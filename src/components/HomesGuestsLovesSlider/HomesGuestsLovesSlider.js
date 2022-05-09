@@ -3,44 +3,42 @@ import HotelCard from "../HotelCard/HotelCard";
 import useFeatch from "../../hooks/useFetch"
 import {SliderArrow, SliderButtonNext, SliderButtonPrev, SliderWrapper} from "../Styled-components/Global";
 
-const SampleNextArrow = (props) => {
-    const {className, onClick} = props;
-    return (
-        <div
-            className={className}
-            onClick={onClick}
-        >
-            <div>
-                <SliderButtonNext>
-                    <SliderArrow margin='0 0 0 10px' width='9px' height='21px'>
-                        <use href="#Arrow"></use>
-                    </SliderArrow>
-                </SliderButtonNext>
-            </div>
-        </div>
-    );
-}
-
-const SamplePrevArrow = (props) => {
-    const {className, onClick} = props;
-    return (
-        <div
-            className={className}
-            onClick={onClick}
-        >
-            <div>
-                <SliderButtonPrev>
-                    <SliderArrow margin='0 0 0 8px' width='9px' height='21px'>
-                        <use href="#Arrow"></use>
-                    </SliderArrow>
-                </SliderButtonPrev>
-            </div>
-        </div>
-    );
-}
-
 const HomesGuestsLovesSlider = () => {
     const {array} = useFeatch();
+    const SampleNextArrow = ({className, onClick}) => {
+        return (
+            <div
+                className={className}
+                onClick={onClick}
+            >
+                <div>
+                    <SliderButtonNext>
+                        <SliderArrow margin='0 0 0 10px' width='9px' height='21px'>
+                            <use href="#Arrow"></use>
+                        </SliderArrow>
+                    </SliderButtonNext>
+                </div>
+            </div>
+        );
+    }
+
+    const SamplePrevArrow = ({className, onClick}) => {
+        return (
+            <div
+                className={className}
+                onClick={onClick}
+            >
+                <div>
+                    <SliderButtonPrev>
+                        <SliderArrow margin='0 0 0 8px' width='9px' height='21px'>
+                            <use href="#Arrow"></use>
+                        </SliderArrow>
+                    </SliderButtonPrev>
+                </div>
+            </div>
+        );
+    }
+
     const settings = {
         dots: false,
         infinite: false,

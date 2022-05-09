@@ -6,9 +6,7 @@ import React from "react";
 
 const AvailableHotelsSlider = () => {
     const hotelCards = useSelector(state => state.hotelsLoadReducer.hotelData)
-    console.log(hotelCards)
-    const SampleNextArrow = (props) => {
-        const {className, onClick} = props;
+    const SampleNextArrow = ({className, onClick}) => {
         return (
             <div
                 className={className}
@@ -23,8 +21,7 @@ const AvailableHotelsSlider = () => {
         );
     }
 
-    const SamplePrevArrow = (props) => {
-        const {className, onClick} = props;
+    const SamplePrevArrow = ({className, onClick}) => {
         return (
             <div
                 className={className}
