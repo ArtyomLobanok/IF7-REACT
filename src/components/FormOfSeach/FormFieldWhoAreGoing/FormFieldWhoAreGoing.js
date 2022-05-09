@@ -7,7 +7,7 @@ import {useSelector} from "react-redux";
 import {ClickAwayListener} from "@mui/material";
 import {ModalForm, SelectWrapper, DataFormWrapper, ModalFormQuestion} from "../../Styled-components/HeaderForm";
 
-const ModalMenu = () => {
+const useModalMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
     const handleClick = () => {
         setIsOpen(!isOpen)
@@ -27,7 +27,7 @@ const ModalMenu = () => {
 const FormFieldThird = () => {
     const selectArray = useSelector(state => state.formReducer.children)
     const {data} = OrderData()
-    const {isOpen, handleClick, handleClickAway} = ModalMenu()
+    const {isOpen, handleClick, handleClickAway} = useModalMenu()
     return (
         <>
             <ClickAwayListener onClickAway={handleClickAway}>
