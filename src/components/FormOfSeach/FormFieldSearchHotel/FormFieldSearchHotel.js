@@ -10,39 +10,35 @@ import {
 const FirstForm = () => {
     const [values, setValues] = useState('');
     const [isActive, setIsActive] = useState(false);
-
     const handleFocus = (e) => {
         if (e.target.value === "") {
             disableField(e);
         }
         setIsActive(true);
     };
-
     const disableField = () => {
         setIsActive(false);
     };
-
     const disableFocus = (e) => {
         if (e.target.value === "") {
             disableField(e);
         }
     };
-
     const dispatch = useDispatch();
     const handleChange = (value) => {
         dispatch(inputText(value))
     }
-
     const searchText = useSelector(state => state.formReducer.search);
     useEffect(
         () => {
-            if (searchText.length !== 0 && (window.scrollY > 400)) {
+            if (searchText.length !== 0 && (window.scrollY > 2400)) {
                 setIsActive(true)
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth",
                 });
-            };
+            }
+            ;
             setValues(searchText)
         }, [searchText]);
 

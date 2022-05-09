@@ -140,6 +140,7 @@ export const SubTittleCards = styled(SubTitle)`
 
 export const Text = styled(Title)`
   color: ${props => props.theme.COLOR_ANY_TEXT};
+  font-size: ${props => props.size || "24px"};
 `
 
 export const CardImg = styled.img`

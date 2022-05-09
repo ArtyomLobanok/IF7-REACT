@@ -1,7 +1,8 @@
 import {useSelector} from "react-redux";
 import Slider from "react-slick";
 import HotelCard from "../HotelCard/HotelCard";
-import {SliderArrow, SliderButtonNext, SliderButtonPrev, SliderWrapper} from "../Styled-components/Global";
+import {Flex, SliderArrow, SliderButtonNext, SliderButtonPrev, SliderWrapper, Text} from "../Styled-components/Global";
+import React from "react";
 
 const AvailableHotelsSlider = () => {
     const hotelCards = useSelector(state => state.hotelsLoadReducer.hotelData)
@@ -73,15 +74,26 @@ const AvailableHotelsSlider = () => {
         ]
     }
     return (
+        <>
+            {
+                (hotelCards.length !== 0) ? (
+                    <SliderWrapper>
+                        <Slider {...settings}>
+                            {hotelCards.map(hotelCard => (
+                                <HotelCard key={hotelCard.id} card={hotelCard}/>
+                            ))}
+                        </Slider>
+                    </SliderWrapper>
+                ) : (
+                    <Flex margin="0 auto" align="center" justify="center">
+                        <Text size='80px' bold>&#129402;</Text>
+                        <Text size='30px' bold>Unfortunately, nothing was found... <br/>Please try to enter
+                            other search data and try again</Text>
+                    </Flex>
 
-        <SliderWrapper>
-            <Slider {...settings}>
-                {hotelCards.map(hotelCard => (
-                    <HotelCard key={hotelCard.id} card={hotelCard}/>
-                ))}
-            </Slider>
-        </SliderWrapper>
-
+                )
+            }
+        </>
     )
 }
 

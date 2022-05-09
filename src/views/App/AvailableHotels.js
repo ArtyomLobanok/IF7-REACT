@@ -1,18 +1,26 @@
 import React from 'react';
 import AvailableHotelsSlider from "../../components/AvailableHotelsSlider/AvailableHotelsSlider"
-import { Container, HeaderSection, SectionAnother} from "../../components/Styled-components/Global"
+import {Container, HeaderSection, SectionAnother, } from "../../components/Styled-components/Global"
 import {useSelector} from "react-redux";
+import {CircularProgress} from "@mui/material";
 
 function AvailableHotels() {
-    const hotelCards = useSelector(state => state.hotelsLoadReducer.hotelData)
+    const loadSpinner = useSelector(state => state.formReducer.loading);
     return (
         <>
             {
-                hotelCards.length > 0 &&
+                loadSpinner &&
                 <SectionAnother>
                     <Container>
                         <HeaderSection>Available hotels</HeaderSection>
-                        <AvailableHotelsSlider/>
+                        {
+                            loadSpinner ?
+                                (
+                                    <AvailableHotelsSlider/>
+                                ) : (
+                                    <CircularProgress/>
+                                )
+                        }
                     </Container>
                 </SectionAnother>
             }

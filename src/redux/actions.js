@@ -11,6 +11,7 @@ import {
     DATE_END,
     SET_CHILD_AGE,
     SWITCH_THEMES,
+    LOADING_DATA,
 } from "./types";
 
 export const incrementAdults = () => {
@@ -77,10 +78,18 @@ export const datePickerEnd = (dateTo) => {
     };
 };
 
+export const loadingData = (loading) => {
+    return {
+        type: LOADING_DATA,
+        loading
+    };
+};
+
 export const hotelsLoad = (params) => {
     return async dispatch => {
         const response = await fetch(`https://fe-student-api.herokuapp.com/api/hotels?${params}`);
         const jsonData = await response.json();
+        dispatch(loadingData(true));
         dispatch({
             type: HOTEL_DATA_LOAD,
             data: jsonData
