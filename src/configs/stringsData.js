@@ -1,7 +1,3 @@
-import GuestsReviews from "../views/App/GuestsReviews";
-import TheBestDestinations from "../views/App/TheBestDestinations";
-import WhatDoWeOffer from "../views/App/WhatDoWeOffer";
-
 export const LabelFirst = "Your destination or hotel name";
 export const TextNotFound = "Unfortunately, nothing was found... Please try to enter other search data and try again";
 export const DateLabel = "Check-in — Check-out";
