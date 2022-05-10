@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import GuestsReviewsData from "../../components/GuestsReviewsData/GuestsReviewsData"
 import GuestsReviewsCard from "../../components/GuestsReviewsCard/GuestsReviewsCard";
-import {Container, HeaderSection, LogotypeIcon, Section, SliderArrow} from "../../components/Styled-components/Global";
+import {Container, HeaderSection, Section, SliderArrow} from "../../components/Styled-components/Global";
 import {
     GuestReviewsWrapperSlider,
     GuestsReviewsSliderButtonNext, GuestsReviewsSliderButtonPrev

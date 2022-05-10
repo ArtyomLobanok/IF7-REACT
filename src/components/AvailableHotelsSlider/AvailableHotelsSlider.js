@@ -15,7 +15,7 @@ const AvailableHotelsSlider = () => {
             >
                 <SliderButtonNext>
                     <SliderArrow margin='0 0 0 10px' width='9px' height='21px'>
-                        <use href="#Arrow"></use>
+                        <use href="#Arrow"/>
                     </SliderArrow>
                 </SliderButtonNext>
             </div>
@@ -30,7 +30,7 @@ const AvailableHotelsSlider = () => {
             >
                 <SliderButtonPrev>
                     <SliderArrow margin='0 0 0 8px' width='9px' height='21px'>
-                        <use href="#Arrow"></use>
+                        <use href="#Arrow"/>
                     </SliderArrow>
                 </SliderButtonPrev>
             </div>
