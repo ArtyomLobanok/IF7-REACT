@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import HotelCard from "../HotelCard/HotelCard";
 import {Flex, SliderArrow, SliderButtonNext, SliderButtonPrev, SliderWrapper, Text} from "../Styled-components/Global";
 import React from "react";
+import {TextNotFound} from "../../configs/stringsData";
 
 const AvailableHotelsSlider = () => {
     const hotelCards = useSelector(state => state.hotelsLoadReducer.hotelData)
@@ -84,8 +85,7 @@ const AvailableHotelsSlider = () => {
                 ) : (
                     <Flex margin="0 auto" align="center" justify="center">
                         <Text size='80px' bold>&#129402;</Text>
-                        <Text size='30px' bold>Unfortunately, nothing was found... <br/>Please try to enter
-                            other search data and try again</Text>
+                        <Text size='30px' bold>{TextNotFound}</Text>
                     </Flex>
 
                 )

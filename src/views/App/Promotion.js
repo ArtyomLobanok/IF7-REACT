@@ -13,6 +13,7 @@ import {
     PromotionWrapperContent,
     PromotionWrapperIcon,
 } from "../../components/Styled-components/Promotion";
+import {PromotionButtonText, PromotionText} from "../../configs/stringsData";
 
 
 
@@ -44,10 +45,10 @@ const Promotion = () => {
                                 </PromotionIcon>
                             </PromotionWrapperIcon>
                             <PromotionWrapperAnnouncement>
-                                <p>Sign up and get 20% off your first booking</p>
+                                <p>{PromotionText}</p>
                                 <StyledLink to={`register`}>
                                     <ButtonBookNowAndSingUP  padding='12px 32px'>
-                                        Sign up
+                                        {PromotionButtonText}
                                     </ButtonBookNowAndSingUP>
                                 </StyledLink>
                             </PromotionWrapperAnnouncement>

@@ -13,6 +13,7 @@ import {
     SWITCH_THEMES,
     LOADING_DATA,
 } from "./types";
+import {urlHotelsSearch} from "../configs/urlConfig"
 
 export const incrementAdults = () => {
     return {
@@ -87,7 +88,7 @@ export const loadingData = (loading) => {
 
 export const hotelsLoad = (params) => {
     return async dispatch => {
-        const response = await fetch(`https://fe-student-api.herokuapp.com/api/hotels?${params}`);
+        const response = await fetch(`${urlHotelsSearch}${params}`);
         const jsonData = await response.json();
         dispatch(loadingData(true));
         dispatch({

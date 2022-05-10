@@ -6,6 +6,7 @@ import {
     StyledInputWrapper,
     StyledLabelFirst,
 } from "../../Styled-components/HeaderForm";
+import {LabelFirst} from "../../../configs/stringsData";
 
 const FirstForm = () => {
     const [isActive, setIsActive] = useState(false);
@@ -43,7 +44,7 @@ const FirstForm = () => {
     return (
         <StyledInputWrapper position='relative' maxWidth='467px'>
             <StyledLabelFirst active={isActive}>
-                Your destination or hotel name
+                {LabelFirst}
             </StyledLabelFirst>
             <StyledInputFirst
                 onFocus={handleFocus}

@@ -7,6 +7,7 @@ import {
     GuestReviewsWrapperSlider,
     GuestsReviewsSliderButtonNext, GuestsReviewsSliderButtonPrev
 } from "../../components/Styled-components/GuestsReviews"
+import {GuestsReviewsHotelsTitle} from "../../configs/stringsData";
 
 const GuestsReviews = () => {
     const SampleNextArrow = (props) => {
@@ -83,7 +84,7 @@ const GuestsReviews = () => {
         <>
             <Section>
                 <Container>
-                    <HeaderSection>Guests reviews</HeaderSection>
+                    <HeaderSection>{GuestsReviewsHotelsTitle}</HeaderSection>
                     <GuestReviewsWrapperSlider>
                         <Slider {...settings} >
                             {GuestsReviewsData.map(reviewCard => (

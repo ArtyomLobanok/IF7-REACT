@@ -8,6 +8,7 @@ import {
     DestinationsItem
 } from "../Styled-components/TheBestDestinations";
 import {ButtonBookNowAndSingUP} from "../Styled-components/Global";
+import {ButtonBookNowText} from "../../configs/stringsData";
 
 const DestinationsCard = (props) => {
     const {imageUrl, subtitle} = props.card;
@@ -24,8 +25,7 @@ const DestinationsCard = (props) => {
                         <img src={imageUrl} alt="Pictures"/>
                     </DestinationsImgWrapper>
                     <DestinationsBtnWrapper>
-                        <ButtonBookNowAndSingUP padding='13px 24px' value={subtitle} onClick={handleClick}>Book
-                            now</ButtonBookNowAndSingUP>
+                        <ButtonBookNowAndSingUP padding='13px 24px' value={subtitle} onClick={handleClick}>{ButtonBookNowText}</ButtonBookNowAndSingUP>
                     </DestinationsBtnWrapper>
                 </DestinationsContentWrapper>
                 <p>{subtitle}</p>

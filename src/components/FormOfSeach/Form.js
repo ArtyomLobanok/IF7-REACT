@@ -5,6 +5,7 @@ import FormFieldThird from "./FormFieldWhoAreGoing/FormFieldWhoAreGoing";
 import {useDispatch, useSelector} from "react-redux";
 import {hotelsLoad} from "../../redux/actions";
 import {FormHeaderWrapper, SearchBtn, StyledForm} from "../Styled-components/HeaderForm";
+import {SearchBtnText} from "../../configs/stringsData";
 
 function Form() {
     const dispatch = useDispatch()
@@ -37,7 +38,7 @@ function Form() {
                 <MyDataPicker/>
                 <FormFieldThird/>
                 <SearchBtn
-                    onClick={handleChange}>Search</SearchBtn>
+                    onClick={handleChange}>{SearchBtnText}</SearchBtn>
             </StyledForm>
         </FormHeaderWrapper>
     );

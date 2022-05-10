@@ -3,6 +3,7 @@ import AvailableHotelsSlider from "../../components/AvailableHotelsSlider/Availa
 import {Container, HeaderSection, SectionAnother, } from "../../components/Styled-components/Global"
 import {useSelector} from "react-redux";
 import {CircularProgress} from "@mui/material";
+import {AvailableHotelsTitle} from "../../configs/stringsData";
 
 function AvailableHotels() {
     const loadSpinner = useSelector(state => state.formReducer.loading);
@@ -12,7 +13,7 @@ function AvailableHotels() {
                 loadSpinner &&
                 <SectionAnother>
                     <Container>
-                        <HeaderSection>Available hotels</HeaderSection>
+                        <HeaderSection>{AvailableHotelsTitle}</HeaderSection>
                         {
                             loadSpinner ?
                                 (

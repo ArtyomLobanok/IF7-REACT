@@ -3,6 +3,7 @@ import {SignUp} from "../../components/FormSingUp/SignUp";
 import HeaderMenu from "../../components/HeaderMenu/HeaderMenu";
 import {Container, StyledLinkLogin} from "../../components/Styled-components/Global"
 import {HeaderWrapper, LoginFrom, HeaderWrapperShadow} from "../../components/Styled-components/Login&Registration";
+import {RegisterQuestionText, TittleLogin, TittleSingUp} from "../../configs/stringsData";
 
 const LoginPage = () => {
     return (
@@ -12,11 +13,11 @@ const LoginPage = () => {
                     <Container>
                         <HeaderMenu propsStyleAccount={{fill: "#F5BD41"}}/>
                         <LoginFrom>
-                            <h2>Register</h2>
+                            <h2>{TittleSingUp}</h2>
                             <SignUp/>
                             <p>
-                                Already have an account?
-                                <StyledLinkLogin to="/login"> Sign in</StyledLinkLogin>
+                                {RegisterQuestionText}
+                                <StyledLinkLogin to="/login">{TittleLogin}</StyledLinkLogin>
                             </p>
                         </LoginFrom>
                     </Container>

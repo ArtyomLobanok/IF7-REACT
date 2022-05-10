@@ -11,6 +11,7 @@ import {
     ModalFormQuestion,
     ModalForm
 } from "../../Styled-components/HeaderForm";
+import {ModalFormQuestionText} from "../../../configs/stringsData";
 
 const useModalMenu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +60,7 @@ const FormFieldThird = () => {
                                     {
                                         data.children.count > 0 &&
                                         <span>
-                                            What is the age of the child you’re<br/> travelling with?
+                                            {ModalFormQuestionText}
                                         </span>
                                     }
                                 </ModalFormQuestion>

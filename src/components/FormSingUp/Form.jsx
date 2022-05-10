@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {FormLogin} from "../Styled-components/Login&Registration";
+import {FormLoginLabelEmail, FormLoginLabelPassword} from "../../configs/stringsData";
 
 const Form = ({title, handleClick}) => {
     const [email, setEmail] = useState('');
@@ -19,7 +20,7 @@ const Form = ({title, handleClick}) => {
     return (
         <FormLogin onSubmit={handleSubmit}>
             <label>
-                Email address
+                {FormLoginLabelEmail}
                 <input
                     type="email"
                     value={email}
@@ -27,7 +28,7 @@ const Form = ({title, handleClick}) => {
                 />
             </label>
             <label>
-                Password
+                {FormLoginLabelPassword}
                 <input
                     type="password"
                     value={pass}

@@ -3,12 +3,12 @@ import Form from "../FormOfSeach/Form";
 import googlePlayBadge from "../../assets/Img/IconsFromHeader/google-play-badge.png"
 import appStoreBadge from "../../assets/Img/IconsFromHeader/AppleStoreBadge.svg"
 import {HeaderContentIconWrapper, HeaderContentTitle, HeaderContentWrapper} from "../Styled-components/Header";
+import {HeaderContentTitleTextFirstPart, HeaderContentTitleTextSecondPart} from "../../configs/stringsData";
 
 const Inner = () => {
     return (
         <HeaderContentWrapper>
-            <HeaderContentTitle>Discover stays<br/>
-                to live, work or just relax</HeaderContentTitle>
+            <HeaderContentTitle>{HeaderContentTitleTextFirstPart}<br/>{HeaderContentTitleTextSecondPart}</HeaderContentTitle>
             <Form/>
                 <HeaderContentIconWrapper>
                     <a href="https://play.google.com/store">

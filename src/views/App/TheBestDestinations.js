@@ -19,6 +19,12 @@ import {
     DestinationsCardsCollapse,
     DestinationsTabs, TabsBtn, TabsBtnActive,
 } from "../../components/Styled-components/TheBestDestinations"
+import {
+    DestinationsTabsCities,
+    DestinationsTabsPlaces,
+    DestinationsTabsRegions,
+    TheBestDestinationsTitle
+} from "../../configs/stringsData";
 
 const TheBestDestinationsState = () => {
     const [tab, setTab] = useState('Regions');
@@ -66,36 +72,36 @@ const TheBestDestinations = () => {
     return (
         <Section>
             <Container>
-                <HeaderSection>The best destinations</HeaderSection>
+                <HeaderSection>{TheBestDestinationsTitle}</HeaderSection>
 
                 <DestinationsTabs>
                     {tab === 'Regions' ? (
                         <TabsBtnActive width='30%' onClick={handleChangeFirstTab}>
-                            Regions
+                            {DestinationsTabsRegions}
                         </TabsBtnActive>
                     ) : (
                         <TabsBtn width='30%' onClick={handleChangeFirstTab}>
-                            Regions
+                            {DestinationsTabsRegions}
                         </TabsBtn>
                     )}
 
                     {tab === 'Cities' ? (
                         <TabsBtnActive width='30%' onClick={handleChangeSecondTab}>
-                            Cities
+                            {DestinationsTabsCities}
                         </TabsBtnActive>
                     ) : (
                         <TabsBtn width='30%' onClick={handleChangeSecondTab}>
-                            Cities
+                            {DestinationsTabsCities}
                         </TabsBtn>
                     )}
 
                     {tab === 'Places' ? (
                         <TabsBtnActive width='40%' onClick={handleChangeThirdTab}>
-                            Places of interest
+                            {DestinationsTabsPlaces}
                         </TabsBtnActive>
                     ) : (
                         <TabsBtn width='40%' onClick={handleChangeThirdTab}>
-                            Places of interest
+                            {DestinationsTabsPlaces}
                         </TabsBtn>
                     )}
 

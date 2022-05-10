@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
+import {urlPopularHotels} from "../configs/urlConfig";
 
 const useFetch = () => {
-    const url = "https://fe-student-api.herokuapp.com/api/hotels/popular";
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [array, setArray] = useState([]);
@@ -9,7 +9,7 @@ const useFetch = () => {
         const getData = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(url);
+                const response = await fetch(urlPopularHotels);
                 const result = await response.json();
 
                 setArray(result);
@@ -20,7 +20,7 @@ const useFetch = () => {
             }
         };
         getData();
-    }, [url])
+    }, [])
 
     return {
         error,

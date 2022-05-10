@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 import {Form} from './Form';
 import {setUser} from '../../redux/slices/userSlice';
+import {TittleSingUp} from "../../configs/stringsData";
 
 const SignUp = () => {
     const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const SignUp = () => {
 
     return (
         <Form
-            title="Register"
+            title={TittleSingUp}
             handleClick={handleRegister}
         />
     )

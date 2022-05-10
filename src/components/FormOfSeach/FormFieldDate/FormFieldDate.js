@@ -7,6 +7,7 @@ import {
     StyledDateLabelWrapper,
     StyledDatePickerWrapper,
 } from "../../Styled-components/HeaderForm"
+import {DateLabel} from "../../../configs/stringsData";
 
 const MyDataPicker = () => {
     const [isActive, setIsActive] = useState(false);
@@ -40,7 +41,7 @@ const MyDataPicker = () => {
     return (
         <StyledDatePickerWrapper maxWidth='259px'>
             <StyledDateLabelWrapper active={isActive}>
-                <label>Check-in — Check-out</label>
+                <label>{DateLabel}</label>
             </StyledDateLabelWrapper>
                 <DatePicker
                     onFocus={handleFocus}

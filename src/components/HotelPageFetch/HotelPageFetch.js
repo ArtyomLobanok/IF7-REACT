@@ -1,9 +1,10 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState,} from "react";
+import {urlHotels} from "../../configs/urlConfig"
 
 const HotelPageFetch = () => {
     const {id} = useParams()
-    const url = `https://fe-student-api.herokuapp.com/api/hotels/${id}`;
+    const dataFetch = `${urlHotels}${id}`;
     const [data, setData] = useState({
         country: undefined,
         imageUrl: undefined,
@@ -11,11 +12,11 @@ const HotelPageFetch = () => {
     })
     useEffect(() => {
             window.scrollTo(0, 0)
-            fetch(url)
+            fetch(dataFetch)
                 .then(res => res.json())
                 .then(data => setData(data))
         },
-        [url])
+        [dataFetch])
     const handleClickLink = (e) => {
         e.preventDefault();
         return false;

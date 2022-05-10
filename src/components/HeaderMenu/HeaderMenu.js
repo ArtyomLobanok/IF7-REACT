@@ -16,6 +16,7 @@ import {
 import Svg from "../../assets/svg/Svg";
 import {switchTheme} from "../../redux/actions"
 import {lightTheme, darkTheme} from "../Styled-components/ThemeData";
+import {ButtonLogOutText, HeaderNavLinkTextFirst, HeaderNavLinkTextSecond} from "../../configs/stringsData";
 
 const HeaderMenu = () => {
     const theme = useSelector((state) => state.themeReducer.theme)
@@ -34,8 +35,8 @@ const HeaderMenu = () => {
                     </StyledLink>
                 </div>
                 <Flex justify='flex-end' align="center">
-                    <HeaderNavLink href="/#" onClick={(e)=>e.preventDefault()}>Stays</HeaderNavLink>
-                    <HeaderNavLink href="/#" onClick={(e)=>e.preventDefault()}>Attractions</HeaderNavLink>
+                    <HeaderNavLink href="/#" onClick={(e)=>e.preventDefault()}>{HeaderNavLinkTextFirst}</HeaderNavLink>
+                    <HeaderNavLink href="/#" onClick={(e)=>e.preventDefault()}>{HeaderNavLinkTextSecond}</HeaderNavLink>
                     <HeaderNavLink>
                         {theme.mode === 'light' ? (
                             <SwitcherIcon cursor='pointer' width='30px' height='30px'
@@ -71,7 +72,7 @@ const HeaderMenu = () => {
                                         <LogOutIcon width='30px' height='30px' margin="12px 0 0 0">
                                             <use href="#singOut"/>
                                         </LogOutIcon>
-                                        Sign out
+                                        {ButtonLogOutText}
                                     </ButtonLogOut>
                                 )
                             }

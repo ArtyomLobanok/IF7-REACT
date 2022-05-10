@@ -49,7 +49,7 @@ const GuestsReviewsCard = (props) => {
                     </Flex>
                 </Flex>
             </Flex>
-            <Text little margin="24px">{post}</Text>
+            <Text size="18px" margin="24px">{post}</Text>
         </GuestsReviewsCardWrapper>
     )
 }
