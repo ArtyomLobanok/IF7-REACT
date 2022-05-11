@@ -11,8 +11,6 @@ import {
     DATE_END,
     SET_CHILD_AGE,
     SWITCH_THEMES,
-    LOADING_DATA,
-    SCROLL_TO_TOP,
 } from "./types";
 import {urlHotelsSearch} from "../configs/urlConfig"
 
@@ -80,23 +78,10 @@ export const datePickerEnd = (dateTo) => {
     };
 };
 
-export const loadingData = (loading) => {
-    return {
-        type: LOADING_DATA,
-        loading
-    };
-};
-export const scrollToTop = () => {
-    return {
-        type: SCROLL_TO_TOP,
-    };
-};
-
 export const hotelsLoad = (params) => {
     return async dispatch => {
         const response = await fetch(`${urlHotelsSearch}${params}`);
         const jsonData = await response.json();
-        dispatch(loadingData(true));
         dispatch({
             type: HOTEL_DATA_LOAD,
             data: jsonData

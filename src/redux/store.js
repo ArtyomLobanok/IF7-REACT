@@ -7,14 +7,12 @@ import userReducer from './slices/userSlice';
 import formReducer from "./reducers/formReducer";
 import hotelsLoadReducer from "./reducers/DataLoadReducer";
 import themeReducer from "./reducers/themeReducer";
-import scrollReducer from "./reducers/scrollReducer";
 
 const rootReducer = combineReducers({
     user: userReducer,
     hotelsLoadReducer,
     formReducer,
     themeReducer,
-    scrollReducer,
 });
 
 const persistConfig = {

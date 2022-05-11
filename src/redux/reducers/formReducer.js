@@ -9,10 +9,9 @@ import {
     DELETE_CHILDREN,
     INCREMENT_ROOMS,
     DECREMENT_ROOMS,
-    LOADING_DATA,
 } from "../types";
 
-const initialState = {search: '', dateFrom: '', dateTo: '', adults: 1, children: [], rooms: 1, loading: false,}
+const initialState = {search: '', dateFrom: '', dateTo: '', adults: 1, children: [], rooms: 1,}
 
 const formReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -71,11 +70,6 @@ const formReducer = (state = initialState, action) => {
             return {
                 ...state,
                 rooms: state.rooms - 1
-            }
-        case LOADING_DATA:
-            return {
-                ...state,
-                loading: action.loading
             }
         default:
             return state;
