@@ -1,7 +1,6 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {removeUser} from '../../redux/slices/userSlice'
-import useAuth from "../../hooks/use-auth";
 import Dropdown from "./Dropdown/Dropdown";
 import {ClickAwayListener} from "@mui/material";
 import {ButtonLogOut, Header, HeaderNavLink} from "../Styled-components/Header"
@@ -21,7 +20,6 @@ import {ButtonLogOutText, HeaderNavLinkTextFirst, HeaderNavLinkTextSecond} from 
 const HeaderMenu = () => {
     const theme = useSelector((state) => state.themeReducer.theme)
     const dispatch = useDispatch();
-    const {isAuth} = useAuth();
     const {isDropdown, handleClickDropdown, handleClickAway} = Dropdown();
     return (
         <Header>
@@ -54,12 +52,12 @@ const HeaderMenu = () => {
                         <div>
                             {isDropdown === true ? (
                                 <AccountIconActive cursor='pointer' width='40px' height='40px'
-                                             onClick={isAuth && handleClickDropdown}>
+                                             onClick={handleClickDropdown}>
                                     <use href="#account"/>
                                 </AccountIconActive>
                             ) : (
                                 <AccountIcon cursor='pointer' width='40px' height='40px'
-                                             onClick={isAuth && handleClickDropdown}>
+                                             onClick={handleClickDropdown}>
                                     <use href="#account"/>
                                 </AccountIcon>
                             )
