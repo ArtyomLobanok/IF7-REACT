@@ -21,7 +21,7 @@ export const ScrollBtn = styled.div`
   svg {
     bottom: 40px;
     right: 25px;
-    z-index: 20;
+    z-index: 99999;
     height: 50px;
     width: 50px;
   }

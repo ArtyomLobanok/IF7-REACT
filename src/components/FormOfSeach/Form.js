@@ -20,7 +20,7 @@ function Form() {
         dispatch(hotelsLoad(params));
     }
 
-    const hotelArray = useSelector(state => state.hotelsLoadReducer.hotelData)
+    const hotelArray = useSelector(state => state.hotelsLoadReducer)
     useEffect(
         () => {
             if (hotelArray.length !== 0) {

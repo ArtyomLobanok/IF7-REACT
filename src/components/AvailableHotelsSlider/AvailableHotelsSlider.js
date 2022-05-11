@@ -6,7 +6,7 @@ import React from "react";
 import {TextNotFound} from "../../configs/stringsData";
 
 const AvailableHotelsSlider = () => {
-    const hotelCards = useSelector(state => state.hotelsLoadReducer.hotelData)
+    const hotelCards = useSelector(state => state.hotelsLoadReducer)
     const SampleNextArrow = ({className, onClick}) => {
         return (
             <div

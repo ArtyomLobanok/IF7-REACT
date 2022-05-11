@@ -12,6 +12,7 @@ import {
     SET_CHILD_AGE,
     SWITCH_THEMES,
     LOADING_DATA,
+    SCROLL_TO_TOP,
 } from "./types";
 import {urlHotelsSearch} from "../configs/urlConfig"
 
@@ -83,6 +84,11 @@ export const loadingData = (loading) => {
     return {
         type: LOADING_DATA,
         loading
+    };
+};
+export const scrollToTop = () => {
+    return {
+        type: SCROLL_TO_TOP,
     };
 };
 

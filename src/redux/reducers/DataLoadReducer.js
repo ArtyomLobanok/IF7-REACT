@@ -1,25 +1,11 @@
 import {HOTEL_DATA_LOAD} from "../types";
 
-const initialState = {
-    hotelData: []
-}
+const initialState = [];
 
 const hotelsLoadReducer = (state = initialState, action) => {
     switch (action.type) {
         case HOTEL_DATA_LOAD:
-            const hotelArray = action.data.map(response => {
-                return {
-                    id: response.id,
-                    name: response.name,
-                    imageUrl: response.imageUrl,
-                    country: response.country,
-                    city: response.city,
-                }
-            })
-            return {
-                ...state,
-                hotelData: hotelArray
-            }
+            return action.data
         default:
             return state;
     }
