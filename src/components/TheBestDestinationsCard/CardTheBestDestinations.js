@@ -10,6 +10,7 @@ import {
 import {ButtonBookNowAndSingUP} from "../Styled-components/Global";
 import {ButtonBookNowText} from "../../configs/stringsData";
 
+
 const DestinationsCard = (props) => {
     const {imageUrl, subtitle} = props.card;
     const dispatch = useDispatch()
