@@ -12,6 +12,7 @@ const ScrollToTop = () => {
         });
     };
     useEffect(() => {
+        let abortController = new AbortController();
         window.addEventListener("scroll", () => {
             if (window.scrollY > 400) {
                 setShowTopBtn(true);
@@ -19,6 +20,9 @@ const ScrollToTop = () => {
                 setShowTopBtn(false);
             }
         });
+        return () => {
+            abortController.abort();
+        }
     }, []);
     return (
         <div>
