@@ -22,7 +22,7 @@ export const SliderWrapper = styled.div`
   div {
     div {
       &:first-child {
-        z-index: 1000;
+        z-index: 1;
       }
 
       &:first-child:before {
@@ -30,7 +30,7 @@ export const SliderWrapper = styled.div`
       }
 
       &:last-child {
-        z-index: 1000;
+        z-index: 1;
 
         &:last-child:before {
           content: "";
@@ -48,7 +48,7 @@ export const SliderButtonNext = styled.button`
   height: 40px;
   border-radius: 50%;
   border: none;
-  transform: translate3d(-40px, -80px, 0);
+  transform: translate3d(-40px, -70px, 0);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   outline: none;
   cursor: pointer;
@@ -64,7 +64,7 @@ export const SliderButtonPrev = styled.button`
   height: 40px;
   border-radius: 50%;
   border: none;
-  transform: translate3d(9px, -80px, 0);
+  transform: translate3d(9px, -70px, 0);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   outline: none;
   cursor: pointer;
