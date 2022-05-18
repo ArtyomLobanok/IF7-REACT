@@ -1,0 +1,13 @@
+export const INCREMENT_ADULTS = 'INCREMENT_ADULTS';
+export const DECREMENT_ADULTS = 'DECREMENT_ADULTS';
+export const ADD_CHILDREN = 'ADD_CHILDREN';
+export const DELETE_CHILDREN = 'DELETE_CHILDREN';
+export const INCREMENT_ROOMS = 'INCREMENT_ROOMS';
+export const DECREMENT_ROOMS = 'DECREMENT_ROOMS';
+export const INPUT_TEXT = 'INPUT_TEXT';
+export const DATE_START = 'DATE_START';
+export const DATE_END = 'DATE_END';
+export const HOTEL_DATA_LOAD = 'HOTEL_DATA_LOAD';
+export const SET_CHILD_AGE = 'SET_CHILD_AGE';
+export const SWITCH_THEMES = 'SWITCH_THEMES';
+

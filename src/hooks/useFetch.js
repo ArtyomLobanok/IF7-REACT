@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
+import {urlPopularHotels} from "../configs/urlConfig";
 
-function useFeatch(url) {
+const useFetch = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [array, setArray] = useState([]);
@@ -8,7 +9,7 @@ function useFeatch(url) {
         const getData = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(url);
+                const response = await fetch(urlPopularHotels);
                 const result = await response.json();
 
                 setArray(result);
@@ -19,7 +20,7 @@ function useFeatch(url) {
             }
         };
         getData();
-    }, [url])
+    }, [])
 
     return {
         error,
@@ -28,4 +29,4 @@ function useFeatch(url) {
     };
 };
 
-export default useFeatch;
+export default useFetch;

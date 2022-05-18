@@ -1,25 +1,46 @@
-import React from "react";
-import './Form.css'
+import React, {useEffect} from "react";
 import FirstForm from './FormFieldSearchHotel/FormFieldSearchHotel'
 import MyDataPicker from "./FormFieldDate/FormFieldDate";
 import FormFieldThird from "./FormFieldWhoAreGoing/FormFieldWhoAreGoing";
+import {useDispatch, useSelector} from "react-redux";
+import {hotelsLoad} from "../../redux/actions";
+import {FormHeaderWrapper, SearchBtn, StyledForm} from "../Styled-components/HeaderForm";
+import {SearchBtnText} from "../../configs/stringsData";
 
+function Form() {
+    const dispatch = useDispatch()
+    const {search, dateFrom, dateTo, adults, children, rooms} = useSelector(state => {
+        const {formReducer} = state;
+        return formReducer;
+    });
+    const params = `search=${search}&dateFrom=${dateFrom}&dateTo=${dateTo}&adults=${adults}&children=${children.toString()}&rooms=${rooms}`
 
+    const handleChange = (e) => {
+        e.preventDefault()
+        dispatch(hotelsLoad(params));
+    }
 
-function Form ({setSearchData}) {
+    const hotelArray = useSelector(state => state.hotelsLoadReducer)
+    useEffect(
+        () => {
+            if (hotelArray.length !== 0) {
+                window.scrollTo({
+                    top: 900,
+                    behavior: "smooth"
+                });
+            }
+        }, [hotelArray]
+    );
     return (
-            <div className="intro__content">
-                <form className="intro__form" id="mainForm">
-                    {/*//Search --->*/}
-                    <FirstForm setSearchData={setSearchData}/>
-                    {/*//Calendar --->*/}
-                    <MyDataPicker/>
-                    {/*//Modal Menu --->*/}
-                    <FormFieldThird/>
-                        {/*BUTTON HERE*/}
-                    <button type='submit' className="form__button search">Search</button>
-                </form>
-            </div>
+        <FormHeaderWrapper>
+            <StyledForm id="mainForm">
+                <FirstForm/>
+                <MyDataPicker/>
+                <FormFieldThird/>
+                <SearchBtn
+                    onClick={handleChange}>{SearchBtnText}</SearchBtn>
+            </StyledForm>
+        </FormHeaderWrapper>
     );
 }
 

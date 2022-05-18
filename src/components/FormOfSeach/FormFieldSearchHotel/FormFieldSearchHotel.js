@@ -1,46 +1,64 @@
 import React, {useEffect, useState} from "react";
-import './FormFieldSearchHotel.css'
+import {useDispatch, useSelector} from "react-redux";
+import {inputText} from "../../../redux/actions";
+import {
+    StyledInputFirst,
+    StyledInputWrapper,
+    StyledLabelFirst,
+} from "../../Styled-components/HeaderForm";
+import {LabelFirst} from "../../../configs/stringsData";
 
-export const useForm = () => {
-    const [values, setValues] = useState({
-        nameOfSearch: '',
-    });
+const FirstForm = () => {
+    const [isActive, setIsActive] = useState(false);
 
-    const handleChange = (e) => {
-        const {name: inputName} = e.target;
-
-
-        setValues({
-            ...values,
-            [inputName]: e.target.value,
-        });
+    const handleFocus = (e) => {
+        if (e.target.value === "") {
+            disableField(e);
+        }
+        setIsActive(true);
+    };
+    const disableField = () => {
+        setIsActive(false);
+    };
+    const disableFocus = (e) => {
+        if (e.target.value === "") {
+            disableField(e);
+        }
+    };
+    const dispatch = useDispatch();
+    const handleChange = (value) => {
+        dispatch(inputText(value))
     }
+    const inputValue = useSelector(state => state.formReducer.search);
+    useEffect(
+        () => {
+            if (inputValue.length !== 0 && (window.scrollY > 2400)) {
+                setIsActive(true)
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            };
+        }, [inputValue]);
 
-    return {
-        values,
-        handleChange,
-    }
-}
-
-const FirstForm = ({setSearchData}) => {
-    const {values, handleChange} = useForm();
-    useEffect(() => {
-        setSearchData(values)
-    }, [values])
     return (
-        <div className="first__input">
-            <input
-                name='nameOfSearch'
+        <StyledInputWrapper position='relative' maxWidth='467px'>
+            <StyledLabelFirst active={isActive}>
+                {LabelFirst}
+            </StyledLabelFirst>
+            <StyledInputFirst
+                onFocus={handleFocus}
+                onBlur={disableFocus}
+                name='search'
                 type='text'
                 id='searchName'
-                className='form__input'
-                value={values.name}
-                onChange={handleChange}
+                value={inputValue}
+                onChange={(e) => {
+                    handleChange(e.target.value)
+                }}
                 autoComplete='off'
-                placeholder='Your destination or hotel
-                name'
             />
-        </div>
+        </StyledInputWrapper>
     )
 }
 

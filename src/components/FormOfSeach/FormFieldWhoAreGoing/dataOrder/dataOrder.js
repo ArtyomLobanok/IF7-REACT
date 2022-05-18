@@ -1,70 +1,64 @@
-import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {
+    decrementAdults, decrementChildren,
+    decrementRooms,
+    incrementAdults, incrementChildren,
+    incrementRooms,
+}
+    from "../../../../redux/actions";
 
 const OrderData = () => {
-    const [countOfAdults, setCountOfAdults] = useState(1);
-    const [countOfChildren, setCountOfChildren] = useState([]);//here map select
-    const [countOfRooms, setCountOfRooms] = useState(1);
-    const [countOfSelect, setCountOfSelect] = useState([]);
+    const form = useSelector(state => state.formReducer)
+    const dispatch = useDispatch();
+
     const data = {
         adults: {
             minValue: 1,
             maxValue: 30,
             label: 'Adults',
-            count: countOfAdults,
+            count: form.adults,
             onIncrement: (event) => {
                 event.preventDefault();
-                data.adults.count !== data.adults.maxValue && setCountOfAdults(prevCount => prevCount + 1)
+                data.adults.count !== data.adults.maxValue && dispatch(incrementAdults())
             },
             onDecrement: (event) => {
                 event.preventDefault();
-                data.adults.count !== data.adults.minValue && setCountOfAdults(prevCount => prevCount - 1)
+                data.adults.count !== data.adults.minValue && dispatch(decrementAdults())
             },
         },
         children: {
             minValue: 0,
             maxValue: 10,
             label: 'Children',
-            count: countOfChildren.length,
+            count: form.children.length,
             onIncrement: (event) => {
                 event.preventDefault();
-                data.children.count < data.children.maxValue && setCountOfChildren(prevState => [...prevState, 1])
-                const addComponent = () => {
-                    setCountOfSelect([...countOfSelect, "Select Component"])
-                }
-                data.children.count < data.children.maxValue && addComponent()
+                data.children.count < data.children.maxValue && dispatch(incrementChildren())
+
             },
             onDecrement: (event) => {
                 event.preventDefault();
-                data.children.count > data.children.minValue && setCountOfChildren(prevState => prevState.slice(1))
-                const RemoveSelect = () => {
-                    event.preventDefault();
-                    setCountOfSelect(prevState => prevState.slice(1))
-                }
-                RemoveSelect()
+                data.children.count > data.children.minValue && dispatch(decrementChildren())
             },
         },
         rooms: {
             minValue: 1,
             maxValue: 30,
             label: 'Rooms',
-            count: countOfRooms,
+            count: form.rooms,
             onIncrement: (event) => {
                 event.preventDefault();
-                data.rooms.count !== data.rooms.maxValue && setCountOfRooms(prevCount => prevCount + 1)
+                data.rooms.count !== data.rooms.maxValue && dispatch(incrementRooms());
             },
             onDecrement: (event) => {
                 event.preventDefault();
-                data.rooms.count !== data.rooms.minValue && setCountOfRooms(prevCount => prevCount - 1)
+                data.rooms.count !== data.rooms.minValue && dispatch(decrementRooms());
             },
         },
     }
     return (
         {
             data,
-            countOfAdults,
-            countOfChildren,
-            countOfRooms,
-            countOfSelect,
         }
     )
 }

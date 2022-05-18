@@ -1,28 +1,31 @@
-import React, {useState} from 'react';
-import './childrenSelect.css'
+import { useDispatch } from "react-redux";
+
+import { setChildAge } from "../../../../redux/actions"
+import {StyledSelects} from "../../../Styled-components/HeaderForm";
 
 const SelectOptions = () => {
-    const [value, setValue] = useState('');
-
     const options = Array.from(Array(18).keys()).map((text, index) => {
-        return <option key={index}> {text} years old</option>;
+        return <option value={text} key={index}> {text} years old</option>;
     });
     return (
         {
             options,
-            value,
-            setValue,
         }
     )
 }
 
-const Select = () => {
-    const {options, value, setValue} = SelectOptions();
+const Select = ({value, index}) => {
+    const onChange= (e) => {
+        dispatch(setChildAge({value: e.target.value, index}))
+    }
+    const dispatch = useDispatch()
+    const { options } = SelectOptions();
     return (
-            <select value={value} onChange={(e) => setValue(e.target.value)}>
+            <StyledSelects value={value} onChange={onChange}>
                 {options}
-            </select>
+            </StyledSelects>
     )
 }
+
 export default Select;
 

@@ -1,23 +1,24 @@
-import React, {useState} from 'react';
-import './App.css';
-import Header from '../HeaderApp/Header';
-import HomesGuestsLoves from "../HomesGuestsLoves/HomesGuestsLoves";
-import AvailableHotels from "../AvailableHotels/AvailableHotels";
-import useFeatch from "../../hooks/useFetch";
-import {url} from "../../api/endPoints";
-import Footer from "../FooterApp/Footer";
+import {Route, Routes} from "react-router-dom";
+import HotelPage from "./HotelPage";
+import LoginPage from "./LoginPage";
+import RegisterPage from "./RegisterPage";
+import React from "react";
+import MainPage from "./MainPage";
+import {ThemeProvider} from "styled-components";
+import {useSelector} from "react-redux";
 
-function App() {
-    const [searchData, setSearchData] = useState('')
-    const {array} = useFeatch(searchData.nameOfSearch && url.searchUrl(searchData.nameOfSearch));
+const App = () => {
+    const theme = useSelector((state) => state.themeReducer.theme)
     return (
-        <>
-            <Header setSearchData={setSearchData}/>
-            {array.length > 0 && <AvailableHotels array={array}/>}
-            <HomesGuestsLoves/>
-            <Footer/>
-        </>
-    );
+        <ThemeProvider theme={theme} >
+            <Routes>
+                <Route path="/" element={<MainPage/>}/>
+                <Route path="hotel/:id" element={<HotelPage/>}/>
+                <Route path="login" element={<LoginPage/>}/>
+                <Route path="register" element={<RegisterPage/>}/>
+            </Routes>
+        </ThemeProvider>
+    )
 }
 
 export default App;

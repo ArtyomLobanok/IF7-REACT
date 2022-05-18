@@ -1,24 +1,25 @@
 import React from "react";
-import './HotelCard.css';
-import {Link} from "react-router-dom";
+import {
+    Flex,
+    SubTitle,
+    CardImg,
+    StyledLink,
+    TittleCards,
+} from "../Styled-components/Global"
+
 
 const hotelCard = props => {
     const {id, imageUrl, name, city, country} = props.card;
     return (
-        <Link className='hotelLink' to={`/hotel/${id}`}>
-            <div className="overviews__item">
-                <div className="overviews__img">
-                    <img src={imageUrl} alt="Pictures"/>
-                </div>
-
-                <div className="overviews__tittle">
-                    {name}
-                </div>
-                <div className="overviews__location">
-                    {city}, {country}
-                </div>
-            </div>
-        </Link>
+        <StyledLink to={`/hotel/${id}`}>
+            <Flex direction='column'>
+                <Flex margin='0 0 24px 0'>
+                    <CardImg src={imageUrl} alt="Pictures"/>
+                </Flex>
+                <TittleCards blue margin='0 0 24px 0'>{name}</TittleCards>
+                <SubTitle>{city}, {country}</SubTitle>
+            </Flex>
+        </StyledLink>
     )
 }
 export default hotelCard;
